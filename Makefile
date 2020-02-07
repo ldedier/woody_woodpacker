@@ -40,7 +40,7 @@ SPEED = -j8
 
 LIBFT = $(LIBFTDIR)/libft.a
 
-SRCS		=	main.c
+SRCS		=	main.c init.c free.c
 				
 INCLUDES	=	woody.h
 
