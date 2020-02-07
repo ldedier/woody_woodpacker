@@ -30,6 +30,8 @@ int	init(struct s_elf *elf, char *filename)
 		close(fd);
 		return (1);
 	}
+	if ((size_t)elf->st.st_size && (size_t)elf->st.st_size < sizeof(Elf64_Ehdr))
+		return (error_corrupted(elf));
 	if ((elf->ptr = mmap(0, elf->st.st_size,
 					PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0)) == MAP_FAILED)
 	{

@@ -21,13 +21,6 @@ static int print_woody_usage(char *progname)
 	return (1);
 }
 
-int	process_woody(struct s_elf *elf)
-{
-	printf("%zu\n", sizeof(Elf64_Phdr));
-	(void)elf;
-	return (0);
-}
-
 int main(int argc, char **argv)
 {
 	struct s_elf elf;

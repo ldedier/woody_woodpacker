@@ -40,7 +40,12 @@ SPEED = -j8
 
 LIBFT = $(LIBFTDIR)/libft.a
 
-SRCS		=	main.c init.c free.c
+SRCS		=	main.c \
+			init.c \
+			free.c \
+			pack.c \
+			print.c \
+			errors.c
 				
 INCLUDES	=	woody.h
 
