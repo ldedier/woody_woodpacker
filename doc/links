@@ -1,4 +1,8 @@
 https://volkyz.com/injecting-elf-files/
-https://github.com/torvalds/linux/blob/16f73eb02d7e1765ccab3d2018e0bd98eb93d973/include/uapi/linux/elf.h#L220
 http://man7.org/linux/man-pages/man5/elf.5.html
 https://0xax.gitbooks.io/linux-insides/content/Theory/linux-theory-2.html
+https://ensiwiki.ensimag.fr/images/b/b2/ENSIMAG-2A-Securiy-Cryptology-2016-Graux-Mouillard-Saoud.pdf
+
+http://www.skyfree.org/linux/references/ELF_Format.pdf
+
+https://eyalitkin.wordpress.com/2018/02/02/elf-caves-hiding-in-the-corner/

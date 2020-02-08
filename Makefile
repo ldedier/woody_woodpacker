@@ -45,6 +45,8 @@ SRCS		=	main.c \
 			free.c \
 			pack.c \
 			print.c \
+			get_text_segment.c \
+			get_cave.c \
 			errors.c
 				
 INCLUDES	=	woody.h

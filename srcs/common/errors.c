@@ -71,3 +71,9 @@ int     is_corrupted_string(char *str, struct s_elf *elf, int *len)
 	}
 	return (0);
 }
+
+int woody_error(char *msg)
+{
+	ft_dprintf(2, "%s\n", msg);
+	return (1);
+}

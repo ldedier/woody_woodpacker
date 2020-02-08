@@ -18,6 +18,14 @@
 # include <fcntl.h>
 # include "libft.h"
 
+# define PAYLOAD_SIZE 250
+
+struct s_cave
+{
+	size_t offset;
+	size_t size;
+};
+
 struct s_elf
 {
 	void *ptr;
@@ -29,11 +37,14 @@ struct s_elf
 
 int			init(struct s_elf *elf, char *filename);
 void			free_all(struct s_elf *elf);
+int			get_cave(struct s_elf *elf, size_t *cave_offset, size_t *cave_size);
 int			process_woody(struct s_elf *elf);
 
 void			print_elf64_exec_header(Elf64_Ehdr header);
 void			print_elf64_program_segment_header(Elf64_Phdr header);
 void			print_elf64_section_header(Elf64_Shdr header);
+void			print_elf64(struct s_elf *elf);
+void			print_cave(struct s_cave cave);
 
 int			not_elf_file(struct s_elf *elf);
 int			error_corrupted(struct s_elf *elf);
@@ -41,4 +52,11 @@ int			error_corrupted(struct s_elf *elf);
 int			is_corrupted_data(void *address, size_t size, struct s_elf *elf);
 int			is_corrupted_string_light(char *str, struct s_elf *elf);
 
+
+
+Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
+
+int			woody_error(char *msg);
+
+int			elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *cave_size);
 #endif
