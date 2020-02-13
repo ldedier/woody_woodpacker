@@ -13,7 +13,7 @@
 NAME	= woody_woodpacker
 
 CC		= gcc -g3
-ASM	=	nasm
+ASM		= nasm
 
 ECHO = echo
 MKDIR = mkdir
@@ -42,7 +42,7 @@ SPEED = -j8
 
 LIBFT = $(LIBFTDIR)/libft.a
 
-SRCS		=	main.c \
+SRCS_C		=	main.c \
 			init.c \
 			free.c \
 			pack.c \
@@ -51,9 +51,13 @@ SRCS		=	main.c \
 			get_cave.c \
 			errors.c
 
+SRCS_ASM	=	payload.s
+
 INCLUDES	=	woody.h
 
-OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS:.c=.o))
+OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS_C:.c=.o)) \
+				$(addprefix $(OBJDIR), $(SRCS_ASM:.s=.o))
+
 INC 			=	-I $(INCLUDESDIR) -I $(LIBFTDIR)/$(LIBFT_INCLUDES_DIR)
 
 OK_COLOR = \x1b[32;01m
@@ -70,8 +74,6 @@ else
 	SPEED = -j8
 endif
 
-payload.o: 
-	$(AS) -o $@
 all:
 	@$(MAKE) -C $(LIBFTDIR) $(SPEED)
 	@$(MAKE) $(BINDIR)/$(NAME) $(SPEED)
@@ -83,17 +85,18 @@ $(LIBFT):
 	@$(MAKE) -C $(LIBFTDIR)
 
 $(BINDIR)/$(NAME): $(LIBFT) $(OBJDIR) $(OBJECTS)
-	@$(CC) -o $@ $(OBJECTS) $(CFLAGS) $(LFLAGS)
+	$(CC) -no-pie -o $@ $(OBJECTS) $(CFLAGS) $(LFLAGS)
 	@$(ECHO) "$(NAME) linked with success !"
 
 $(OBJDIR):
+	echo MKDIR OBJ
 	@$(MKDIR) $@
+
+$(OBJDIR)payload.o: payload.s $(INCLUDES)
+	$(ASM) $(ASMFLAGS) -o $@ $< 
 
 $(OBJDIR)%.o: %.c $(INCLUDES)
 	$(CC) -c $< -o $@ $(CFLAGS)
-
-$(OBJDIR)%.o: %.s $(INCLUDES)
-	$(ASM) -c $< -o $@ $(ASMFLAGS)
 
 clean:
 	@$(MAKE) clean -C $(LIBFTDIR)
