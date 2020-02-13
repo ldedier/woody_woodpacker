@@ -12,17 +12,18 @@
 
 NAME	= payload
 
-AS = nasm -g 
+AS = nasm
+CC = gcc
 
 ECHO = echo
 MKDIR = mkdir
 
-INCLUDESDIR = includes
 DEBUG ?= 0
 
 SRCDIR   = srcs/
 OBJDIR   = objs/
-BINDIR   = .
+INCLUDESDIR = includes/
+BINDIR   = ./
 
 VPATH		=	$(SRCDIR)
 
@@ -31,25 +32,25 @@ SRCS		=	payload.s
 OBJECTS		=	$(addprefix $(OBJDIR), $(SRCS:.s=.o))
 
 INCLUDES_NO_PREFIX = payload.h
-INCLUDES = $(addprefix $(INCLUDESDIR)/, $(INCLUDES_NO_PREFIX))
+INCLUDES = $(addprefix $(INCLUDESDIR), $(INCLUDES_NO_PREFIX))
 INC = -I $(INCLUDESDIR)
 
-ASMFLAGS = -f macho64
+ASMFLAGS = -f elf64
 
 all:
-	@$(MAKE) $(BINDIR)/$(NAME)
+	@$(MAKE) $(BINDIR)$(NAME)
 
 debug:
 	@$(MAKE) all DEBUG=1
 
-$(BINDIR)/$(NAME): $(OBJDIR) $(OBJECTS)
-	ld $^ -o $@ $(ASMFLAGS)
+$(BINDIR)$(NAME): $(OBJDIR) $(OBJECTS)
+	$(CC) -no-pie -o $@ $(OBJECTS)
 	@$(ECHO) "$(NAME) linked with success !"
 
 $(OBJDIR):
 	@$(MKDIR) $@
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.s $(INCLUDES)
+$(OBJDIR)%.o: $(SRCDIR)%.s $(INCLUDES)
 	@mkdir -p $(OBJDIR)
 	$(AS) -o $@ $< $(ASMFLAGS) $(INC)
 
@@ -59,7 +60,7 @@ clean:
 	@$(RM) -rf $(OBJDIR)
 
 fclean: clean
-	@$(RM) $(BINDIR)/$(NAME)
+	@$(RM) $(BINDIR)$(NAME)
 
 re: fclean all
 

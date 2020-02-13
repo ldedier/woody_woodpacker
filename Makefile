@@ -13,6 +13,7 @@
 NAME	= woody_woodpacker
 
 CC		= gcc -g3
+ASM	=	nasm
 
 ECHO = echo
 MKDIR = mkdir
@@ -27,8 +28,9 @@ INCLUDESDIR =		includes
 LIBFTDIR =		libft
 LIBFT_INCLUDES_DIR =	includes
 
-SOURCE_PATHS =	common \
-		hash \
+ASMFLAGS = -f elf64
+
+SOURCE_PATHS =	C \
 		asm
 
 SOURCE_FULL_PATHS = $(addprefix $(SRCDIR), $(SOURCE_PATHS))
@@ -48,7 +50,7 @@ SRCS		=	main.c \
 			get_text_segment.c \
 			get_cave.c \
 			errors.c
-				
+
 INCLUDES	=	woody.h
 
 OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS:.c=.o))
@@ -68,6 +70,8 @@ else
 	SPEED = -j8
 endif
 
+payload.o: 
+	$(AS) -o $@
 all:
 	@$(MAKE) -C $(LIBFTDIR) $(SPEED)
 	@$(MAKE) $(BINDIR)/$(NAME) $(SPEED)
@@ -85,8 +89,11 @@ $(BINDIR)/$(NAME): $(LIBFT) $(OBJDIR) $(OBJECTS)
 $(OBJDIR):
 	@$(MKDIR) $@
 
-$(OBJDIR)%.o: $(SRC_DIR)%.c $(INCLUDES)
+$(OBJDIR)%.o: %.c $(INCLUDES)
 	$(CC) -c $< -o $@ $(CFLAGS)
+
+$(OBJDIR)%.o: %.s $(INCLUDES)
+	$(ASM) -c $< -o $@ $(ASMFLAGS)
 
 clean:
 	@$(MAKE) clean -C $(LIBFTDIR)
