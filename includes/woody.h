@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include "libft.h"
 
-# define PAYLOAD_SIZE 250
+# define PAYLOAD_SIZE 100
 
 struct s_cave
 {
