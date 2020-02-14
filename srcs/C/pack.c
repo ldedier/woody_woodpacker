@@ -12,7 +12,7 @@
 
 #include "woody.h"
 
-int	get_text(struct s_elf *elf, size_t *text_size, unsigned char *data)
+int	get_text(struct s_elf *elf, size_t *text_size, unsigned char **data)
 {
 	Elf64_Shdr *section;
 	size_t i;
@@ -38,13 +38,13 @@ int	get_text(struct s_elf *elf, size_t *text_size, unsigned char *data)
 int	process_woody(struct s_elf *elf, struct s_elf *payload)
 {
 	struct s_cave cave;
-	size_t payload_size;
+	size_t	payload_size;
+	unsigned char	*data;
 
 	if (check_elf(payload) || check_elf(elf))
 		return (1);
-	if (get_text_size(payload, &payload_size))
+	if (get_text(payload, &payload_size, &data))
 		return (1);
-	
 	printf("Payload size: %zu\n", payload_size);
 	if (elf64_get_cave_attributes(elf, &cave.offset, &cave.size))
 		return (1);
