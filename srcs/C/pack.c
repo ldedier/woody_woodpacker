@@ -12,34 +12,26 @@
 
 #include "woody.h"
 
-int	identify_elf(struct s_elf *elf)
+int	get_text_size(struct s_elf *elf, size_t *text_size)
 {
-	elf->header = (Elf64_Ehdr)*(Elf64_Ehdr *)elf->ptr;
-	if (ft_strncmp(ELFMAG, (char *)elf->header.e_ident, SELFMAG))
-		return (not_elf_file(elf));
+	(void)elf;
+	*text_size = 100;
 	return (0);
 }
 
-int	elf_is_corrupted(struct s_elf *elf)
-{
-	if (is_corrupted_data(elf->ptr + elf->header.e_phoff, elf->header.e_phnum * elf->header.e_phentsize, elf))
-		return (1);
-	if (is_corrupted_data(elf->ptr + elf->header.e_shoff, elf->header.e_shnum * elf->header.e_shentsize, elf))
-		return (1);
-	return (0);
-}
-
-int	process_woody(struct s_elf *elf)
+int	process_woody(struct s_elf *elf, struct s_elf *payload)
 {
 	struct s_cave cave;
+	size_t payload_size;
 
-	if (identify_elf(elf))
+	if (check_elf(payload) || check_elf(elf))
 		return (1);
-	if (elf_is_corrupted(elf))
-		return (error_corrupted(elf));
+	if (get_text_size(payload, &payload_size))
+		return (1);
+	printf("Payload size: %zu\n", payload_size);
 	if (elf64_get_cave_attributes(elf, &cave.offset, &cave.size))
 		return (1);
-	if (cave.size < PAYLOAD_SIZE)
+	if (cave.size < payload_size)
 		return (woody_error("could not find a suitable part of binary to be injected\n"));
 	print_cave(cave);
 	return (0);

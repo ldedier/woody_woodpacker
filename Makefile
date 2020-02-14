@@ -14,7 +14,7 @@ NAME	= woody_woodpacker
 
 CC		= gcc -g3
 ASM		= nasm
-
+PWD		= $(shell pwd)
 ECHO = echo
 MKDIR = mkdir
 
@@ -40,18 +40,22 @@ VPATH		=	$(INCLUDESDIR) \
 
 SPEED = -j8
 
+PAYLOAD_SRC = payload.s
+PAYLOAD_OBJ = payload.o
+
 LIBFT = $(LIBFTDIR)/libft.a
 
 SRCS_C		=	main.c \
 			init.c \
 			free.c \
+			check_elf.c \
 			pack.c \
 			print.c \
 			get_text_segment.c \
 			get_cave.c \
 			errors.c
 
-SRCS_ASM	=	payload.s
+SRCS_ASM	=	$(PAYLOAD_SRC)
 
 INCLUDES	=	woody.h
 
@@ -64,7 +68,7 @@ OK_COLOR = \x1b[32;01m
 EOC = \033[0m
 
 LFLAGS =	-L $(LIBFTDIR) -lft -Wall -Wextra -Werror
-CFLAGS = $(INC) -Wall -Wextra -Werror
+CFLAGS = $(INC) -Wall -Wextra -Werror -DPAYLOAD_FILE=\"$(PWD)/$(OBJDIR)$(PAYLOAD_OBJ)\"
 
 ifeq ($(DEBUG), 1)
 	CFLAGS += -fsanitize=address
@@ -89,10 +93,9 @@ $(BINDIR)/$(NAME): $(LIBFT) $(OBJDIR) $(OBJECTS)
 	@$(ECHO) "$(NAME) linked with success !"
 
 $(OBJDIR):
-	echo MKDIR OBJ
 	@$(MKDIR) $@
 
-$(OBJDIR)payload.o: payload.s $(INCLUDES)
+$(OBJDIR)$(PAYLOAD_OBJ): $(PAYLOAD_SRC) $(INCLUDES)
 	$(ASM) $(ASMFLAGS) -o $@ $< 
 
 $(OBJDIR)%.o: %.c $(INCLUDES)

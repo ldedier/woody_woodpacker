@@ -38,7 +38,7 @@ struct s_elf
 int			init(struct s_elf *elf, char *filename);
 void			free_all(struct s_elf *elf);
 int			get_cave(struct s_elf *elf, size_t *cave_offset, size_t *cave_size);
-int			process_woody(struct s_elf *elf);
+int			process_woody(struct s_elf *elf, struct s_elf *payload);
 
 void			print_elf64_exec_header(Elf64_Ehdr header);
 void			print_elf64_program_segment_header(Elf64_Phdr header);
@@ -59,4 +59,7 @@ Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
 int			woody_error(char *msg);
 
 int			elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *cave_size);
+
+
+int			check_elf(struct s_elf *elf);
 #endif

@@ -24,13 +24,16 @@ static int print_woody_usage(char *progname)
 int main(int argc, char **argv)
 {
 	struct s_elf elf;
+	struct s_elf payload;
 	int ret;
 
 	if (argc != 2)
 		return print_woody_usage(argv[0]);
 	if (init(&elf, argv[1]))
 		return (1);
-	ret = process_woody(&elf);
+	if (init(&payload, PAYLOAD_FILE))
+		return (1);
+	ret = process_woody(&elf, &payload);
 	free_all(&elf);
 	return (ret);
 }
