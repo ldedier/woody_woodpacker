@@ -12,11 +12,27 @@
 
 #include "woody.h"
 
-int	get_text_size(struct s_elf *elf, size_t *text_size)
+int	get_text(struct s_elf *elf, size_t *text_size, unsigned char *data)
 {
-	(void)elf;
-	*text_size = 100;
-	return (0);
+	Elf64_Shdr *section;
+	size_t i;
+
+	i = 0;
+	while (i < elf->header.e_shnum)
+	{
+		section = (Elf64_Shdr *)(elf->ptr + elf->header.e_shoff + i * elf->header.e_shentsize);
+		if (is_corrupted_string_light(elf->strtable + section->sh_name, elf))
+			return error_corrupted(elf);
+		if (!ft_strcmp(elf->strtable + section->sh_name, ".text"))
+		{
+			printf("%s WWWOOOWW\n", elf->strtable + section->sh_name);	
+			print_elf64_section_header(*section);
+			*text_size = 42;
+			*data = NULL;
+		}
+		i++;
+	}
+	return (1);
 }
 
 int	process_woody(struct s_elf *elf, struct s_elf *payload)
@@ -28,6 +44,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (1);
 	if (get_text_size(payload, &payload_size))
 		return (1);
+	
 	printf("Payload size: %zu\n", payload_size);
 	if (elf64_get_cave_attributes(elf, &cave.offset, &cave.size))
 		return (1);

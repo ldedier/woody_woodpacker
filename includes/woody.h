@@ -32,6 +32,7 @@ struct s_elf
 	char *filename;
 	struct stat st;
 	off_t size;
+	char *strtable;
 	Elf64_Ehdr header;
 };
 
@@ -54,7 +55,7 @@ int			is_corrupted_string_light(char *str, struct s_elf *elf);
 
 
 
-Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
+Elf64_Phdr		*get_text(struct s_elf *elf, size_t *text_size, unsigned char *data);
 
 int			woody_error(char *msg);
 

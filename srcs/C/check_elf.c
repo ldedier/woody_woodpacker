@@ -22,10 +22,21 @@ int	identify_elf(struct s_elf *elf)
 
 int	elf_is_corrupted(struct s_elf *elf)
 {
-	if (is_corrupted_data(elf->ptr + elf->header.e_phoff, elf->header.e_phnum * elf->header.e_phentsize, elf))
+	Elf64_Shdr *first_section_header;
+	Elf64_Shdr *strtable_section_header;
+
+	if (is_corrupted_data(elf->ptr + elf->header.e_phoff,
+		elf->header.e_phnum * elf->header.e_phentsize, elf))
 		return (1);
-	if (is_corrupted_data(elf->ptr + elf->header.e_shoff, elf->header.e_shnum * elf->header.e_shentsize, elf))
+	if (is_corrupted_data(elf->ptr + elf->header.e_shoff,
+		elf->header.e_shnum * elf->header.e_shentsize, elf))
 		return (1);
+	if (elf->header.e_shnum == 0
+		|| elf->header.e_shstrndx >= elf->header.e_shnum)
+		return (1);
+	first_section_header = (Elf64_Shdr *)(void *)(elf->ptr + elf->header.e_shoff);
+	strtable_section_header = &first_section_header[elf->header.e_shstrndx];
+	elf->strtable = (char *)((void *)elf->ptr + strtable_section_header->sh_offset);
 	return (0);
 }
 
