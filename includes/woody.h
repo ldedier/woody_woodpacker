@@ -19,6 +19,7 @@
 # include "libft.h"
 
 # define PAYLOAD_SIZE 400
+# define PACKED_NAME "woody"
 
 struct s_cave
 {
@@ -31,9 +32,8 @@ struct s_elf
 	void *ptr;
 	char *filename;
 	struct stat st;
-	off_t size;
 	char *strtable;
-	Elf64_Ehdr header;
+	Elf64_Ehdr *header;
 };
 
 int			init(struct s_elf *elf, char *filename);

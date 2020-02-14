@@ -65,25 +65,25 @@ void	print_elf64(struct s_elf *elf)
 	Elf64_Shdr *first_section_header;
 	Elf64_Shdr *strtable_section;
 
-	print_elf64_exec_header(elf->header);
+	print_elf64_exec_header(*(elf->header));
 
-	ft_printf("\n\nSegment headers (%d):\n\n", elf->header.e_phnum);
+	ft_printf("\n\nSegment headers (%d):\n\n", elf->header->e_phnum);
 	i = 0;
-	while (i < elf->header.e_phnum)
+	while (i < elf->header->e_phnum)
 	{
-		segment_header = (Elf64_Phdr *)((void *)(elf->ptr + elf->header.e_phoff + i * elf->header.e_phentsize));
+		segment_header = (Elf64_Phdr *)((void *)(elf->ptr + elf->header->e_phoff + i * elf->header->e_phentsize));
 		ft_printf("\nsegment #%d:\n\n", i);
 		print_elf64_program_segment_header(*segment_header);
 		i++;
 	}
 
-	first_section_header = (Elf64_Shdr *)(void *)(elf->ptr + elf->header.e_shoff);
-	strtable_section = &first_section_header[elf->header.e_shstrndx];
+	first_section_header = (Elf64_Shdr *)(void *)(elf->ptr + elf->header->e_shoff);
+	strtable_section = &first_section_header[elf->header->e_shstrndx];
 	strtable = (char *)((void *)elf->ptr + strtable_section->sh_offset);
 	i = 0;
-	while (i < elf->header.e_shnum)
+	while (i < elf->header->e_shnum)
 	{
-		section_header = (Elf64_Shdr *)((void *)(elf->ptr + elf->header.e_shoff + i * elf->header.e_shentsize));
+		section_header = (Elf64_Shdr *)((void *)(elf->ptr + elf->header->e_shoff + i * elf->header->e_shentsize));
 	//	if (is_corrupted_string_light(strtable + section_header->sh_name, elf))
 	//		return (error_corrupted(elf));
 		ft_printf("\nsection #%d: %s\n\n", i, strtable + section_header->sh_name);

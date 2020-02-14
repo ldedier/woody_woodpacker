@@ -18,10 +18,10 @@ Elf64_Phdr *get_text_segment_header(struct s_elf *elf)
 	size_t i;
 
 	i = 0;
-	while (i < elf->header.e_phnum)
+	while (i < elf->header->e_phnum)
 	{
 		segment_header = (Elf64_Phdr *)((void *)(elf->ptr
-			+ elf->header.e_phoff + i * elf->header.e_phentsize));
+			+ elf->header->e_phoff + i * elf->header->e_phentsize));
 		if (segment_header->p_type == PT_LOAD 
 			&& segment_header->p_flags & (PF_X | PF_W))
 		{
