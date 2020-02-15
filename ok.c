@@ -12,11 +12,18 @@
 
 #include <stdio.h>
 
+void v()
+{
+	printf("hehe\n");
+}
+
 int main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
 
 	printf("salut\n");
+	printf("hehe\n");
+	v();
 	return (0);
 }

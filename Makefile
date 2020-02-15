@@ -59,8 +59,8 @@ SRCS_ASM	=	$(PAYLOAD_SRC)
 
 INCLUDES	=	woody.h
 
-OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS_C:.c=.o)) \
-				$(addprefix $(OBJDIR), $(SRCS_ASM:.s=.o))
+OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS_C:.c=.o)) 
+	#			$(addprefix $(OBJDIR), $(SRCS_ASM:.s=.o))
 
 INC 			=	-I $(INCLUDESDIR) -I $(LIBFTDIR)/$(LIBFT_INCLUDES_DIR)
 
@@ -81,6 +81,7 @@ endif
 all:
 	@$(MAKE) -C $(LIBFTDIR) $(SPEED)
 	@$(MAKE) $(BINDIR)/$(NAME) $(SPEED)
+	@$(MAKE) $(OBJDIR)$(PAYLOAD_OBJ)
 
 debug:
 	@$(MAKE) all DEBUG=1
@@ -97,6 +98,7 @@ $(OBJDIR):
 
 $(OBJDIR)$(PAYLOAD_OBJ): $(PAYLOAD_SRC) $(INCLUDES)
 	$(ASM) $(ASMFLAGS) -o $@ $< 
+	@$(ECHO) "$(PAYLOAD_OBJ) linked with success !"
 
 $(OBJDIR)%.o: %.c $(INCLUDES)
 	$(CC) -c $< -o $@ $(CFLAGS)

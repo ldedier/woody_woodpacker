@@ -1,35 +1,40 @@
 section .text
-
-global hash
-global payload
-
-extern printf
+    global payload
+    global hash
 
 payload:
-	;; save cpu state
-	push rdi
-	;; do your evil thing
-	lea rdi, [rel msg]			; pointer to msg (char* [])
-	call printf
+   ;; save cpu state
+   push rax
+   push rdi
+   push rsi
+   push rdx
 
-	;; restore cpu state
-	pop rdi
-	call hash
-	
-	;; jump to main
-	mov rax, 0x1111111111111111		; set rax back to normal
-	jmp rax					; jump to it
+   ;; do your evil thing
 
-hash:
-	enter 0, 0
-	push rdi
-	lea rdi, [rel msg2]
-	call printf
-	pop rdi
-	leave
-	ret
-	
 
-section .data
-	msg		db '....WOODY....', 0xa, 0
-	msg2		db '....OUAI....', 0xa, 0
+   mov rax, 1             ; syscall number
+   mov rdi, 1             ; fd = 1(stdout)
+   lea rsi, [rel msg]     ; pointer to msg (char* [])
+   mov rdx, msg_end - msg ; size
+   syscall                ;
+   
+;   call hash
+
+   ;; restore cpu state
+   pop rdx
+   pop rsi
+   pop rdi
+   pop rax
+
+   ;; jump to main
+   mov rax, 0x1111111111111111    ; set rax back to normal
+   jmp rax                        ; jump to it
+
+;hash:
+;   enter 0, 0
+;   leave
+;   ret
+
+align 8
+   msg      db '...WOODY...', 0xa , 0
+   msg_end  db 0x0

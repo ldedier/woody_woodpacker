@@ -49,9 +49,9 @@ int	print_some(char *data)
 {
 	size_t i;
 	i = 0;
-	while (i < 50)
+	while (i < 20)
 	{
-		printf("%x\n", data[i]);
+		printf("%02x\n", data[i]);
 		i++;
 	}
 	return (1);
@@ -68,7 +68,9 @@ int	patch_target(unsigned char *data, size_t size, long pattern, size_t to_rempl
 		to_compare = (long *)(data + i);
 		if (*to_compare == pattern)
 		{
+			printf("jump %lx\n", *to_compare);
 			*to_compare = to_remplace;
+			printf("jump %lx\n", *to_compare);
 			return (0);
 		}
 		i++;
@@ -92,32 +94,24 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (1);
 	if (cave.size < payload_size)
 		return (woody_error("could not find a suitable part of binary to be injected\n"));
-//	print_cave(cave);
-//	cave.offset = align(cave.offset, 16);
 	print_cave(cave);
+	printf("old entry offset : %zu\n", elf->header->e_entry);
+	printf("old entry offset : %lx\n", elf->header->e_entry);
 	print_some(elf->ptr + elf->header->e_entry);
 	ft_memcpy(elf->ptr + cave.offset, data, payload_size);
+//	if (patch_target(elf->ptr + cave.offset, payload_size, 0x1111111111111111, 0x0000555555555148))
 	if (patch_target(elf->ptr + cave.offset, payload_size, 0x1111111111111111, elf->header->e_entry))
 		return (woody_error("could not find payload jmp argument"));
-/*
-	int fd2 = open("before", O_CREAT | O_WRONLY | O_TRUNC, 0755);
-	int fd3 = open("after", O_CREAT | O_WRONLY | O_TRUNC, 0755);
-
-	printf("%ld\n", elf->header->e_entry);	
-	write(fd2, elf->ptr, elf->st.st_size);
-	write(fd3, elf->ptr, elf->st.st_size);
-	write(1, elf->ptr, elf->st.st_size);
-*/
 	elf->header->e_entry = cave.offset;
-	printf("%zu\n", elf->header->e_entry);
+	printf("////////////////\n");
+	print_some(elf->ptr + elf->header->e_entry);
+	printf("new entry offset : %zu\n", elf->header->e_entry);
 	if ((fd = open(PACKED_NAME, O_CREAT | O_WRONLY | O_TRUNC, 0755)) < 0)
 	{
-		perror("open"); //check if ok
+		perror("open");
 		return (1);
 	}
 	write(fd, elf->ptr, elf->st.st_size);
 	close(fd);
 	return (0);
 }
-
-

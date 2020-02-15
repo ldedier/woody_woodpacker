@@ -19,7 +19,7 @@
 # include "libft.h"
 
 # define PAYLOAD_SIZE 400
-# define PACKED_NAME "woody"
+# define PACKED_NAME "to_change_woody"
 
 struct s_cave
 {
