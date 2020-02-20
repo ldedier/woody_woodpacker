@@ -55,7 +55,7 @@ int			is_corrupted_string_light(char *str, struct s_elf *elf);
 
 
 
-int			get_text(struct s_elf *elf, size_t *text_size, unsigned char **data);
+int			get_text(struct s_elf *elf, size_t *text_size, unsigned char **data, size_t *offset);
 Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
 
 int			woody_error(char *msg);

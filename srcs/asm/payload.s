@@ -33,8 +33,8 @@ _rip:
 
    ; set rax back to normal
    ; jump to main
-   mov r15, 0x1111111111111111
-   mov rax, 0x2222222222222222
+   mov r15, 0x1111111111111111 ; get 
+   mov rax, 0x2222222222222222 ; 0 if PIE is desactivated
    cmp rax, 0
    jz nopie
    mov rax, r14
