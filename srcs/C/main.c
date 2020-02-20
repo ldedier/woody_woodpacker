@@ -29,9 +29,9 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 		return print_woody_usage(argv[0]);
-	if (init(&elf, argv[1]))
+	if (init(&elf, argv[1]) || init(&payload, PAYLOAD_FILE))
 		return (1);
-	if (init(&payload, PAYLOAD_FILE))
+	if (check_elf(&payload) || check_elf(&elf))
 		return (1);
 	ret = process_woody(&elf, &payload);
 	free_all(&elf);
