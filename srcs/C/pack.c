@@ -66,18 +66,26 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		elf->header->e_entry = cave.offset;
 		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x1111111111111111, old_entry - elf->header->e_entry - 5))
 			return (woody_error("could not find payload jmp argument"));
+		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x3333333333333333, elf->text_section->sh_offset - elf->header->e_entry - 5))
+			return (woody_error("could not find payload jmp argument"));
 	}
 	else if (elf->header->e_type == ET_EXEC)
 	{
 		ft_printf("EXEC (executablefile)\n");
 		elf->header->e_entry = elf->header->e_entry + (cave.offset - elf->text_section->sh_offset);
+		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x2222222222222222, 0))
+			return (woody_error("could not find payload jmp argument"));
 		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x1111111111111111, old_entry))
 			return (woody_error("could not find payload jmp argument"));
-		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x2222222222222222, 0))
+		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x3333333333333333, elf->text_section->sh_addr))
 			return (woody_error("could not find payload jmp argument"));
 	}
 	else
 		return woody_error("this elf is not a valid executable elf");
+	printf("OFFSET: %ld\n", elf->text_section->sh_offset);
+	if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x4444444444444444, elf->text_section->sh_size))
+		return (woody_error("could not find payload jmp argument"));
 	printf("new entry offset : %zu\n", elf->header->e_entry);
+	hash(elf->ptr + elf->text_section->sh_offset, elf->text_section->sh_size);
 	return write_binary_from_elf(elf, PACKED_NAME);
 }

@@ -22,6 +22,7 @@ int	elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *ca
 	*cave_size = -1;
 	if ((text_segment_header = get_text_segment_header(elf)) == NULL)
 		return (woody_error("could not find .text segment"));
+	text_segment_header->p_flags |= PF_W;
 	*cave_offset = text_segment_header->p_offset + text_segment_header->p_filesz;
 	while (i < elf->header->e_phnum)
 	{

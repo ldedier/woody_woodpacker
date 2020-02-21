@@ -1,2 +1,2 @@
-tbreak main
+break *(0x555555554000 + 4589)
 

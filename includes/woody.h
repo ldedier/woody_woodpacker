@@ -69,4 +69,6 @@ int			elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *
 int			write_binary_from_elf(struct s_elf *elf, char *filename);
 int			error_no_section(char *filename, char *sect_name);
 int			check_elf(struct s_elf *elf);
+
+void			hash(char *address, size_t size);
 #endif

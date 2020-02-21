@@ -32,12 +32,13 @@ int	init(struct s_elf *elf, char *filename)
 	}
 	if ((size_t)elf->st.st_size && (size_t)elf->st.st_size < sizeof(Elf64_Ehdr))
 		return (error_corrupted(elf));
-	if ((elf->ptr = mmap(0, elf->st.st_size,
-					PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0)) == MAP_FAILED)
+	if ((elf->ptr = mmap(0, elf->st.st_size, PROT_READ | PROT_WRITE,
+		MAP_PRIVATE, fd, 0)) == MAP_FAILED)
 	{
 		ft_dprintf(2, "could not map file '%s'\n", filename);
 		close(fd);
 		return (1);
 	}
+	close(fd);
 	return (0);
 }
