@@ -22,7 +22,7 @@ _rip:
    mov rdx, msg_end - msg ; size
    syscall                ;
 
-   mov rdi, 0x3333333333333333 
+   mov rdi, 0x3333333333333333
    mov rsi, 0x4444444444444444
    mov rdi, 0x5555555555555555
    call hash
@@ -51,8 +51,15 @@ nopie:
    ; rsi: size to hash
    ; rdx: key to hash
 
-hash: 
+fill_swap_buffer:
    enter 0, 0
+   mov rcx, 0
+   leave
+   ret
+
+hash:
+   enter 0xff, 0
+   call fill_swap_buffer
    leave
    ret
 
