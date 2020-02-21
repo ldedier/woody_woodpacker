@@ -21,6 +21,11 @@ _rip:
    lea rsi, [rel msg]     ; pointer to msg (char* [])
    mov rdx, msg_end - msg ; size
    syscall                ;
+
+   mov rdi, 0x3333333333333333 
+   mov rsi, 0x4444444444444444
+   mov rdi, 0x5555555555555555
+   call hash
    
 ;   call hash
 
@@ -42,7 +47,11 @@ nopie:
    add rax, r15
    jmp rax      ; jump to it
 
-hash:
+   ; rdi: address to hash
+   ; rsi: size to hash
+   ; rdx: key to hash
+
+hash: 
    enter 0, 0
    leave
    ret

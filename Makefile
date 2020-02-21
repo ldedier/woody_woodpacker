@@ -53,14 +53,15 @@ SRCS_C		=	main.c \
 			print.c \
 			get_text_segment.c \
 			get_cave.c \
+			elf_tools.c \
 			errors.c
 
 SRCS_ASM	=	$(PAYLOAD_SRC)
 
 INCLUDES	=	woody.h
 
-OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS_C:.c=.o)) 
-	#			$(addprefix $(OBJDIR), $(SRCS_ASM:.s=.o))
+OBJECTS			=	$(addprefix $(OBJDIR), $(SRCS_C:.c=.o)) \
+				$(addprefix $(OBJDIR), $(SRCS_ASM:.s=.o))
 
 INC 			=	-I $(INCLUDESDIR) -I $(LIBFTDIR)/$(LIBFT_INCLUDES_DIR)
 

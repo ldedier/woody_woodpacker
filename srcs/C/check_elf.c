@@ -37,6 +37,8 @@ int	elf_is_corrupted(struct s_elf *elf)
 	first_section_header = (Elf64_Shdr *)(void *)(elf->ptr + elf->header->e_shoff);
 	strtable_section_header = &first_section_header[elf->header->e_shstrndx];
 	elf->strtable = (char *)((void *)elf->ptr + strtable_section_header->sh_offset);
+	if (get_section(elf, &elf->text_section, ".text"))
+		return (1);
 	return (0);
 }
 

@@ -34,6 +34,7 @@ struct s_elf
 	struct stat st;
 	char *strtable;
 	Elf64_Ehdr *header;
+	Elf64_Shdr *text_section;
 };
 
 int			init(struct s_elf *elf, char *filename);
@@ -56,6 +57,8 @@ int			is_corrupted_string_light(char *str, struct s_elf *elf);
 
 
 int			get_text(struct s_elf *elf, size_t *text_size, unsigned char **data, size_t *offset);
+
+int			get_section(struct s_elf *elf, Elf64_Shdr **section_ptr, char *sect_name);
 Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
 
 int			woody_error(char *msg);
@@ -63,5 +66,7 @@ int			woody_error(char *msg);
 int			elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *cave_size);
 
 
+int			write_binary_from_elf(struct s_elf *elf, char *filename);
+int			error_no_section(char *filename, char *sect_name);
 int			check_elf(struct s_elf *elf);
 #endif

@@ -12,64 +12,6 @@
 
 #include "woody.h"
 
-
-int	get_text_section(struct s_elf *elf, Elf64_Shdr **text_section)
-{
-	Elf64_Shdr *section;
-	size_t i;
-
-	i = 0;
-	while (i < elf->header->e_shnum)
-	{
-		section = (Elf64_Shdr *)(elf->ptr + elf->header->e_shoff + i * elf->header->e_shentsize);
-		if (is_corrupted_string_light(elf->strtable + section->sh_name, elf))
-			return error_corrupted(elf);
-		if (!ft_strcmp(elf->strtable + section->sh_name, ".text"))
-		{
-			if (is_corrupted_data(elf->ptr + section->sh_offset, section->sh_size, elf))
-				return error_corrupted(elf);
-			*text_section = section;
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	get_text(struct s_elf *elf, size_t *text_size, unsigned char **data, size_t *offset)
-{
-	Elf64_Shdr *section;
-	size_t i;
-
-	i = 0;
-	while (i < elf->header->e_shnum)
-	{
-		section = (Elf64_Shdr *)(elf->ptr + elf->header->e_shoff + i * elf->header->e_shentsize);
-		if (is_corrupted_string_light(elf->strtable + section->sh_name, elf))
-			return error_corrupted(elf);
-		if (!ft_strcmp(elf->strtable + section->sh_name, ".text"))
-		{
-			print_elf64_section_header(*section);
-			*text_size = section->sh_size;
-			if (is_corrupted_data(elf->ptr + section->sh_offset, section->sh_size, elf))
-				return error_corrupted(elf);
-			*data = elf->ptr + section->sh_offset;
-			*offset = section->sh_offset;
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-size_t		align(size_t x, size_t n)
-{
-	if (x == 0)
-		return (n);
-	else
-		return ((x + n - 1) & ~(n - 1));
-}
-
 int	print_some(char *data)
 {
 	size_t i;
@@ -103,60 +45,39 @@ int	patch_target(unsigned char *data, size_t size, long pattern, long to_remplac
 	return (1);
 }
 
-
-
 int	process_woody(struct s_elf *elf, struct s_elf *payload)
 {
 	struct s_cave	cave;
-	size_t		payload_size;
 	size_t		old_entry;
-	unsigned char	*data;
-	int 		fd;
-	size_t		offset;
-	Elf64_Shdr	*text_section;
 
-	if (get_text(payload, &payload_size, &data, &offset))
-		return (1);
-	print_elf64_section_header(*text_section);
-	printf("Payload size: %zu\n", payload_size);
+	old_entry = elf->header->e_entry;
+	printf("Payload size: %zu\n", payload->text_section->sh_size);
 	if (elf64_get_cave_attributes(elf, &cave.offset, &cave.size))
 		return (1);
-	if (cave.size < payload_size)
-		return (woody_error("could not find a suitable part of binary to be injected\n"));
-	old_entry = elf->header->e_entry;
+	if (cave.size < payload->text_section->sh_size)
+		return (woody_error("could not find a suitable part of binary to be injected in\n"));
 	print_cave(cave);
-	printf("old entry offset : %zu\n", elf->header->e_entry);
-	printf("old entry offset : %#lx\n", elf->header->e_entry);
-	ft_memcpy(elf->ptr + cave.offset, data, payload_size);
-	printf("%ld\n", (void *)data - elf->ptr);
+	printf("old entry : %zu\n", elf->header->e_entry);
+	ft_memcpy(elf->ptr + cave.offset,
+		payload->ptr + payload->text_section->sh_offset, payload->text_section->sh_size);
 	if (elf->header->e_type == ET_DYN)
 	{
-		elf->header->e_entry = cave.offset;
-		ft_memcpy(elf->ptr + cave.offset, data, payload_size);
 		ft_printf("DYN (shared object file)\n");
-		if (patch_target(elf->ptr + cave.offset, payload_size, 0x1111111111111111, old_entry - elf->header->e_entry - 5))
+		elf->header->e_entry = cave.offset;
+		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x1111111111111111, old_entry - elf->header->e_entry - 5))
 			return (woody_error("could not find payload jmp argument"));
 	}
 	else if (elf->header->e_type == ET_EXEC)
 	{
-		if (get_text_section(elf, &text_section))
-			return (1);
-		elf->header->e_entry = elf->header->e_entry + (cave.offset - text_section->sh_offset) ; // TO DO
 		ft_printf("EXEC (executablefile)\n");
-		if (patch_target(elf->ptr + cave.offset, payload_size, 0x1111111111111111, old_entry))
+		elf->header->e_entry = elf->header->e_entry + (cave.offset - elf->text_section->sh_offset);
+		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x1111111111111111, old_entry))
 			return (woody_error("could not find payload jmp argument"));
-		if (patch_target(elf->ptr + cave.offset, payload_size, 0x2222222222222222, 0))
+		if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x2222222222222222, 0))
 			return (woody_error("could not find payload jmp argument"));
 	}
 	else
 		return woody_error("this elf is not a valid executable elf");
 	printf("new entry offset : %zu\n", elf->header->e_entry);
-	if ((fd = open(PACKED_NAME, O_CREAT | O_WRONLY | O_TRUNC, 0755)) < 0)
-	{
-		perror("open");
-		return (1);
-	}
-	write(fd, elf->ptr, elf->st.st_size);
-	close(fd);
-	return (0);
+	return write_binary_from_elf(elf, PACKED_NAME);
 }

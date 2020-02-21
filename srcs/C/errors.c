@@ -12,6 +12,12 @@
 
 #include "woody.h"
 
+int	error_no_section(char *filename, char *sect_name)
+{
+	ft_dprintf(2, "elf %s does not have a \"%s\" section\n", filename, sect_name);
+	return (1);
+}
+
 int     is_corrupted_data(void *address, size_t size, struct s_elf *elf)
 {
 	if (address + size > elf->ptr + elf->st.st_size
