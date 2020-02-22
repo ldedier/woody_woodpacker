@@ -33,7 +33,6 @@ nopie:
 
 ;   call hash
 
-;   mov rdi, rax ; address of entry point
    mov rsi, 0x4444444444444444 ; size of text section
    mov rdx, 0x5555555555555555 ; key of RC4
    call hash
@@ -47,7 +46,12 @@ nopie:
 
 fill_swap_buffer:
    enter 0, 0
-   mov rcx, 0
+   xor rcx, rcx
+fill_swap_loop:
+   mov byte[rdi + rcx], cl
+   inc rcx
+   cmp rcx, 0xff
+   jl fill_swap_loop
    leave
    ret
 
@@ -57,8 +61,14 @@ fill_swap_buffer:
 
 hash:
    enter 0xff, 0
- ;  call fill_swap_buffer
+   sub rsp, 0x30
+   mov qword[rbp - 0x10f], rdi
+   lea rdi, [rbp - 0xff] ; S
+   mov r10, 0 ; i
+   mov r11, 0 ; j
+   call fill_swap_buffer
    xor rcx, rcx
+   mov rdi, [rbp - 0x10f]
 hash_loop:
    add byte[rdi + rcx], 128
    inc rcx
