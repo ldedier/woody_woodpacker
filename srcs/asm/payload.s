@@ -64,7 +64,7 @@ fill_swap_loop_identity:
    mov byte[rdi + rcx], cl
    inc rcx
    cmp rcx, 0xff
-   jl fill_swap_loop_identity
+   jle fill_swap_loop_identity
    xor rcx, rcx
    mov r11, 0
 fill_swap_loop:
@@ -126,3 +126,4 @@ align 8
    msg      db '...WOODY...', 0xa , 0
    msg_end  db 0x0
    key      db '___TO_REMPLACE_KEY___' , 0
+   debug      db '%d\n' , 0
