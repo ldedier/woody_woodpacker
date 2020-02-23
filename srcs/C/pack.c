@@ -57,6 +57,20 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (woody_error("could not find key string placeholder"));
 
 	printf("new entry offset : %zu\n", elf->header->e_entry);
-	hash(elf->ptr + elf->text_section->sh_offset, "hello", elf->text_section->sh_size);
+//	hash(elf->ptr + elf->text_section->sh_offset, "hello", elf->text_section->sh_size);
+
+
+	char *str = ft_strdup("salut");
+	size_t i = 0;
+//	hash(str, "hello", ft_strlen(str));
+	hash(str, "pwd12", ft_strlen(str));
+	while (i < ft_strlen(str))
+	{
+		ft_printf("%.2x ", str[i]);
+		i++;
+	}
+	ft_printf("\n%s\n ", str);
+	//salut w/ key hello :
+	// 7c 30 d3 8f df
 	return write_binary_from_elf(elf, PACKED_NAME);
 }

@@ -44,10 +44,10 @@ int	write_binary_from_elf(struct s_elf *elf, char *filename)
 		perror("open");
 		return (1);
 	}
-	ft_printf("%p\n", elf->ptr);
-	ft_printf("%d\n", fd);
+//	ft_printf("%p\n", elf->ptr);
+//	ft_printf("%d\n", fd);
 	write(fd, elf->ptr, elf->st.st_size);
 	close(fd);
-	ft_printf("WROTE %zu\n", elf->st.st_size);
+//	ft_printf("WROTE %zu\n", elf->st.st_size);
 	return (0);
 }

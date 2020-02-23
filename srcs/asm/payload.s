@@ -12,8 +12,6 @@ _rip:
    push rdi
    push rsi
    push rdx
-   push r11
-   push r12
 
    ;; do your evil thing
 
@@ -38,11 +36,11 @@ nopie:
 
    lea rsi, [rel key] ; key of RC4
    mov rdx, 0x4444444444444444  ; size of text section
+   push rax
    call hash
 
    ;; restore cpu state
-   pop r12
-   pop r11
+   pop rax
    pop rdx
    pop rsi
    pop rdi
@@ -101,11 +99,23 @@ hash:
    mov r10, 0 ; i
    mov r11, 0 ; j
    call fill_swap_buffer
+   mov rsi, qword[rbp - 0x108]
    xor rcx, rcx
-   mov rdi, [rbp - 0x108]
+   xor r10, r10 ; i
+   xor r11, r11 ; j
+   xor r12, r12
+;   mov rdi, [rbp - 0x108]
    mov rdx, [rbp - 0x110]
 hash_loop:
-   add byte[rdi + rcx], 128
+   inc r10
+   add r11b, byte[rdi + r10]
+   mov al, byte[rdi + r10]
+   xchg al, byte[rdi + r11]
+   mov byte[rdi + r11], al
+   mov r12b, byte[rdi + r10]
+   add r12b, byte[rdi + r11]
+   mov r12b, byte[rdi + r12]
+   xor byte[rsi + rcx], r12b
    inc rcx
    cmp rcx, rdx
    jl hash_loop
