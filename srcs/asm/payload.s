@@ -76,14 +76,14 @@ fill_swap_loop:
 
    add r11, [rsi + rdx]
    and r11, 0xff
-   inc rcx
 
    mov bl, byte[rdi + rcx]
    xchg byte[rdi + r11], bl
    mov byte[rdi + rcx], bl
 
+   inc rcx
    cmp rcx, 0xff
-   jl fill_swap_loop
+   jle fill_swap_loop
    leave
    ret
 
@@ -109,9 +109,10 @@ hash:
 hash_loop:
    inc r10
    add r11b, byte[rdi + r10]
+;  and r11, 0xff
    mov al, byte[rdi + r10]
    xchg al, byte[rdi + r11]
-   mov byte[rdi + r11], al
+   mov byte[rdi + r10], al
    mov r12b, byte[rdi + r10]
    add r12b, byte[rdi + r11]
    mov r12b, byte[rdi + r12]
@@ -126,4 +127,3 @@ align 8
    msg      db '...WOODY...', 0xa , 0
    msg_end  db 0x0
    key      db '___TO_REMPLACE_KEY___' , 0
-   debug      db '%d\n' , 0
