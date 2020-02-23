@@ -70,5 +70,5 @@ int			write_binary_from_elf(struct s_elf *elf, char *filename);
 int			error_no_section(char *filename, char *sect_name);
 int			check_elf(struct s_elf *elf);
 
-void			hash(char *address, size_t size);
+void			hash(char *address, char *key, size_t size);
 #endif

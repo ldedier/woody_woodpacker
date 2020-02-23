@@ -1,6 +1,7 @@
 section .text
     global payload
     global hash
+    extern ft_strlen
 
 payload:
 
@@ -44,35 +45,65 @@ nopie:
 
    jmp rax ; jump to it
 
+; rdi: S
+; rsi: RC4 key
+
 fill_swap_buffer:
-   enter 0, 0
+   enter 0x20, 0
+   mov [rbp - 0x8], rdi
+   mov [rbp - 0x10], rsi
+   mov rdi, rsi
+   call ft_strlen
+   mov [rbp - 0x18], eax
+  ; mov rsi, [rbp - 0x10]
+   mov rdi, [rbp - 0x8]
    xor rcx, rcx
-fill_swap_loop:
+fill_swap_loop_identity:
    mov byte[rdi + rcx], cl
    inc rcx
+   cmp rcx, 0xff
+   jl fill_swap_loop_identity
+   xor rcx, rcx
+   mov r11, 0
+fill_swap_loop:
+   add r11, [rdi + rcx]
+
+   mov rax, rcx
+   xor rdx, rdx
+   div qword [rbp - 0x18] ; rdx = i mod keylength
+
+   add r11, [rsi + rdx]
+   and r11, 0xff
+   inc rcx
+
+   mov bl, byte[rdi + rcx]
+   xchg byte[rdi + r11], bl
+   mov byte[rdi + rcx], bl
+
    cmp rcx, 0xff
    jl fill_swap_loop
    leave
    ret
 
    ; rdi: address to hash
-   ; rsi: size to hash
-   ; rdx: key to hash
+   ; rsi: key to hash
+   ; rdx: size to hash
 
 hash:
-   enter 0xff, 0
-   sub rsp, 0x30
-   mov qword[rbp - 0x10f], rdi
-   lea rdi, [rbp - 0xff] ; S
+   enter 0x110, 0
+   mov qword[rbp - 0x108], rdi
+   mov qword[rbp - 0x110], rdx
+   lea rdi, [rbp - 0x100] ; S
    mov r10, 0 ; i
    mov r11, 0 ; j
    call fill_swap_buffer
    xor rcx, rcx
-   mov rdi, [rbp - 0x10f]
+   mov rdi, [rbp - 0x108]
+   mov rdx, [rbp - 0x110]
 hash_loop:
    add byte[rdi + rcx], 128
    inc rcx
-   cmp rcx, rsi
+   cmp rcx, rdx
    jl hash_loop
    leave
    ret
@@ -80,3 +111,4 @@ hash_loop:
 align 8
    msg      db '...WOODY...', 0xa , 0
    msg_end  db 0x0
+   key      db 'keyToRemplace' , 0

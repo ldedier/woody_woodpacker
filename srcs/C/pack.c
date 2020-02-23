@@ -86,6 +86,6 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x4444444444444444, elf->text_section->sh_size))
 		return (woody_error("could not find payload jmp argument"));
 	printf("new entry offset : %zu\n", elf->header->e_entry);
-	hash(elf->ptr + elf->text_section->sh_offset, elf->text_section->sh_size);
+	hash(elf->ptr + elf->text_section->sh_offset, "hello", elf->text_section->sh_size);
 	return write_binary_from_elf(elf, PACKED_NAME);
 }
