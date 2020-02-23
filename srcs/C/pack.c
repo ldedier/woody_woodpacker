@@ -12,39 +12,6 @@
 
 #include "woody.h"
 
-int	print_some(char *data)
-{
-	size_t i;
-	i = 0;
-	while (i < 20)
-	{
-		printf("%02x\n", data[i]);
-		i++;
-	}
-	return (1);
-}
-
-int	patch_target(unsigned char *data, size_t size, long pattern, long to_remplace)
-{
-	size_t i;
-	long *to_compare;
-	i = 0;
-
-	while (i < size - sizeof(long))
-	{
-		to_compare = (long *)(data + i);
-		if (*to_compare == pattern)
-		{
-			printf("jump %lx\n", *to_compare);
-			*to_compare = to_remplace;
-			printf("jump %ld\n", *to_compare);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
 int	process_woody(struct s_elf *elf, struct s_elf *payload)
 {
 	struct s_cave	cave;
@@ -83,8 +50,12 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	else
 		return woody_error("this elf is not a valid executable elf");
 	printf("OFFSET: %ld\n", elf->text_section->sh_offset);
+	//scan_target(elf->ptr + cave.offset, payload->text_section->sh_size);
 	if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x4444444444444444, elf->text_section->sh_size))
 		return (woody_error("could not find payload jmp argument"));
+	if (patch_target_string(elf->ptr + cave.offset, payload->text_section->sh_size, "___TO_REMPLACE_KEY___", "hello"))
+		return (woody_error("could not find key string placeholder"));
+
 	printf("new entry offset : %zu\n", elf->header->e_entry);
 	hash(elf->ptr + elf->text_section->sh_offset, "hello", elf->text_section->sh_size);
 	return write_binary_from_elf(elf, PACKED_NAME);

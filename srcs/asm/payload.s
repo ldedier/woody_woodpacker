@@ -12,6 +12,8 @@ _rip:
    push rdi
    push rsi
    push rdx
+   push r11
+   push r12
 
    ;; do your evil thing
 
@@ -39,6 +41,8 @@ nopie:
    call hash
 
    ;; restore cpu state
+   pop r12
+   pop r11
    pop rdx
    pop rsi
    pop rdi
@@ -54,7 +58,7 @@ fill_swap_buffer:
    mov [rbp - 0x10], rsi
    mov rdi, rsi
    call ft_strlen
-   mov [rbp - 0x18], eax
+   mov [rbp - 0x18], rax
   ; mov rsi, [rbp - 0x10]
    mov rdi, [rbp - 0x8]
    xor rcx, rcx
@@ -111,4 +115,4 @@ hash_loop:
 align 8
    msg      db '...WOODY...', 0xa , 0
    msg_end  db 0x0
-   key      db 'keyToRemplace' , 0
+   key      db '___TO_REMPLACE_KEY___' , 0

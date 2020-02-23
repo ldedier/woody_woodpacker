@@ -71,4 +71,11 @@ int			error_no_section(char *filename, char *sect_name);
 int			check_elf(struct s_elf *elf);
 
 void			hash(char *address, char *key, size_t size);
+
+int			patch_target_string(unsigned char *data, size_t size, char *pattern, char *to_remplace);
+int			patch_target(unsigned char *data, size_t size, long pattern, long to_remplace);
+
+
+int			print_some(char *data);
+int			scan_target(unsigned char *data, size_t size);
 #endif

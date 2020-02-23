@@ -54,6 +54,8 @@ SRCS_C		=	main.c \
 			get_text_segment.c \
 			get_cave.c \
 			elf_tools.c \
+			patch_target.c \
+			debug_target.c \
 			errors.c
 
 SRCS_ASM	=	$(PAYLOAD_SRC)
