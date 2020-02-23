@@ -36,8 +36,8 @@ nopie:
 
 ;   call hash
 
-   mov rsi, 0x4444444444444444 ; size of text section
-   mov rdx, 0x5555555555555555 ; key of RC4
+   lea rsi, [rel key] ; key of RC4
+   mov rdx, 0x4444444444444444  ; size of text section
    call hash
 
    ;; restore cpu state
