@@ -20,6 +20,8 @@
 
 # define PAYLOAD_SIZE 400
 # define PACKED_NAME "to_change_woody"
+# define DEBUG_KEY "pwd12"
+# define KEY_PLACEHOLDER "___TO_REMPLACE_KEY___"
 
 struct s_cave
 {

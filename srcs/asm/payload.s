@@ -1,7 +1,6 @@
 section .text
     global payload
     global hash
-    extern ft_strlen
 
 payload:
 
@@ -55,7 +54,7 @@ fill_swap_buffer:
    mov [rbp - 0x8], rdi
    mov [rbp - 0x10], rsi
    mov rdi, rsi
-   call ft_strlen
+   call payload_strlen
    mov [rbp - 0x18], rax
   ; mov rsi, [rbp - 0x10]
    mov rdi, [rbp - 0x8]
@@ -87,9 +86,21 @@ fill_swap_loop:
    leave
    ret
 
+payload_strlen:
+   xor rcx, rcx
+   not rcx ; ecx = -1
+   xor al, al
+   cld
+   repne scasb ; ecx = -strlen - 2
+   not rcx ; reversing all bits of a negative number results in its absolute value - 1 (ecx = strlen + 1)
+   dec rcx
+   mov rax, rcx
+   ret
+
    ; rdi: address to hash
    ; rsi: key to hash
    ; rdx: size to hash (if > 256 full merde)
+
 
 hash:
    enter 0x110, 0
