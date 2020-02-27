@@ -1,6 +1,7 @@
 section .text
     global payload
     global hash
+    extern ft_strlen
 
 payload:
 
@@ -33,46 +34,91 @@ nopie:
 
 ;   call hash
 
-   mov rsi, 0x4444444444444444 ; size of text section
-   mov rdx, 0x5555555555555555 ; key of RC4
+   lea rsi, [rel key] ; key of RC4
+   mov rdx, 0x4444444444444444  ; size of text section
+   push rax
    call hash
 
    ;; restore cpu state
+   pop rax
    pop rdx
    pop rsi
    pop rdi
 
    jmp rax ; jump to it
 
+; rdi: S
+; rsi: RC4 key
+
 fill_swap_buffer:
-   enter 0, 0
+   enter 0x20, 0
+   mov [rbp - 0x8], rdi
+   mov [rbp - 0x10], rsi
+   mov rdi, rsi
+   call ft_strlen
+   mov [rbp - 0x18], rax
+  ; mov rsi, [rbp - 0x10]
+   mov rdi, [rbp - 0x8]
    xor rcx, rcx
-fill_swap_loop:
+fill_swap_loop_identity:
    mov byte[rdi + rcx], cl
    inc rcx
    cmp rcx, 0xff
-   jl fill_swap_loop
+   jle fill_swap_loop_identity
+   xor rcx, rcx
+   mov r11, 0
+fill_swap_loop:
+   add r11, [rdi + rcx]
+
+   mov rax, rcx
+   xor rdx, rdx
+   div qword [rbp - 0x18] ; rdx = i mod keylength
+
+   add r11, [rsi + rdx]
+   and r11, 0xff
+
+   mov bl, byte[rdi + rcx]
+   xchg byte[rdi + r11], bl
+   mov byte[rdi + rcx], bl
+
+   inc rcx
+   cmp rcx, 0xff
+   jle fill_swap_loop
    leave
    ret
 
    ; rdi: address to hash
-   ; rsi: size to hash
-   ; rdx: key to hash
+   ; rsi: key to hash
+   ; rdx: size to hash (if > 256 full merde)
 
 hash:
-   enter 0xff, 0
-   sub rsp, 0x30
-   mov qword[rbp - 0x10f], rdi
-   lea rdi, [rbp - 0xff] ; S
+   enter 0x110, 0
+   mov qword[rbp - 0x108], rdi
+   mov qword[rbp - 0x110], rdx
+   lea rdi, [rbp - 0x100] ; S
    mov r10, 0 ; i
    mov r11, 0 ; j
    call fill_swap_buffer
+   mov rsi, qword[rbp - 0x108] ; rsi becomes address to hash
    xor rcx, rcx
-   mov rdi, [rbp - 0x10f]
+   xor r10, r10 ; i
+   xor r11, r11 ; j
+   xor r12, r12
+;   mov rdi, [rbp - 0x108]
+   mov rdx, [rbp - 0x110] ; rdx still size to hash
+			  ; rdi : BUFFER S
 hash_loop:
-   add byte[rdi + rcx], 128
+   inc r10b
+   add r11b, byte[rdi + r10]
+   mov al, byte[rdi + r10]
+   xchg al, byte[rdi + r11]
+   mov byte[rdi + r10], al
+   mov r12b, byte[rdi + r10]
+   add r12b, byte[rdi + r11]
+   mov r12b, byte[rdi + r12]
+   xor byte[rsi + rcx], r12b
    inc rcx
-   cmp rcx, rsi
+   cmp rcx, rdx
    jl hash_loop
    leave
    ret
@@ -80,3 +126,4 @@ hash_loop:
 align 8
    msg      db '...WOODY...', 0xa , 0
    msg_end  db 0x0
+   key      db '___TO_REMPLACE_KEY___' , 0

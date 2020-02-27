@@ -12,37 +12,29 @@
 
 #include "woody.h"
 
-int	print_some(char *data)
+	//salut w/ key hello :
+	// 7c 30 d3 8f df
+void test_hash(char *str, char *key)
 {
-	size_t i;
-	i = 0;
-	while (i < 20)
+	size_t i = 0;
+	char *content = ft_strdup(str);
+	size_t len = strlen(content);
+
+	(void)key;
+	ft_printf("LEN: %zu\n", len);
+	ft_printf("content: %s\n", content);
+	ft_printf("OLALALA\n");
+	hash(content, key, len);
+	ft_printf("KESKISPASS\n");
+	ft_printf("LEN: %zu\n", i);
+	ft_printf("LEN: %zu\n", len);
+	while (i < len)
 	{
-		printf("%02x\n", data[i]);
+		ft_printf("%.2hhX", content[i]);
 		i++;
 	}
-	return (1);
-}
-
-int	patch_target(unsigned char *data, size_t size, long pattern, long to_remplace)
-{
-	size_t i;
-	long *to_compare;
-	i = 0;
-
-	while (i < size - sizeof(long))
-	{
-		to_compare = (long *)(data + i);
-		if (*to_compare == pattern)
-		{
-			printf("jump %lx\n", *to_compare);
-			*to_compare = to_remplace;
-			printf("jump %ld\n", *to_compare);
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+	ft_printf("\n%s\n ", content);
+	free(content);
 }
 
 int	process_woody(struct s_elf *elf, struct s_elf *payload)
@@ -83,9 +75,18 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	else
 		return woody_error("this elf is not a valid executable elf");
 	printf("OFFSET: %ld\n", elf->text_section->sh_offset);
+	//scan_target(elf->ptr + cave.offset, payload->text_section->sh_size);
 	if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x4444444444444444, elf->text_section->sh_size))
 		return (woody_error("could not find payload jmp argument"));
+	if (patch_target_string(elf->ptr + cave.offset, payload->text_section->sh_size, "___TO_REMPLACE_KEY___", "hello"))
+		return (woody_error("could not find key string placeholder"));
+
 	printf("new entry offset : %zu\n", elf->header->e_entry);
-	hash(elf->ptr + elf->text_section->sh_offset, elf->text_section->sh_size);
+	hash(elf->ptr + elf->text_section->sh_offset, "hello", elf->text_section->sh_size);
+//	hash(elf->ptr + elf->text_section->sh_offset, "hello", elf->text_section->sh_size);
+
+//	test_hash("salut", "hello");
+	test_hash("Math 310 Proves!", "pwd12");
+//	test_hash("MMathh 310 Proves!Math 310 Prroves!Math 31es!rovh 310 Proves!Math 310 Prroves!Math 31es!rovh 310 Proves!Math 310 Prroves!Math 31es!rovh 310 Proves!Math 310 Prroves!Math 31es!rovh 310 Proves!Math 310 Prroves!Math 31es!rovh 310 P 310Prxsssxosssssssssssssssv!rvox!", "pwd12");
 	return write_binary_from_elf(elf, PACKED_NAME);
 }
