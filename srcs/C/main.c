@@ -14,6 +14,7 @@
 # include <stdio.h>
 # include "woody.h"
 # include <sys/mman.h>
+# include <time.h>
 
 static int print_woody_usage(char *progname)
 {
@@ -23,6 +24,7 @@ static int print_woody_usage(char *progname)
 
 int main(int argc, char **argv)
 {
+	srand(time(NULL));
 	struct s_elf elf;
 	struct s_elf payload;
 	int ret;

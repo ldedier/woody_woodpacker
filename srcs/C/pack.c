@@ -52,18 +52,32 @@ char	*generate_key(size_t len)
 	size_t i;
 	char *res;
 
-	if (!(res = ft_strnew(len)))
+	if (!(res = malloc(len + 1)))
 		return (NULL);
 	i = 0;
 	while (i < len)
-		res[i++] = random_printable();
+		res[i++] = (random() & 0xff) | 0x1;
+	res[i] = 0;
 	return (res);
+}
+
+void	print_string_hexa(char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_printf("%.2hhX", str[i]);
+		i++;
+	}
 }
 
 int	process_woody(struct s_elf *elf, struct s_elf *payload)
 {
 	struct s_cave	cave;
 	size_t		old_entry;
+	char		*key;
 
 	old_entry = elf->header->e_entry;
 	printf("Payload size: %zu\n", payload->text_section->sh_size);
@@ -97,15 +111,19 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	}
 	else
 		return woody_error("this elf is not a valid executable elf");
+	if (!(key = generate_key(sizeof(KEY_PLACEHOLDER))))
+		return (woody_error("malloc error"));
 	printf("OFFSET: %ld\n", elf->text_section->sh_offset);
-	//scan_target(elf->ptr + cave.offset, payload->text_section->sh_size);
+	printf("SIZE: %zu\n", sizeof(KEY_PLACEHOLDER));
 	if (patch_target(elf->ptr + cave.offset, payload->text_section->sh_size, 0x4444444444444444, elf->text_section->sh_size))
 		return (woody_error("could not find payload jmp argument"));
-	if (patch_target_string(elf->ptr + cave.offset, payload->text_section->sh_size, KEY_PLACEHOLDER, DEBUG_KEY))
+	if (patch_target_string(elf->ptr + cave.offset, payload->text_section->sh_size, KEY_PLACEHOLDER, key))
 		return (woody_error("could not find key string placeholder"));
 	ft_printf("size: %zu\n", elf->text_section->sh_size);
-
 	printf("new entry offset : %zu\n", elf->header->e_entry);
-	hash(elf->ptr + elf->text_section->sh_offset, DEBUG_KEY, elf->text_section->sh_size);
+	hash(elf->ptr + elf->text_section->sh_offset, key, elf->text_section->sh_size);
+	ft_printf("key for \"%s\" : ", elf->filename);
+	print_string_hexa(key);
+	ft_printf("\n");
 	return write_binary_from_elf(elf, PACKED_NAME);
 }
