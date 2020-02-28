@@ -4,6 +4,8 @@ source include.sh
 source generateBlacklist.sh
 
 WoodyPackerErrorsDir=couldNotBePacked
+WoodyExecErrorsDir=execFailures
+execBlacklist=(/usr/bin/pidof /usr/bin/ssh-agent)
 
 GENERATE_BLACKLIST=0
 
@@ -35,13 +37,21 @@ function checkFileELFExec {
 	if [ $? -ne 0 ];then
 		echo -e "${RED}${file} is not packing correctly!${EOC}"
 	else 
-		echo -e "${GREEN}${file} got packed correctly!${EOC}"
-		if [[ ! "${blacklist[@]}" =~ "$file" ]] && [[ ! "${blackerlist[@]}" =~ "$(basename $file)" ]]  ; then
-			./$PACKED_NAME < /dev/null
-			echo "$file: ret = $?" >> RETS
+		echo -e "${GREEN}${file} got packed correctly!${EOC}"	
+		if [[ ! "${blacklist[@]}" =~ "$file" ]] && [[ ! "${blackerlist[@]}" =~ "$(basename $file)" ]] && [[ ! "${execBlacklist[@]}" =~ "$file" ]]   ; then
+			(./$PACKED_NAME < /dev/null)
+			retValue=$?
+			echo "$file: ret = $retValue" >> RETS
+			if [ $retValue -ge 100 ]; then
+				mkdir -p $WoodyExecErrorsDir
+				ln -s $file $WoodyExecErrorsDir/$(basename $file)
+			fi
 		fi
 	fi
 }
+
+rm -rf $WoodyExecErrorsDir
+rm -rf $WoodyPackerErrorsDir
 
 function testFileELFPacking {
 
@@ -50,7 +60,7 @@ function testFileELFPacking {
 }
 
 function testFileELFExecuting {
-
+	rm -f RETS
 	applyPATH checkFileELFExec
 
 }
@@ -58,6 +68,7 @@ function testFileELFExecuting {
 #testFileELFPacking
 testFileELFExecuting
 
+reset
 echo "FINIII"
 
 com='
