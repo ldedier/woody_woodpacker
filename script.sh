@@ -103,7 +103,7 @@ vinagre
 xinit
 yelp)
 
-blackerlist=(calibrate_ppa "[" yes bash)
+blackerlist=(calibrate_ppa "["  bash)
 
 NAME='woody_woodpacker'
 PACKED_NAME='to_change_woody'
@@ -115,24 +115,22 @@ WoodyPackerErrorsDir=couldNotBePacked
 rm LOG
 
 function checkIfBlockingBinary {
-	if [[ "${blackerlist[@]}" =~ "$(basename $file)" ]]; then
-		return
-	fi
+#	if [[ "${blackerlist[@]}" =~ "$(basename $file)" ]]; then
+#		return
+#	fi
 	binary=$1
+	echo $binary
 	echo $$
-	{ $binary 10 < /dev/null ; pkill sleep ; } &
-	ps -j
-	echo "JOBS:" $(jobs -p)
-	echo sleeping 2
-	sleep 2
-	echo ended sleeping 2
-	if [ "$(ps | cut -d ' ' -f 2 | grep $!)" ]; then
+	{ $binary < /dev/null ; pkill -9 sleep ; } &
+	sleep 4
+	echo ended sleeping 1
+	echo "last pid: $!"
+	if [ "$(ps | grep $!)" ]; then
 		echo $binary >> LOG
 		echo "killing pid $!"
-		pkill -9 --group $!
-		pkill -9 $!
+		pkill "$(basename $binary)"
+		kill -9 $!
 	fi
-	ps
 }
 
 function checkFileELF {
@@ -189,9 +187,9 @@ function checkPATH {
 #checkPATH
 
 #checkDir "/usr/bin"
-checkFile "/bin/sleep"
+#checkFile "/bin/ls"
 
-#checkIfBlockingBinary  "/usr/bin/vim"
+checkIfBlockingBinary  "/usr/bin/vim"
 #reset
 #checkIfBlockingBinary  "/bin/ls"
 
