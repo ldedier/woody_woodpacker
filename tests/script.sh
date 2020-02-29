@@ -39,19 +39,32 @@ function checkFileELFExec {
 	else 
 		echo -e "${GREEN}${file} got packed correctly!${EOC}"	
 		if [[ ! "${blacklist[@]}" =~ "$file" ]] && [[ ! "${blackerlist[@]}" =~ "$(basename $file)" ]] && [[ ! "${execBlacklist[@]}" =~ "$file" ]]   ; then
-			(./$PACKED_NAME < /dev/null)
-			retValue=$?
-			echo "$file: ret = $retValue" >> RETS
-			if [ $retValue -ge 100 ]; then
-				mkdir -p $WoodyExecErrorsDir
-				ln -s $file $WoodyExecErrorsDir/$(basename $file)
+			logDir=$WoodyExecErrorsDir/$(basename $file)
+			returnDiffFile=$logDir/returnDiff
+			myOutput=/tmp/myOutput
+			trueOutput=/tmp/trueOutput
+			$file < /dev/null > $trueOutput
+			trueRet=$?
+			./$PACKED_NAME < /dev/null > $myOutput
+			myRet=$?
+			if [ $trueRet -ne $myRet ]; then
+				mkdir -p $logDir
+				echo "############### $file #############" > $returnDiffFile
+				echo "" >> $returnDiffFile
+				echo "real ret:		$trueRet" >> $returnDiffFile
+				echo "$PACKED_NAME ret:	$myRet" >> $returnDiffFile
 			fi
+			diff <(echo "...WOODY..." ; cat $trueOutput | sed s/$(echo -n $file | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')/$PACKED_NAME/g) $myOutput
+			if [ $? -ne 0 ]; then
+				mkdir -p $logDir
+				cp $myOutput $logDir/myOutput
+				cp <(echo "...WOODY..." ; cat $trueOutput | sed s/$(echo -n $file | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')/$PACKED_NAME/g) $logDir/trueOutput
+			fi
+			rm $myOutput
+			rm $trueOutput
 		fi
 	fi
 }
-
-rm -rf $WoodyExecErrorsDir
-rm -rf $WoodyPackerErrorsDir
 
 function testFileELFPacking {
 
@@ -61,12 +74,17 @@ function testFileELFPacking {
 
 function testFileELFExecuting {
 	rm -f RETS
+	rm -rf $WoodyExecErrorsDir
 	applyPATH checkFileELFExec
 
 }
 
-#testFileELFPacking
-testFileELFExecuting
+rm -rf $WoodyExecErrorsDir
+rm -rf $WoodyPackerErrorsDir
+
+make -C $BINDIR
+testFileELFPacking
+#testFileELFExecuting
 
 reset
 echo "FINIII"

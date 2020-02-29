@@ -17,7 +17,7 @@ _rip:
    mov rax, 1             ; syscall number
    mov rdi, 1             ; fd = 1(stdout)
    lea rsi, [rel msg]     ; pointer to msg (char* [])
-   mov rdx, msg_end - msg ; size
+   mov rdx, msg_end - msg - 1 ; size
    syscall                
    ; set rax back to normal
    ; jump to main

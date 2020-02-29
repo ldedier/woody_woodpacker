@@ -1,7 +1,9 @@
 #!/bin/bash
 
-NAME='../woody_woodpacker'
+BINDIR=..
+NAME=$BINDIR/woody_woodpacker
 PACKED_NAME='to_change_woody'
+
 WoodyPackerErrorsDir=couldNotBePacked
 blacklistFile=blacklist.sh
 GREEN='\033[0;32m'
