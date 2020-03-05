@@ -89,12 +89,14 @@ function testFileELFExecuting {
 
 rm -rf $WoodyExecErrorsDir
 rm -rf $WoodyPackerErrorsDir
+rm -f $PACKED_NAME
 
 make -C $BINDIR
 
 #testFileELFPacking
 testFileELFExecuting
 
+rm -f 0 1 test.ttf fonts.scale file2brl.temp
 reset
 echo "FINIII"
 

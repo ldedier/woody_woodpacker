@@ -1,4 +1,4 @@
-############### /bin/git-upload-pack #############
+############### /usr/bin/git-upload-pack #############
 
 real ret:		129
 to_change_woody ret:	1

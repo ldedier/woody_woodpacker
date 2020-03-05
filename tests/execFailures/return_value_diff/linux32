@@ -1,4 +1,0 @@
-############### /bin/linux32 #############
-
-real ret:		0
-to_change_woody ret:	1

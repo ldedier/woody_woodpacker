@@ -1,4 +1,4 @@
-############### /bin/colrm #############
+############### /usr/bin/colrm #############
 
 real ret:		0
 to_change_woody ret:	139

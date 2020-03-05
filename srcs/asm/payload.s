@@ -11,6 +11,8 @@ _rip:
    push rdi
    push rsi
    push rdx
+   push r15
+   push r14
 
    ;; do your evil thing
 
@@ -21,7 +23,7 @@ _rip:
    syscall                
    ; set rax back to normal
    ; jump to main
-   mov r15, 0x1111111111111111 ; get initial entry point (relative or absolutei to program base address)
+   mov r15, 0x1111111111111111 ; get initial entry point (relative or absolute to program base address)
    mov rax, 0x2222222222222222 ; 0 if PIE is desactivated
    mov rdi, 0x3333333333333333 ; address of text section (always relative)
    cmp rax, 0
@@ -31,8 +33,6 @@ _rip:
 nopie:
    add rax, r15
 
-;   call hash
-
    lea rsi, [rel key] ; key of RC4
    mov rdx, 0x4444444444444444  ; size of text section
    push rax
@@ -40,6 +40,9 @@ nopie:
 
    ;; restore cpu state
    pop rax
+
+   pop r14
+   pop r15
    pop rdx
    pop rsi
    pop rdi
@@ -88,11 +91,11 @@ fill_swap_loop:
 
 payload_strlen:
    xor rcx, rcx
-   not rcx ; ecx = -1
+   not rcx
    xor al, al
    cld
-   repne scasb ; ecx = -strlen - 2
-   not rcx ; reversing all bits of a negative number results in its absolute value - 1 (ecx = strlen + 1)
+   repne scasb
+   not rcx
    dec rcx
    mov rax, rcx
    ret

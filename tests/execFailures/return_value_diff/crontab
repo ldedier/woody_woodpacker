@@ -1,4 +1,4 @@
-############### /bin/crontab #############
+############### /usr/bin/crontab #############
 
 real ret:		0
 to_change_woody ret:	1

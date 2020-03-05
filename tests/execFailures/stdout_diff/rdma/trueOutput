@@ -1,5 +1,0 @@
-...WOODY...
-Usage: rdma [ OPTIONS ] OBJECT { COMMAND | help }
-       rdma [ -f[orce] ] -b[atch] filename
-where  OBJECT := { dev | link | resource | help }
-       OPTIONS := { -V[ersion] | -d[etails] | -j[son] | -p[retty]}

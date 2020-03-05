@@ -1,4 +1,0 @@
-############### /bin/i386 #############
-
-real ret:		0
-to_change_woody ret:	1

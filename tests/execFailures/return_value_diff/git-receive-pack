@@ -1,4 +1,4 @@
-############### /bin/git-receive-pack #############
+############### /usr/bin/git-receive-pack #############
 
 real ret:		129
 to_change_woody ret:	1

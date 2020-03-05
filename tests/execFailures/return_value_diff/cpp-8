@@ -1,4 +1,4 @@
-############### /bin/cpp-8 #############
+############### /usr/bin/cpp-8 #############
 
 real ret:		0
-to_change_woody ret:	139
+to_change_woody ret:	1

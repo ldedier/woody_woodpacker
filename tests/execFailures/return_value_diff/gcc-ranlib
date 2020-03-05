@@ -1,4 +1,4 @@
-############### /bin/gcc-ranlib #############
+############### /usr/bin/gcc-ranlib #############
 
 real ret:		0
-to_change_woody ret:	139
+to_change_woody ret:	1

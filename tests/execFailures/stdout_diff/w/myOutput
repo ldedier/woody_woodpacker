@@ -1,7 +1,0 @@
-...WOODY...
- 04:09:47 up 32 min,  4 users,  load average: 0.85, 0.41, 0.27
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-root     tty1     -                03:37   32:34   0.05s  0.04s -zsh
-ldedier  pts/0    192.168.43.58    03:37   51.00s  5.01s  0.00s ./to_change_woody
-ldedier  pts/1    192.168.43.58    03:37   59.00s  1.25s  0.42s vim script.sh
-ldedier  pts/2    192.168.43.58    03:57    3.00s  2.51s  2.51s -zsh
