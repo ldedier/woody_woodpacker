@@ -46,8 +46,7 @@ void print_elf64_section_header(Elf64_Shdr header)
 {
 	ft_printf("name index: %u\n", header.sh_name);
 	ft_printf("type: %#x\n", header.sh_type);
-	ft_printf("flags: %llu\n", header.sh_flags);
-	ft_printf("virtual address: %llu\n", header.sh_addr);
+
 	ft_printf("file offset: %llu\n", header.sh_offset);
 	ft_printf("size in bytes: %llu\n", header.sh_size);
 	ft_printf("link to another section: %u\n", header.sh_link);
@@ -84,13 +83,11 @@ void	print_elf64(struct s_elf *elf)
 	while (i < elf->header->e_shnum)
 	{
 		section_header = (Elf64_Shdr *)((void *)(elf->ptr + elf->header->e_shoff + i * elf->header->e_shentsize));
-	//	if (is_corrupted_string_light(strtable + section_header->sh_name, elf))
-	//		return (error_corrupted(elf));
+		section_header->sh_flags |= (SHF_WRITE | SHF_ALLOC | SHF_EXECINSTR);
 		ft_printf("\nsection #%d: %s\n\n", i, strtable + section_header->sh_name);
 		print_elf64_section_header(*section_header);
 		i++;
 	}
-	//return (0);
 }
 
 void	print_cave(struct s_cave cave)

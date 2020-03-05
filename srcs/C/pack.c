@@ -92,7 +92,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		payload->ptr + payload->text_section->sh_offset, payload->text_section->sh_size);
 	if (elf->header->e_type == ET_DYN)
 	{
-		ft_printf("DYN (shared object file)\n");
+		printf("DYN (shared object file)\n");
 		printf("ENTRY %zu\n",  elf->header->e_entry );
 		printf("SECTION OFFSET %zu\n", elf->text_section->sh_offset);
 		printf("text section address: %ld\n", elf->text_section->sh_addr);

@@ -20,18 +20,19 @@ _rip:
    mov rdi, 1             ; fd = 1(stdout)
    lea rsi, [rel msg]     ; pointer to msg (char* [])
    mov rdx, msg_end - msg - 1 ; size
-   syscall                
+   syscall
+
    ; set rax back to normal
    ; jump to main
    mov r15, 0x1111111111111111 ; get initial entry point (relative or absolute to program base address)
    mov rax, 0x2222222222222222 ; 0 if PIE is desactivated
-   mov rdi, 0x3333333333333333 ; address of text section (always relative)
+   mov rdi, 0x3333333333333333 ; address of text section (relative or absolute to program base address)
    cmp rax, 0
    jz nopie
    mov rax, r14
-   add rdi, r14
+   add rdi, r14		       ; absolute address of text section
 nopie:
-   add rax, r15
+   add rax, r15			; add to relative entry point the new entry point address (so rax contains absolute old entry point)
 
    lea rsi, [rel key] ; key of RC4
    mov rdx, 0x4444444444444444  ; size of text section

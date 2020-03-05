@@ -1,0 +1,527 @@
+Text segment header
+type: 0x1
+flags: 0000000000000000000000000111
+offset: 0
+virtual address: 0
+physical address: 0
+size of the segment in the file image: 3936
+size of the segment in the memory: 3936
+alignment: 2097152
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+
+Next segment header
+type: 0x1
+flags: 0000000000000000000000000111
+offset: 7656
+virtual address: 2104808
+physical address: 2104808
+size of the segment in the file image: 672
+size of the segment in the memory: 744
+alignment: 2097152
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
+
+ident: ELF
+type: 3
+machine: 62
+version: 1
+entry point: 2880
+program header table file offset: 64
+section header table file offset: 8640
+processor specific flags: 0
+elf header size: 64
+program header table entry size: 56
+program header table entry count: 9
+section header table entry size: 64
+section header table entry count: 28
+section header string table index: 27
+
+
+Segment headers (9):
+
+
+segment #0:
+
+type: 0x6
+flags: 0000000000000000000000000111
+offset: 64
+virtual address: 64
+physical address: 64
+size of the segment in the file image: 504
+size of the segment in the memory: 504
+alignment: 8
+
+segment #1:
+
+type: 0x3
+flags: 0000000000000000000000000111
+offset: 568
+virtual address: 568
+physical address: 568
+size of the segment in the file image: 28
+size of the segment in the memory: 28
+alignment: 1
+
+segment #2:
+
+type: 0x1
+flags: 0000000000000000000000000111
+offset: 0
+virtual address: 0
+physical address: 0
+size of the segment in the file image: 3936
+size of the segment in the memory: 3936
+alignment: 2097152
+
+segment #3:
+
+type: 0x1
+flags: 0000000000000000000000000111
+offset: 7656
+virtual address: 2104808
+physical address: 2104808
+size of the segment in the file image: 672
+size of the segment in the memory: 744
+alignment: 2097152
+
+segment #4:
+
+type: 0x2
+flags: 0000000000000000000000000111
+offset: 7672
+virtual address: 2104824
+physical address: 2104824
+size of the segment in the file image: 480
+size of the segment in the memory: 480
+alignment: 8
+
+segment #5:
+
+type: 0x4
+flags: 0000000000000000000000000111
+offset: 596
+virtual address: 596
+physical address: 596
+size of the segment in the file image: 68
+size of the segment in the memory: 68
+alignment: 4
+
+segment #6:
+
+type: 0x6474e550
+flags: 0000000000000000000000000111
+offset: 3528
+virtual address: 3528
+physical address: 3528
+size of the segment in the file image: 76
+size of the segment in the memory: 76
+alignment: 4
+
+segment #7:
+
+type: 0x6474e551
+flags: 0000000000000000000000000111
+offset: 0
+virtual address: 0
+physical address: 0
+size of the segment in the file image: 0
+size of the segment in the memory: 0
+alignment: 16
+
+segment #8:
+
+type: 0x6474e552
+flags: 0000000000000000000000000111
+offset: 7656
+virtual address: 2104808
+physical address: 2104808
+size of the segment in the file image: 536
+size of the segment in the memory: 536
+alignment: 1
+
+section #0: 
+
+name index: 0
+type: 0
+flags: 0
+virtual address: 0
+file offset: 0
+size in bytes: 0
+link to another section: 0
+additional section information: 0
+additional section information: 0
+entry size if section holds table: 0
+
+section #1: .interp
+
+name index: 11
+type: 0x1
+flags: 2
+virtual address: 568
+file offset: 568
+size in bytes: 28
+link to another section: 0
+additional section information: 0
+additional section information: 1
+entry size if section holds table: 0
+
+section #2: .note.ABI-tag
+
+name index: 19
+type: 0x7
+flags: 2
+virtual address: 596
+file offset: 596
+size in bytes: 32
+link to another section: 0
+additional section information: 0
+additional section information: 4
+entry size if section holds table: 0
+
+section #3: .note.gnu.build-id
+
+name index: 33
+type: 0x7
+flags: 2
+virtual address: 628
+file offset: 628
+size in bytes: 36
+link to another section: 0
+additional section information: 0
+additional section information: 4
+entry size if section holds table: 0
+
+section #4: .gnu.hash
+
+name index: 52
+type: 0x6ffffff6
+flags: 2
+virtual address: 664
+file offset: 664
+size in bytes: 52
+link to another section: 5
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 0
+
+section #5: .dynsym
+
+name index: 62
+type: 0xb
+flags: 2
+virtual address: 720
+file offset: 720
+size in bytes: 528
+link to another section: 6
+additional section information: 1
+additional section information: 8
+entry size if section holds table: 24
+
+section #6: .dynstr
+
+name index: 70
+type: 0x3
+flags: 2
+virtual address: 1248
+file offset: 1248
+size in bytes: 231
+link to another section: 0
+additional section information: 0
+additional section information: 1
+entry size if section holds table: 0
+
+section #7: .gnu.version
+
+name index: 78
+type: 0x6fffffff
+flags: 2
+virtual address: 1480
+file offset: 1480
+size in bytes: 44
+link to another section: 5
+additional section information: 0
+additional section information: 2
+entry size if section holds table: 2
+
+section #8: .gnu.version_r
+
+name index: 91
+type: 0x6ffffffe
+flags: 2
+virtual address: 1528
+file offset: 1528
+size in bytes: 32
+link to another section: 6
+additional section information: 1
+additional section information: 8
+entry size if section holds table: 0
+
+section #9: .rela.dyn
+
+name index: 106
+type: 0x4
+flags: 2
+virtual address: 1560
+file offset: 1560
+size in bytes: 288
+link to another section: 5
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 24
+
+section #10: .rela.plt
+
+name index: 116
+type: 0x4
+flags: 66
+virtual address: 1848
+file offset: 1848
+size in bytes: 288
+link to another section: 5
+additional section information: 23
+additional section information: 8
+entry size if section holds table: 24
+
+section #11: .init
+
+name index: 126
+type: 0x1
+flags: 6
+virtual address: 2136
+file offset: 2136
+size in bytes: 23
+link to another section: 0
+additional section information: 0
+additional section information: 4
+entry size if section holds table: 0
+
+section #12: .plt
+
+name index: 121
+type: 0x1
+flags: 6
+virtual address: 2160
+file offset: 2160
+size in bytes: 208
+link to another section: 0
+additional section information: 0
+additional section information: 16
+entry size if section holds table: 16
+
+section #13: .plt.got
+
+name index: 132
+type: 0x1
+flags: 6
+virtual address: 2368
+file offset: 2368
+size in bytes: 8
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 8
+
+section #14: .text
+
+name index: 141
+type: 0x1
+flags: 6
+virtual address: 2384
+file offset: 2384
+size in bytes: 1026
+link to another section: 0
+additional section information: 0
+additional section information: 16
+entry size if section holds table: 0
+
+section #15: .fini
+
+name index: 147
+type: 0x1
+flags: 6
+virtual address: 3412
+file offset: 3412
+size in bytes: 9
+link to another section: 0
+additional section information: 0
+additional section information: 4
+entry size if section holds table: 0
+
+section #16: .rodata
+
+name index: 153
+type: 0x1
+flags: 2
+virtual address: 3424
+file offset: 3424
+size in bytes: 104
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 0
+
+section #17: .eh_frame_hdr
+
+name index: 161
+type: 0x1
+flags: 2
+virtual address: 3528
+file offset: 3528
+size in bytes: 76
+link to another section: 0
+additional section information: 0
+additional section information: 4
+entry size if section holds table: 0
+
+section #18: .eh_frame
+
+name index: 175
+type: 0x1
+flags: 2
+virtual address: 3608
+file offset: 3608
+size in bytes: 328
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 0
+
+section #19: .init_array
+
+name index: 185
+type: 0xe
+flags: 3
+virtual address: 2104808
+file offset: 7656
+size in bytes: 8
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 8
+
+section #20: .fini_array
+
+name index: 197
+type: 0xf
+flags: 3
+virtual address: 2104816
+file offset: 7664
+size in bytes: 8
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 8
+
+section #21: .dynamic
+
+name index: 209
+type: 0x6
+flags: 3
+virtual address: 2104824
+file offset: 7672
+size in bytes: 480
+link to another section: 6
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 16
+
+section #22: .got
+
+name index: 136
+type: 0x1
+flags: 3
+virtual address: 2105304
+file offset: 8152
+size in bytes: 40
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 8
+
+section #23: .got.plt
+
+name index: 218
+type: 0x1
+flags: 3
+virtual address: 2105344
+file offset: 8192
+size in bytes: 120
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 8
+
+section #24: .data
+
+name index: 227
+type: 0x1
+flags: 3
+virtual address: 2105464
+file offset: 8312
+size in bytes: 16
+link to another section: 0
+additional section information: 0
+additional section information: 8
+entry size if section holds table: 0
+
+section #25: .bss
+
+name index: 233
+type: 0x8
+flags: 3
+virtual address: 2105504
+file offset: 8328
+size in bytes: 48
+link to another section: 0
+additional section information: 0
+additional section information: 32
+entry size if section holds table: 0
+
+section #26: .gnu_debuglink
+
+name index: 238
+type: 0x1
+flags: 0
+virtual address: 0
+file offset: 8328
+size in bytes: 52
+link to another section: 0
+additional section information: 0
+additional section information: 4
+entry size if section holds table: 0
+
+section #27: .shstrtab
+
+name index: 1
+type: 0x3
+flags: 0
+virtual address: 0
+file offset: 8380
+size in bytes: 253
+link to another section: 0
+additional section information: 0
+additional section information: 1
+entry size if section holds table: 0
+cave offset: 3936 , cave size: 3720
+text section size: 1026
+key for "colrm" : 2F69BFE31B3F93216DF909D179F3B727077DE58397D9
+Payload size: 396
+old entry : 2880
+old text section : 2384
+DYN (shared object file)
+ENTRY 2880
+SECTION OFFSET 2384
+text section address: 2384
+cave offset 3936
+jump 1111111111111111
+jump -1061
+jump 3333333333333333
+jump -1557
+jump 4444444444444444
+jump 1026
+new entry offset : 3936
