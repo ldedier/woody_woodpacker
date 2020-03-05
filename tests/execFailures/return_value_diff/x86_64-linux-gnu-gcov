@@ -1,0 +1,4 @@
+############### /bin/x86_64-linux-gnu-gcov #############
+
+real ret:		1
+to_change_woody ret:	139

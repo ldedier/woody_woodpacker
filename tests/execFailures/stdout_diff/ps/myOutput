@@ -1,0 +1,5 @@
+...WOODY...
+  PID TTY          TIME CMD
+  568 pts/0    00:00:01 zsh
+24247 pts/0    00:00:00 to_change_woody
+32744 pts/0    00:00:02 script.sh

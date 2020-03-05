@@ -1,0 +1,4 @@
+############### /bin/bunzip2 #############
+
+real ret:		2
+to_change_woody ret:	0

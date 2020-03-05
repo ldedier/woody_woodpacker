@@ -1,0 +1,16 @@
+...WOODY...
+#kernel
+IpInReceives                    36800              0.0
+IpInDelivers                    36800              0.0
+IpOutRequests                   36704              0.0
+TcpInSegs                       36800              0.0
+TcpOutSegs                      36733              0.0
+TcpExtDelayedACKLocked          1                  0.0
+TcpExtTCPPureAcks               16552              0.0
+TcpExtTCPHPAcks                 20161              0.0
+TcpExtTCPAutoCorking            17664              0.0
+TcpExtTCPOrigDataSent           36733              0.0
+TcpExtTCPDelivered              36733              0.0
+IpExtInOctets                   1916748            0.0
+IpExtOutOctets                  4044684            0.0
+IpExtInNoECTPkts                36800              0.0

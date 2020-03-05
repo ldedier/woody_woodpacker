@@ -1,0 +1,6 @@
+...WOODY...
+Usage: ./to_change_woody [-h] [-V] [file ...]
+ -h --help        give this help
+ -V --version     display version number
+ file...          files to compress.
+Report bugs to <mhi@penguin.cz>
