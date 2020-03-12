@@ -1,0 +1,6 @@
+...WOODY...
+Usage: tpm2_getmanufec [<options>] <arguments>
+Where <options> are:
+    [ -e | --endorse-passwd=<value>] [ -o | --owner-passwd=<value>] [ -H | --handle=<value>] [ -P | --ek-passwd=<value>]
+    [ -g | --alg=<value>] [ -f | --output=<value>] [ -N | --non-persistent] [ -O | --offline=<value>]
+    [ -E | --ec-cert=<value>] [ -U | --SSL-NO-VERIFY] [ -S | --input-session-handle=<value>]

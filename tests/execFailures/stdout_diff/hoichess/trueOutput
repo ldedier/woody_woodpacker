@@ -1,0 +1,13 @@
+...WOODY...
+HoiChess 0.22.0-1-debian
+Copyright (C) 2004-2017 Holger Ruckdeschel <holger@hoicher.de>
+This program is free software and comes with ABSOLUTELY NO WARRANTY.
+See the GNU General Public License for more details.
+
+Reading /usr/share/games/hoichess/hoichess.rc
+Info: hash_size_entries=1398101 hash_size_bytes=33554424 hash_pvtable=0
+Info: pawnhash_size_entries=104857 pawnhash_size_bytes=4194280
+Info: evalcache_size_entries=262144 evalcache_size_bytes=4194304
+Opening book: /usr/share/games/hoichess/hoichess-book.dat
+Reading (stdin)
+

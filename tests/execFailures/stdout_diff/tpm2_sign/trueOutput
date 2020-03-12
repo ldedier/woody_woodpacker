@@ -1,0 +1,6 @@
+...WOODY...
+Usage: tpm2_sign [<options>]
+Where <options> are:
+    [ -k | --key-handle=<value>] [ -P | --pwdk=<value>] [ -g | --halg=<value>] [ -m | --msg=<value>]
+    [ -s | --sig=<value>] [ -t | --ticket=<value>] [ -c | --key-context=<value>] [ -S | --input-session-handle=<value>]
+    [ -f | --format=<value>]

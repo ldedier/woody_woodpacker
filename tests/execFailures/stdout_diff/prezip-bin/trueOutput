@@ -1,0 +1,5 @@
+...WOODY...
+prezip, a prefix delta compressor. Version 0.1.1, 2004-11-06
+Usage:
+  To Compress:   to_change_woody -z
+  To Decompress: to_change_woody -d

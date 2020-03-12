@@ -1,0 +1,5 @@
+...WOODY...
+Usage: to_change_woody [<options>]
+Where <options> are:
+    [ -x | --index=<value>] [ -a | --auth-handle=<value>] [ -P | --handle-passwd=<value>] [ -X | --passwdInHex]
+    [ -S | --input-session-handle=<value>]

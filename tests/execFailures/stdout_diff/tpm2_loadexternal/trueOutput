@@ -1,0 +1,4 @@
+...WOODY...
+Usage: tpm2_loadexternal [<options>]
+Where <options> are:
+    [ -H | --Hierachy=<value>] [ -u | --pubfile=<value>] [ -r | --privfile=<value>] [ -C | --context=<value>]

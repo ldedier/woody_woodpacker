@@ -1,0 +1,14 @@
+...WOODY...
+*** verify-uselistorder ***
+verify bitcode
+verify assembly
+reverse
+verify bitcode
+verify assembly
+
+shuffle (1 of 1)
+verify bitcode
+verify assembly
+reverse
+verify bitcode
+verify assembly

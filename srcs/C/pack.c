@@ -135,6 +135,8 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 //	print_elf64(elf);
 
 	printf("Payload size: %zu\n", payload->text_section->sh_size);
+	print_elf64(elf);
+	exit(1);
 	if (elf64_get_cave_attributes(elf, &cave.offset, &cave.size))
 		return (1);
 	if (cave.size < payload->text_section->sh_size)

@@ -1,0 +1,15 @@
+...WOODY...
+OVERVIEW: dlltool
+
+USAGE: to_change_woody [options] <inputs>
+
+OPTIONS:
+  -D <value> Specify the input DLL Name
+  -d <value> Input .def File
+  -f <value> Assembler Flags
+  -k         Kill @n Symbol from export
+  -l <value> Generate an import lib
+  -m <value> Set target machine
+  -S <value> Assembler
+
+TARGETS: i386, i386:x86-64, arm, arm64

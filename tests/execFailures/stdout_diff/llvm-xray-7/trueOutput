@@ -1,0 +1,111 @@
+...WOODY...
+OVERVIEW: XRay Tools
+
+  This program consolidates multiple XRay trace processing tools for convenient access.
+
+USAGE: llvm-xray-7 [subcommand] [options]
+
+SUBCOMMANDS:
+
+  account    - Function call accounting
+  convert    - Trace Format Conversion
+  extract    - Extract instrumentation maps
+  graph      - Generate function-call graph
+  graph-diff - Generate diff of function-call graphs
+  stack      - Call stack accounting
+
+  Type "llvm-xray-7 <subcommand> -help" to get more help on a specific subcommand
+
+OPTIONS:
+
+Color Options:
+
+  -color                                            - Use colors in output (default=autodetect)
+
+General options:
+
+  -aarch64-neon-syntax                              - Choose style of NEON code to emit from AArch64 backend:
+    =generic                                        -   Emit generic NEON assembly
+    =apple                                          -   Emit Apple-style NEON assembly
+  -amdgpu-dump-hsa-metadata                         - Dump AMDGPU HSA Metadata
+  -amdgpu-enable-merge-m0                           - Merge and hoist M0 initializations
+  -amdgpu-sdwa-peephole                             - Enable SDWA peepholer
+  -amdgpu-spill-sgpr-to-smem                        - Use scalar stores to spill SGPRs if supported by subtarget
+  -amdgpu-verify-hsa-metadata                       - Verify AMDGPU HSA Metadata
+  -amdgpu-vgpr-index-mode                           - Use GPR indexing mode instead of movrel for vector indexing
+  -arm-add-build-attributes                         - 
+  -arm-implicit-it                                  - Allow conditional instructions outdside of an IT block
+    =always                                         -   Accept in both ISAs, emit implicit ITs in Thumb
+    =never                                          -   Warn in ARM, reject in Thumb
+    =arm                                            -   Accept in ARM, reject in Thumb
+    =thumb                                          -   Warn in ARM, emit implicit ITs in Thumb
+  -atomic-counter-update-promoted                   - Do counter update using atomic fetch add  for promoted counters only
+  -bounds-checking-single-trap                      - Use one trap block per function
+  -cost-kind                                        - Target cost kind
+    =throughput                                     -   Reciprocal throughput
+    =latency                                        -   Instruction latency
+    =code-size                                      -   Code size
+  -cvp-dont-process-adds                            - 
+  -disable-promote-alloca-to-vector                 - Disable promote alloca to vector
+  -do-counter-promotion                             - Do counter register promotion
+  -emscripten-cxx-exceptions-whitelist=<string>     - The list of function names in which Emscripten-style exception handling is enabled (see emscripten EMSCRIPTEN_CATCHING_WHITELIST options)
+  -enable-emscripten-cxx-exceptions                 - WebAssembly Emscripten-style exception handling
+  -enable-emscripten-sjlj                           - WebAssembly Emscripten-style setjmp/longjmp handling
+  -enable-load-pre                                  - 
+  -enable-name-compression                          - Enable name string compression
+  -expensive-combines                               - Enable expensive instruction combines
+  -gpsize=<uint>                                    - Global Pointer Addressing Size.  The default size is 8.
+  -hash-based-counter-split                         - Rename counter variable of a comdat function based on cfg hash
+  -import-all-index                                 - Import all external functions in index.
+  -instcombine-guard-widening-window=<uint>         - How wide an instruction window to bypass looking for another guard
+  -instcombine-max-num-phis=<uint>                  - Maximum number phis to handle in intptr/ptrint folding
+  -instcombine-maxarray-size=<uint>                 - Maximum array size considered when doing a combine
+  -internalize-public-api-file=<filename>           - A file containing list of symbol names to preserve
+  -internalize-public-api-list=<list>               - A list of symbol names to preserve
+  -iterative-counter-promotion                      - Allow counter promotion across the whole loop nest.
+  -lto-pass-remarks-output=<filename>               - Output filename for pass remarks
+  -max-counter-promotions=<int>                     - Max number of allowed counter promotions
+  -max-counter-promotions-per-loop=<uint>           - Max number counter promotions per loop to avoid increasing register pressure too much
+  -memop-size-large=<uint>                          - Set large value thresthold in memory intrinsic size profiling. Value of 0 disables the large value profiling.
+  -memop-size-range=<string>                        - Set the range of size in memory intrinsic calls to be profiled precisely, in a format of <start_val>:<end_val>
+  -merror-missing-parenthesis                       - Error for missing parenthesis around predicate registers
+  -merror-noncontigious-register                    - Error for register names that aren't contigious
+  -mhvx                                             - Enable Hexagon Vector eXtensions
+    =v60                                            -   Build for HVX v60
+    =v62                                            -   Build for HVX v62
+    =v65                                            -   Build for HVX v65
+    =                                               -   
+  -mips-compact-branches                            - MIPS Specific: Compact branch policy.
+    =never                                          -   Do not use compact branches if possible.
+    =optimal                                        -   Use compact branches where appropiate (default).
+    =always                                         -   Always use compact branches if possible.
+  -mips16-constant-islands                          - Enable mips16 constant islands.
+  -mips16-hard-float                                - Enable mips16 hard float.
+  -mno-compound                                     - Disable looking for compound instructions for Hexagon
+  -mno-fixup                                        - Disable fixing up resolved relocations for Hexagon
+  -mno-ldc1-sdc1                                    - Expand double precision loads and stores to their single precision counterparts
+  -mno-pairing                                      - Disable looking for duplex instructions for Hexagon
+  -mwarn-missing-parenthesis                        - Warn for missing parenthesis around predicate registers
+  -mwarn-noncontigious-register                     - Warn for register names that arent contigious
+  -mwarn-sign-mismatch                              - Warn for mismatching a signed and unsigned value
+  -no-discriminators                                - Disable generation of discriminator information.
+  -nvptx-sched4reg                                  - NVPTX Specific: schedule for register pressue
+  -r600-ir-structurize                              - Use StructurizeCFG IR pass
+  -rdf-dump                                         - 
+  -rdf-limit=<uint>                                 - 
+  -safepoint-ir-verifier-print-only                 - 
+  -sample-profile-check-record-coverage=<N>         - Emit a warning if less than N% of records in the input profile are matched to the IR.
+  -sample-profile-check-sample-coverage=<N>         - Emit a warning if less than N% of samples in the input profile are matched to the IR.
+  -sample-profile-max-propagate-iterations=<uint>   - Maximum number of iterations to go through when propagating sample block/edge weights through the CFG.
+  -speculative-counter-promotion-max-exiting=<uint> - The max number of exiting blocks of a loop to allow  speculative counter promotion
+  -speculative-counter-promotion-to-loop            - When the option is false, if the target block is in a loop, the promotion will be disallowed unless the promoted counter  update can be further/iteratively promoted into an acyclic  region.
+  -summary-file=<string>                            - The summary file to use for function importing.
+  -threads=<int>                                    - 
+  -verify-region-info                               - Verify region info (time consuming)
+  -vp-counters-per-site=<number>                    - The average number of profile counters allocated per value profiling site.
+  -vp-static-alloc                                  - Do static counter allocation for value profiler
+
+Generic Options:
+
+  -help                                             - Display available options (-help-hidden for more)
+  -version                                          - Display the version of this program

@@ -1,0 +1,3 @@
+...WOODY...
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-3y1QKvgIcJ,guid=998f306bf5a4541ca4b45ea25e6a2a60
+DBUS_SESSION_BUS_PID=9262

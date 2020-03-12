@@ -1,0 +1,7 @@
+...WOODY...
+pasuspender [options] ... 
+
+  -h, --help                            Show this help
+      --version                         Show version
+  -s, --server=SERVER                   The name of the server to connect to
+

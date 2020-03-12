@@ -1,0 +1,4 @@
+...WOODY...
+Usage: tpm2_makecredential [<options>]
+Where <options> are:
+    [ -e | --enc-key=<value>] [ -s | --sec=<value>] [ -n | --name=<value>] [ -o | --out-file=<value>]

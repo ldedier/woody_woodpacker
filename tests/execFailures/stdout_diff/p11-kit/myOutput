@@ -1,0 +1,8 @@
+...WOODY...
+usage: to_change_woody command <args>...
+
+Common to_change_woody commands are:
+  list-modules     List modules and tokens
+  remote           Run a specific PKCS#11 module remotely
+
+See 'to_change_woody <command> --help' for more information

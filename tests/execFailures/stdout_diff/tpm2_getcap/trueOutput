@@ -1,0 +1,4 @@
+...WOODY...
+Usage: tpm2_getcap [<options>]
+Where <options> are:
+    [ -c | --capability=<value>]

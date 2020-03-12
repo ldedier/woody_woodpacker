@@ -1,0 +1,4 @@
+...WOODY...
+Usage: tpm2_readpublic [<options>]
+Where <options> are:
+    [ -H | --object=<value>] [ -o | --opu=<value>] [ -c | --context-object=<value>] [ -f | --format=<value>]

@@ -1,0 +1,5 @@
+...WOODY...
+Usage: tpm2_createpolicy [<options>]
+Where <options> are:
+    [ -f | --policy-file=<value>] [ -g | --policy-digest-alg=<value>] [ -L | --set-list=<value>] [ -F | --pcr-input-file=<value>]
+    [ -P | --policy-pcr] [ -a | --auth-policy-session] [ -e | --extend-policy-session]

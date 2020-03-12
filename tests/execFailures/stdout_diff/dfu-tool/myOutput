@@ -1,0 +1,50 @@
+...WOODY...
+Command not found
+
+Usage:
+  to_change_woody [OPTION?]
+
+  attach                        Attach DFU capable device back to runtime
+  convert FORMAT FILE-IN FILE OUT [SIZE]
+                                Convert firmware to DFU format
+  decrypt FILENAME-IN FILENAME-OUT TYPE KEY
+                                Decrypt firmware data
+  detach                        Detach currently attached DFU capable device
+  dump FILENAME                 Dump details about a firmware file
+  encrypt FILENAME-IN FILENAME-OUT TYPE KEY
+                                Encrypt firmware data
+  list                          List currently attached DFU capable devices
+  merge FILE-OUT FILE1 FILE2 [FILE3...]
+                                Merge multiple firmware files into one
+  patch-apply                   Apply a binary patch
+  patch-create                  Create a binary patch using two files
+  patch-dump                    Dump information about a binary patch to the screen
+  read FILENAME                 Read firmware from device into a file
+  read-alt FILENAME DEVICE-ALT-NAME|DEVICE-ALT-ID
+                                Read firmware from one partition into a file
+  replace-data                  Replace data in an existing firmware file
+  reset                         Reset a DFU device
+  set-address FILE ADDRESS      Set element address on firmware file
+  set-alt-setting FILE ALT-ID   Set alternative number on firmware file
+  set-alt-setting-name FILE VALUE
+                                Set alternative name on firmware file
+  set-metadata FILE KEY VALUE   Sets metadata on a firmware file
+  set-product FILE PID          Set product ID on firmware file
+  set-release FILE RELEASE      Set release version on firmware file
+  set-target-size FILE SIZE     Set the firmware size for the target
+  set-vendor FILE VID           Set vendor ID on firmware file
+  watch                         Watch DFU devices being hotplugged
+  write                         Write firmware from file into device
+  write-alt FILENAME DEVICE-ALT-NAME|DEVICE-ALT-ID [IMAGE-ALT-NAME|IMAGE-ALT-ID]
+                                Write firmware from file into one partition
+
+Help Options:
+  -h, --help                    Show help options
+
+Application Options:
+  --version                     Print the version number
+  -v, --verbose                 Print verbose debug statements
+  -d, --device=VID:PID          Specify Vendor/Product ID(s) of DFU device
+  -t, --transfer-size=BYTES     Specify the number of bytes per USB transfer
+  --force                       Force the action ignoring all warnings
+

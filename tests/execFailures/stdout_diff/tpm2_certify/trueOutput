@@ -1,0 +1,6 @@
+...WOODY...
+Usage: tpm2_certify [<options>]
+Where <options> are:
+    [ -H | --object-handle=<value>] [ -k | --key-handle=<value>] [ -P | --pwdo=<value>] [ -K | --pwdk=<value>]
+    [ -g | --halg=<value>] [ -a | --attest-file=<value>] [ -s | --sig-file=<value>] [ -C | --obj-context=<value>]
+    [ -c | --key-context=<value>] [ -f | --format=<value>]

@@ -1,0 +1,6 @@
+...WOODY...
+Usage: tpm2_getpubak [<options>]
+Where <options> are:
+    [ -o | --owner-passwd=<value>] [ -e | --endorse-passwd=<value>] [ -E | --ek-handle=<value>] [ -k | --ak-handle=<value>]
+    [ -g | --alg=<value>] [ -D | --digest-alg=<value>] [ -s | --sign-alg=<value>] [ -P | --ak-passwd=<value>]
+    [ -f | --file=<value>] [ -n | --ak-name=<value>]

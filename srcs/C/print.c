@@ -71,10 +71,15 @@ void	print_elf64(struct s_elf *elf)
 	while (i < elf->header->e_phnum)
 	{
 		segment_header = (Elf64_Phdr *)((void *)(elf->ptr + elf->header->e_phoff + i * elf->header->e_phentsize));
+		printf("%ld\n", (void *)segment_header - (void *)elf->ptr);
 		ft_printf("\nsegment #%d:\n\n", i);
 		print_elf64_program_segment_header(*segment_header);
 		i++;
 	}
+	segment_header = (Elf64_Phdr *)((void *)(elf->ptr + elf->header->e_phoff + i * elf->header->e_phentsize));
+	printf("%ld\n", (void *)elf->header - (void *)elf->ptr);
+	printf("%ld\n", (void *)segment_header - (void *)elf->ptr);
+exit(1);
 
 	first_section_header = (Elf64_Shdr *)(void *)(elf->ptr + elf->header->e_shoff);
 	strtable_section = &first_section_header[elf->header->e_shstrndx];

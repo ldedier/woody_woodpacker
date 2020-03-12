@@ -1,0 +1,5 @@
+...WOODY...
+Usage: tpm2_nvreadlock [<options>]
+Where <options> are:
+    [ -x | --index=<value>] [ -a | --auth-handle=<value>] [ -P | --handle-passwd=<value>] [ -X | --passwdInHex]
+    [ -S | --input-session-handle=<value>]
