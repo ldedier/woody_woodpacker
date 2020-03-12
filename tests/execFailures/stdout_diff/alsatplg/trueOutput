@@ -1,7 +1,0 @@
-...WOODY...
-Usage: to_change_woody [OPTIONS]...
-
--h, --help              help
--c, --compile=FILE      compile file
--v, --verbose=LEVEL     set verbosity level (0...1)
--o, --output=FILE       set output file

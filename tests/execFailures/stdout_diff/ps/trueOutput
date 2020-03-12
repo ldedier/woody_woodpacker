@@ -1,0 +1,5 @@
+...WOODY...
+  PID TTY          TIME CMD
+  494 pts/0    00:00:02 zsh
+ 5950 pts/0    00:00:00 ps
+13947 pts/0    00:00:03 script.sh

@@ -1,4 +1,4 @@
-############### /usr/bin/bzcat #############
+############### /bin/bzcat #############
 
 real ret:		2
 to_change_woody ret:	0

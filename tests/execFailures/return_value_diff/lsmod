@@ -1,0 +1,4 @@
+############### /bin/lsmod #############
+
+real ret:		0
+to_change_woody ret:	254

@@ -1,6 +1,6 @@
 ...WOODY...
 Usage:
-  to_change_woody [OPTION?]
+  to_change_woody [OPTION…]
 
   calculate-ccmx [REFERENCE.ti3] [MEASURED.ti3] [OUTPUT.ccmx]
                                     Create a CCMX from reference and measurement data

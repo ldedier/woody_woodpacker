@@ -1,0 +1,130 @@
+...WOODY...
+ldedier  pts/2        192.168.43.58    Fri Mar  6 07:12   still logged in
+ldedier  pts/1        192.168.43.58    Fri Mar  6 06:38   still logged in
+ldedier  pts/0        192.168.43.58    Fri Mar  6 06:38   still logged in
+reboot   system boot  4.19.0-6-amd64   Fri Mar  6 06:38   still running
+root     tty1                          Fri Mar  6 06:36 - crash  (00:01)
+reboot   system boot  4.19.0-6-amd64   Fri Mar  6 06:36   still running
+ldedier  pts/2        192.168.43.58    Thu Mar  5 03:57 - crash (1+02:39)
+ldedier  pts/1        192.168.43.58    Thu Mar  5 03:37 - 04:12  (00:34)
+ldedier  pts/0        192.168.43.58    Thu Mar  5 03:37 - 04:12  (00:34)
+ldedier  pts/0        192.168.43.58    Thu Mar  5 03:37 - 03:37  (00:00)
+root     tty1                          Thu Mar  5 03:37 - crash (1+02:59)
+reboot   system boot  4.19.0-6-amd64   Thu Mar  5 03:36   still running
+root     tty1                          Thu Mar  5 03:33 - crash  (00:03)
+reboot   system boot  4.19.0-6-amd64   Thu Mar  5 03:32   still running
+ldedier  pts/1        192.168.1.32     Sat Feb 29 07:55 - crash (4+19:37)
+ldedier  pts/0        192.168.1.32     Sat Feb 29 07:55 - crash (4+19:37)
+root     tty1                          Sat Feb 29 07:23 - crash (4+20:08)
+reboot   system boot  4.19.0-6-amd64   Sat Feb 29 07:23   still running
+ldedier  pts/1        192.168.1.32     Fri Feb 28 15:31 - crash  (15:52)
+ldedier  pts/0        192.168.1.32     Fri Feb 28 15:08 - crash  (16:14)
+ldedier  pts/1        192.168.43.58    Fri Feb 28 11:33 - 12:29  (00:55)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 11:33 - 12:29  (00:55)
+root     tty1                          Fri Feb 28 11:33 - crash  (19:49)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 28 11:33   still running
+ldedier  pts/0        192.168.43.58    Fri Feb 28 10:29 - crash  (01:03)
+root     tty1                          Fri Feb 28 10:29 - crash  (01:04)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 28 10:29   still running
+ldedier  pts/0        192.168.43.58    Fri Feb 28 09:58 - crash  (00:30)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 09:54 - 09:56  (00:01)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 09:52 - 09:54  (00:02)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 09:48 - 09:52  (00:03)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 09:48 - 09:48  (00:00)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 09:44 - 09:48  (00:03)
+root     tty1                          Fri Feb 28 09:44 - crash  (00:44)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 28 09:44   still running
+ldedier  pts/1        192.168.43.58    Fri Feb 28 09:42 - crash  (00:02)
+ldedier  pts/0        10.18.192.2      Fri Feb 28 09:40 - crash  (00:03)
+root     tty1                          Fri Feb 28 09:40 - crash  (00:03)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 28 09:37   still running
+ldedier  pts/1        10.18.192.2      Fri Feb 28 09:26 - crash  (00:11)
+ldedier  pts/0        10.18.192.2      Fri Feb 28 09:26 - crash  (00:11)
+root     tty1                          Fri Feb 28 09:25 - crash  (00:12)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 28 09:24   still running
+ldedier  pts/0        192.168.43.58    Fri Feb 28 05:03 - crash  (04:21)
+ldedier  pts/4        192.168.43.58    Fri Feb 28 04:58 - 05:03  (00:05)
+ldedier  pts/3        192.168.43.58    Fri Feb 28 04:56 - crash  (04:28)
+ldedier  pts/1        192.168.43.58    Fri Feb 28 04:37 - crash  (04:47)
+ldedier  pts/0        192.168.43.58    Fri Feb 28 04:37 - 04:58  (00:20)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 28 04:37   still running
+ldedier  pts/1        192.168.43.58    Thu Feb 27 04:39 - crash  (23:58)
+ldedier  pts/0        192.168.43.58    Thu Feb 27 04:39 - crash  (23:58)
+root     tty1                          Thu Feb 27 04:38 - crash  (23:59)
+reboot   system boot  4.19.0-6-amd64   Thu Feb 27 04:38   still running
+ldedier  pts/0        192.168.1.32     Wed Feb 26 14:35 - crash  (14:03)
+reboot   system boot  4.19.0-6-amd64   Wed Feb 26 14:30   still running
+ldedier  pts/1        192.168.1.32     Mon Feb 24 16:36 - 17:11  (00:34)
+ldedier  pts/0        192.168.1.32     Mon Feb 24 16:36 - 17:11  (00:34)
+ldedier  pts/0        192.168.1.32     Mon Feb 24 16:36 - 16:36  (00:00)
+root     tty1                          Mon Feb 24 16:35 - crash (1+21:55)
+reboot   system boot  4.19.0-6-amd64   Mon Feb 24 16:19   still running
+ldedier  pts/2        192.168.43.58    Sun Feb 23 16:43 - crash  (23:35)
+ldedier  pts/1        192.168.43.58    Sun Feb 23 16:43 - crash  (23:35)
+ldedier  pts/0        192.168.43.58    Sun Feb 23 16:43 - crash  (23:35)
+reboot   system boot  4.19.0-6-amd64   Sun Feb 23 16:43   still running
+ldedier  pts/1        192.168.43.58    Sun Feb 23 15:11 - crash  (01:32)
+ldedier  pts/0        192.168.43.58    Sun Feb 23 15:11 - 15:48  (00:37)
+root     tty1                          Sun Feb 23 15:11 - crash  (01:32)
+reboot   system boot  4.19.0-6-amd64   Sun Feb 23 15:11   still running
+ldedier  pts/2        192.168.43.58    Sun Feb 23 06:33 - crash  (08:37)
+ldedier  pts/1        192.168.43.58    Sun Feb 23 06:33 - crash  (08:37)
+ldedier  pts/0        192.168.43.58    Sun Feb 23 06:33 - crash  (08:37)
+root     tty1                          Sun Feb 23 06:32 - crash  (08:38)
+reboot   system boot  4.19.0-6-amd64   Sun Feb 23 06:32   still running
+ldedier  pts/3        192.168.1.32     Sun Feb 23 04:18 - 06:16  (01:58)
+ldedier  pts/2        192.168.1.32     Sun Feb 23 04:18 - crash  (02:13)
+ldedier  pts/1        192.168.1.32     Sun Feb 23 04:18 - 06:16  (01:58)
+ldedier  pts/0        192.168.1.32     Sun Feb 23 04:18 - 06:16  (01:58)
+root     tty1                          Sun Feb 23 04:17 - crash  (02:14)
+reboot   system boot  4.19.0-6-amd64   Sun Feb 23 04:17   still running
+ldedier  pts/3        192.168.1.32     Sat Feb 22 06:57 - 09:53  (02:56)
+ldedier  pts/2        192.168.1.32     Sat Feb 22 06:57 - 09:52  (02:55)
+ldedier  pts/1        192.168.1.32     Sat Feb 22 06:57 - 09:52  (02:55)
+ldedier  pts/0        192.168.1.32     Sat Feb 22 06:57 - 09:52  (02:55)
+root     tty1                          Sat Feb 22 06:56 - crash  (21:20)
+reboot   system boot  4.19.0-6-amd64   Sat Feb 22 06:56   still running
+ldedier  pts/1        192.168.43.58    Fri Feb 21 04:40 - crash (1+02:16)
+ldedier  pts/0        192.168.43.58    Fri Feb 21 04:33 - crash (1+02:23)
+root     tty1                          Fri Feb 21 04:32 - crash (1+02:23)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 21 04:32   still running
+ldedier  pts/1        192.168.43.58    Thu Feb 20 15:20 - 15:58  (00:37)
+ldedier  pts/0        192.168.43.58    Thu Feb 20 15:20 - 15:58  (00:38)
+root     tty1                          Thu Feb 20 15:19 - crash  (13:13)
+reboot   system boot  4.19.0-6-amd64   Thu Feb 20 15:19   still running
+ldedier  pts/1        192.168.1.32     Sat Feb 15 15:43 - crash (4+23:35)
+ldedier  pts/0        192.168.1.32     Sat Feb 15 15:20 - crash (4+23:58)
+ldedier  tty1                          Sat Feb 15 15:19 - crash (4+23:59)
+reboot   system boot  4.19.0-6-amd64   Sat Feb 15 15:19   still running
+ldedier  pts/0        192.168.43.58    Fri Feb 14 03:02 - crash (1+12:17)
+ldedier  tty1                          Fri Feb 14 03:01 - crash (1+12:17)
+reboot   system boot  4.19.0-6-amd64   Fri Feb 14 03:01   still running
+ldedier  pts/0        192.168.1.32     Thu Feb 13 15:01 - 16:21  (01:20)
+ldedier  tty1                          Thu Feb 13 15:00 - crash  (12:00)
+reboot   system boot  4.19.0-6-amd64   Thu Feb 13 15:00   still running
+ldedier  pts/0        192.168.43.58    Thu Feb 13 06:29 - crash  (08:30)
+ldedier  tty1                          Thu Feb 13 06:26 - crash  (08:33)
+reboot   system boot  4.19.0-6-amd64   Thu Feb 13 06:26   still running
+ldedier  tty1                          Thu Feb 13 06:24 - crash  (00:02)
+reboot   system boot  4.19.0-6-amd64   Thu Feb 13 06:24   still running
+reboot   system boot  4.19.0-6-amd64   Thu Feb 13 04:39   still running
+ldedier  pts/0        192.168.43.58    Thu Feb 13 03:37 - 04:11  (00:33)
+ldedier  tty1                          Thu Feb 13 03:37 - crash  (01:02)
+reboot   system boot  4.19.0-6-amd64   Thu Feb 13 03:36   still running
+ldedier  pts/0        192.168.1.32     Sat Feb  8 16:19 - crash (4+11:16)
+ldedier  pts/2        192.168.1.32     Sat Feb  8 07:10 - 16:18  (09:08)
+ldedier  pts/0        192.168.1.32     Sat Feb  8 07:03 - 16:18  (09:14)
+ldedier  pts/0        192.168.1.32     Sat Feb  8 07:02 - 07:03  (00:01)
+ldedier  pts/0        192.168.1.32     Sat Feb  8 07:01 - 07:02  (00:00)
+ldedier  pts/1        192.168.1.32     Sat Feb  8 06:59 - 16:18  (09:19)
+ldedier  pts/0        192.168.1.32     Sat Feb  8 04:10 - 07:01  (02:51)
+ldedier  pts/0        192.168.1.32     Sat Feb  8 04:09 - 04:10  (00:00)
+ldedier  pts/0        192.168.1.32     Sat Feb  8 04:00 - 04:09  (00:09)
+ldedier  tty1                          Sat Feb  8 04:00 - crash (4+23:36)
+reboot   system boot  4.19.0-6-amd64   Sat Feb  8 03:59   still running
+ldedier  tty1                          Sat Feb  8 03:55 - crash  (00:04)
+root     tty1                          Sun Feb  2 09:45 - 03:55 (5+18:09)
+ldedier  tty1                          Sun Feb  2 09:44 - 09:45  (00:00)
+reboot   system boot  4.19.0-6-amd64   Sun Feb  2 09:44   still running
+
+wtmp begins Sun Feb  2 09:44:37 2020

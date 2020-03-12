@@ -41,7 +41,7 @@ int	write_binary_from_elf(struct s_elf *elf, char *filename)
 
 	if ((fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0755)) < 0)
 	{
-		perror("open");
+		perror(filename);
 		return (1);
 	}
 //	ft_printf("%p\n", elf->ptr);

@@ -1,0 +1,749 @@
+...WOODY...
+COMMAND     PID  TID TASKCMD               USER   FD      TYPE             DEVICE SIZE/OFF       NODE NAME
+systemd       1                            root  cwd   unknown                                        /proc/1/cwd (readlink: Permission denied)
+systemd       1                            root  rtd   unknown                                        /proc/1/root (readlink: Permission denied)
+systemd       1                            root  txt   unknown                                        /proc/1/exe (readlink: Permission denied)
+systemd       1                            root NOFD                                                  /proc/1/fd (opendir: Permission denied)
+kthreadd      2                            root  cwd   unknown                                        /proc/2/cwd (readlink: Permission denied)
+kthreadd      2                            root  rtd   unknown                                        /proc/2/root (readlink: Permission denied)
+kthreadd      2                            root  txt   unknown                                        /proc/2/exe (readlink: Permission denied)
+kthreadd      2                            root NOFD                                                  /proc/2/fd (opendir: Permission denied)
+rcu_gp        3                            root  cwd   unknown                                        /proc/3/cwd (readlink: Permission denied)
+rcu_gp        3                            root  rtd   unknown                                        /proc/3/root (readlink: Permission denied)
+rcu_gp        3                            root  txt   unknown                                        /proc/3/exe (readlink: Permission denied)
+rcu_gp        3                            root NOFD                                                  /proc/3/fd (opendir: Permission denied)
+rcu_par_g     4                            root  cwd   unknown                                        /proc/4/cwd (readlink: Permission denied)
+rcu_par_g     4                            root  rtd   unknown                                        /proc/4/root (readlink: Permission denied)
+rcu_par_g     4                            root  txt   unknown                                        /proc/4/exe (readlink: Permission denied)
+rcu_par_g     4                            root NOFD                                                  /proc/4/fd (opendir: Permission denied)
+kworker/0     6                            root  cwd   unknown                                        /proc/6/cwd (readlink: Permission denied)
+kworker/0     6                            root  rtd   unknown                                        /proc/6/root (readlink: Permission denied)
+kworker/0     6                            root  txt   unknown                                        /proc/6/exe (readlink: Permission denied)
+kworker/0     6                            root NOFD                                                  /proc/6/fd (opendir: Permission denied)
+mm_percpu     8                            root  cwd   unknown                                        /proc/8/cwd (readlink: Permission denied)
+mm_percpu     8                            root  rtd   unknown                                        /proc/8/root (readlink: Permission denied)
+mm_percpu     8                            root  txt   unknown                                        /proc/8/exe (readlink: Permission denied)
+mm_percpu     8                            root NOFD                                                  /proc/8/fd (opendir: Permission denied)
+ksoftirqd     9                            root  cwd   unknown                                        /proc/9/cwd (readlink: Permission denied)
+ksoftirqd     9                            root  rtd   unknown                                        /proc/9/root (readlink: Permission denied)
+ksoftirqd     9                            root  txt   unknown                                        /proc/9/exe (readlink: Permission denied)
+ksoftirqd     9                            root NOFD                                                  /proc/9/fd (opendir: Permission denied)
+rcu_sched    10                            root  cwd   unknown                                        /proc/10/cwd (readlink: Permission denied)
+rcu_sched    10                            root  rtd   unknown                                        /proc/10/root (readlink: Permission denied)
+rcu_sched    10                            root  txt   unknown                                        /proc/10/exe (readlink: Permission denied)
+rcu_sched    10                            root NOFD                                                  /proc/10/fd (opendir: Permission denied)
+rcu_bh       11                            root  cwd   unknown                                        /proc/11/cwd (readlink: Permission denied)
+rcu_bh       11                            root  rtd   unknown                                        /proc/11/root (readlink: Permission denied)
+rcu_bh       11                            root  txt   unknown                                        /proc/11/exe (readlink: Permission denied)
+rcu_bh       11                            root NOFD                                                  /proc/11/fd (opendir: Permission denied)
+migration    12                            root  cwd   unknown                                        /proc/12/cwd (readlink: Permission denied)
+migration    12                            root  rtd   unknown                                        /proc/12/root (readlink: Permission denied)
+migration    12                            root  txt   unknown                                        /proc/12/exe (readlink: Permission denied)
+migration    12                            root NOFD                                                  /proc/12/fd (opendir: Permission denied)
+cpuhp/0      14                            root  cwd   unknown                                        /proc/14/cwd (readlink: Permission denied)
+cpuhp/0      14                            root  rtd   unknown                                        /proc/14/root (readlink: Permission denied)
+cpuhp/0      14                            root  txt   unknown                                        /proc/14/exe (readlink: Permission denied)
+cpuhp/0      14                            root NOFD                                                  /proc/14/fd (opendir: Permission denied)
+kdevtmpfs    15                            root  cwd   unknown                                        /proc/15/cwd (readlink: Permission denied)
+kdevtmpfs    15                            root  rtd   unknown                                        /proc/15/root (readlink: Permission denied)
+kdevtmpfs    15                            root  txt   unknown                                        /proc/15/exe (readlink: Permission denied)
+kdevtmpfs    15                            root NOFD                                                  /proc/15/fd (opendir: Permission denied)
+netns        16                            root  cwd   unknown                                        /proc/16/cwd (readlink: Permission denied)
+netns        16                            root  rtd   unknown                                        /proc/16/root (readlink: Permission denied)
+netns        16                            root  txt   unknown                                        /proc/16/exe (readlink: Permission denied)
+netns        16                            root NOFD                                                  /proc/16/fd (opendir: Permission denied)
+kauditd      17                            root  cwd   unknown                                        /proc/17/cwd (readlink: Permission denied)
+kauditd      17                            root  rtd   unknown                                        /proc/17/root (readlink: Permission denied)
+kauditd      17                            root  txt   unknown                                        /proc/17/exe (readlink: Permission denied)
+kauditd      17                            root NOFD                                                  /proc/17/fd (opendir: Permission denied)
+khungtask    18                            root  cwd   unknown                                        /proc/18/cwd (readlink: Permission denied)
+khungtask    18                            root  rtd   unknown                                        /proc/18/root (readlink: Permission denied)
+khungtask    18                            root  txt   unknown                                        /proc/18/exe (readlink: Permission denied)
+khungtask    18                            root NOFD                                                  /proc/18/fd (opendir: Permission denied)
+oom_reape    19                            root  cwd   unknown                                        /proc/19/cwd (readlink: Permission denied)
+oom_reape    19                            root  rtd   unknown                                        /proc/19/root (readlink: Permission denied)
+oom_reape    19                            root  txt   unknown                                        /proc/19/exe (readlink: Permission denied)
+oom_reape    19                            root NOFD                                                  /proc/19/fd (opendir: Permission denied)
+writeback    20                            root  cwd   unknown                                        /proc/20/cwd (readlink: Permission denied)
+writeback    20                            root  rtd   unknown                                        /proc/20/root (readlink: Permission denied)
+writeback    20                            root  txt   unknown                                        /proc/20/exe (readlink: Permission denied)
+writeback    20                            root NOFD                                                  /proc/20/fd (opendir: Permission denied)
+kcompactd    21                            root  cwd   unknown                                        /proc/21/cwd (readlink: Permission denied)
+kcompactd    21                            root  rtd   unknown                                        /proc/21/root (readlink: Permission denied)
+kcompactd    21                            root  txt   unknown                                        /proc/21/exe (readlink: Permission denied)
+kcompactd    21                            root NOFD                                                  /proc/21/fd (opendir: Permission denied)
+ksmd         22                            root  cwd   unknown                                        /proc/22/cwd (readlink: Permission denied)
+ksmd         22                            root  rtd   unknown                                        /proc/22/root (readlink: Permission denied)
+ksmd         22                            root  txt   unknown                                        /proc/22/exe (readlink: Permission denied)
+ksmd         22                            root NOFD                                                  /proc/22/fd (opendir: Permission denied)
+khugepage    23                            root  cwd   unknown                                        /proc/23/cwd (readlink: Permission denied)
+khugepage    23                            root  rtd   unknown                                        /proc/23/root (readlink: Permission denied)
+khugepage    23                            root  txt   unknown                                        /proc/23/exe (readlink: Permission denied)
+khugepage    23                            root NOFD                                                  /proc/23/fd (opendir: Permission denied)
+crypto       24                            root  cwd   unknown                                        /proc/24/cwd (readlink: Permission denied)
+crypto       24                            root  rtd   unknown                                        /proc/24/root (readlink: Permission denied)
+crypto       24                            root  txt   unknown                                        /proc/24/exe (readlink: Permission denied)
+crypto       24                            root NOFD                                                  /proc/24/fd (opendir: Permission denied)
+kintegrit    25                            root  cwd   unknown                                        /proc/25/cwd (readlink: Permission denied)
+kintegrit    25                            root  rtd   unknown                                        /proc/25/root (readlink: Permission denied)
+kintegrit    25                            root  txt   unknown                                        /proc/25/exe (readlink: Permission denied)
+kintegrit    25                            root NOFD                                                  /proc/25/fd (opendir: Permission denied)
+kblockd      26                            root  cwd   unknown                                        /proc/26/cwd (readlink: Permission denied)
+kblockd      26                            root  rtd   unknown                                        /proc/26/root (readlink: Permission denied)
+kblockd      26                            root  txt   unknown                                        /proc/26/exe (readlink: Permission denied)
+kblockd      26                            root NOFD                                                  /proc/26/fd (opendir: Permission denied)
+edac-poll    27                            root  cwd   unknown                                        /proc/27/cwd (readlink: Permission denied)
+edac-poll    27                            root  rtd   unknown                                        /proc/27/root (readlink: Permission denied)
+edac-poll    27                            root  txt   unknown                                        /proc/27/exe (readlink: Permission denied)
+edac-poll    27                            root NOFD                                                  /proc/27/fd (opendir: Permission denied)
+devfreq_w    28                            root  cwd   unknown                                        /proc/28/cwd (readlink: Permission denied)
+devfreq_w    28                            root  rtd   unknown                                        /proc/28/root (readlink: Permission denied)
+devfreq_w    28                            root  txt   unknown                                        /proc/28/exe (readlink: Permission denied)
+devfreq_w    28                            root NOFD                                                  /proc/28/fd (opendir: Permission denied)
+watchdogd    29                            root  cwd   unknown                                        /proc/29/cwd (readlink: Permission denied)
+watchdogd    29                            root  rtd   unknown                                        /proc/29/root (readlink: Permission denied)
+watchdogd    29                            root  txt   unknown                                        /proc/29/exe (readlink: Permission denied)
+watchdogd    29                            root NOFD                                                  /proc/29/fd (opendir: Permission denied)
+kswapd0      30                            root  cwd   unknown                                        /proc/30/cwd (readlink: Permission denied)
+kswapd0      30                            root  rtd   unknown                                        /proc/30/root (readlink: Permission denied)
+kswapd0      30                            root  txt   unknown                                        /proc/30/exe (readlink: Permission denied)
+kswapd0      30                            root NOFD                                                  /proc/30/fd (opendir: Permission denied)
+kthrotld     48                            root  cwd   unknown                                        /proc/48/cwd (readlink: Permission denied)
+kthrotld     48                            root  rtd   unknown                                        /proc/48/root (readlink: Permission denied)
+kthrotld     48                            root  txt   unknown                                        /proc/48/exe (readlink: Permission denied)
+kthrotld     48                            root NOFD                                                  /proc/48/fd (opendir: Permission denied)
+ipv6_addr    49                            root  cwd   unknown                                        /proc/49/cwd (readlink: Permission denied)
+ipv6_addr    49                            root  rtd   unknown                                        /proc/49/root (readlink: Permission denied)
+ipv6_addr    49                            root  txt   unknown                                        /proc/49/exe (readlink: Permission denied)
+ipv6_addr    49                            root NOFD                                                  /proc/49/fd (opendir: Permission denied)
+kstrp        59                            root  cwd   unknown                                        /proc/59/cwd (readlink: Permission denied)
+kstrp        59                            root  rtd   unknown                                        /proc/59/root (readlink: Permission denied)
+kstrp        59                            root  txt   unknown                                        /proc/59/exe (readlink: Permission denied)
+kstrp        59                            root NOFD                                                  /proc/59/fd (opendir: Permission denied)
+ata_sff     107                            root  cwd   unknown                                        /proc/107/cwd (readlink: Permission denied)
+ata_sff     107                            root  rtd   unknown                                        /proc/107/root (readlink: Permission denied)
+ata_sff     107                            root  txt   unknown                                        /proc/107/exe (readlink: Permission denied)
+ata_sff     107                            root NOFD                                                  /proc/107/fd (opendir: Permission denied)
+scsi_eh_0   109                            root  cwd   unknown                                        /proc/109/cwd (readlink: Permission denied)
+scsi_eh_0   109                            root  rtd   unknown                                        /proc/109/root (readlink: Permission denied)
+scsi_eh_0   109                            root  txt   unknown                                        /proc/109/exe (readlink: Permission denied)
+scsi_eh_0   109                            root NOFD                                                  /proc/109/fd (opendir: Permission denied)
+scsi_eh_1   110                            root  cwd   unknown                                        /proc/110/cwd (readlink: Permission denied)
+scsi_eh_1   110                            root  rtd   unknown                                        /proc/110/root (readlink: Permission denied)
+scsi_eh_1   110                            root  txt   unknown                                        /proc/110/exe (readlink: Permission denied)
+scsi_eh_1   110                            root NOFD                                                  /proc/110/fd (opendir: Permission denied)
+scsi_tmf_   111                            root  cwd   unknown                                        /proc/111/cwd (readlink: Permission denied)
+scsi_tmf_   111                            root  rtd   unknown                                        /proc/111/root (readlink: Permission denied)
+scsi_tmf_   111                            root  txt   unknown                                        /proc/111/exe (readlink: Permission denied)
+scsi_tmf_   111                            root NOFD                                                  /proc/111/fd (opendir: Permission denied)
+scsi_tmf_   112                            root  cwd   unknown                                        /proc/112/cwd (readlink: Permission denied)
+scsi_tmf_   112                            root  rtd   unknown                                        /proc/112/root (readlink: Permission denied)
+scsi_tmf_   112                            root  txt   unknown                                        /proc/112/exe (readlink: Permission denied)
+scsi_tmf_   112                            root NOFD                                                  /proc/112/fd (opendir: Permission denied)
+scsi_eh_2   113                            root  cwd   unknown                                        /proc/113/cwd (readlink: Permission denied)
+scsi_eh_2   113                            root  rtd   unknown                                        /proc/113/root (readlink: Permission denied)
+scsi_eh_2   113                            root  txt   unknown                                        /proc/113/exe (readlink: Permission denied)
+scsi_eh_2   113                            root NOFD                                                  /proc/113/fd (opendir: Permission denied)
+scsi_tmf_   115                            root  cwd   unknown                                        /proc/115/cwd (readlink: Permission denied)
+scsi_tmf_   115                            root  rtd   unknown                                        /proc/115/root (readlink: Permission denied)
+scsi_tmf_   115                            root  txt   unknown                                        /proc/115/exe (readlink: Permission denied)
+scsi_tmf_   115                            root NOFD                                                  /proc/115/fd (opendir: Permission denied)
+kworker/0   154                            root  cwd   unknown                                        /proc/154/cwd (readlink: Permission denied)
+kworker/0   154                            root  rtd   unknown                                        /proc/154/root (readlink: Permission denied)
+kworker/0   154                            root  txt   unknown                                        /proc/154/exe (readlink: Permission denied)
+kworker/0   154                            root NOFD                                                  /proc/154/fd (opendir: Permission denied)
+kworker/u   184                            root  cwd   unknown                                        /proc/184/cwd (readlink: Permission denied)
+kworker/u   184                            root  rtd   unknown                                        /proc/184/root (readlink: Permission denied)
+kworker/u   184                            root  txt   unknown                                        /proc/184/exe (readlink: Permission denied)
+kworker/u   184                            root NOFD                                                  /proc/184/fd (opendir: Permission denied)
+jbd2/sda1   186                            root  cwd   unknown                                        /proc/186/cwd (readlink: Permission denied)
+jbd2/sda1   186                            root  rtd   unknown                                        /proc/186/root (readlink: Permission denied)
+jbd2/sda1   186                            root  txt   unknown                                        /proc/186/exe (readlink: Permission denied)
+jbd2/sda1   186                            root NOFD                                                  /proc/186/fd (opendir: Permission denied)
+ext4-rsv-   187                            root  cwd   unknown                                        /proc/187/cwd (readlink: Permission denied)
+ext4-rsv-   187                            root  rtd   unknown                                        /proc/187/root (readlink: Permission denied)
+ext4-rsv-   187                            root  txt   unknown                                        /proc/187/exe (readlink: Permission denied)
+ext4-rsv-   187                            root NOFD                                                  /proc/187/fd (opendir: Permission denied)
+systemd-j   215                            root  cwd   unknown                                        /proc/215/cwd (readlink: Permission denied)
+systemd-j   215                            root  rtd   unknown                                        /proc/215/root (readlink: Permission denied)
+systemd-j   215                            root  txt   unknown                                        /proc/215/exe (readlink: Permission denied)
+systemd-j   215                            root NOFD                                                  /proc/215/fd (opendir: Permission denied)
+systemd-u   239                            root  cwd   unknown                                        /proc/239/cwd (readlink: Permission denied)
+systemd-u   239                            root  rtd   unknown                                        /proc/239/root (readlink: Permission denied)
+systemd-u   239                            root  txt   unknown                                        /proc/239/exe (readlink: Permission denied)
+systemd-u   239                            root NOFD                                                  /proc/239/fd (opendir: Permission denied)
+systemd-t   266                systemd-timesync  cwd   unknown                                        /proc/266/cwd (readlink: Permission denied)
+systemd-t   266                systemd-timesync  rtd   unknown                                        /proc/266/root (readlink: Permission denied)
+systemd-t   266                systemd-timesync  txt   unknown                                        /proc/266/exe (readlink: Permission denied)
+systemd-t   266                systemd-timesync NOFD                                                  /proc/266/fd (opendir: Permission denied)
+systemd-t   266  302 sd-resolv systemd-timesync  cwd   unknown                                        /proc/266/task/302/cwd (readlink: Permission denied)
+systemd-t   266  302 sd-resolv systemd-timesync  rtd   unknown                                        /proc/266/task/302/root (readlink: Permission denied)
+systemd-t   266  302 sd-resolv systemd-timesync  txt   unknown                                        /proc/266/task/302/exe (readlink: Permission denied)
+systemd-t   266  302 sd-resolv systemd-timesync NOFD                                                  /proc/266/task/302/fd (opendir: Permission denied)
+ttm_swap    300                            root  cwd   unknown                                        /proc/300/cwd (readlink: Permission denied)
+ttm_swap    300                            root  rtd   unknown                                        /proc/300/root (readlink: Permission denied)
+ttm_swap    300                            root  txt   unknown                                        /proc/300/exe (readlink: Permission denied)
+ttm_swap    300                            root NOFD                                                  /proc/300/fd (opendir: Permission denied)
+irq/18-vm   301                            root  cwd   unknown                                        /proc/301/cwd (readlink: Permission denied)
+irq/18-vm   301                            root  rtd   unknown                                        /proc/301/root (readlink: Permission denied)
+irq/18-vm   301                            root  txt   unknown                                        /proc/301/exe (readlink: Permission denied)
+irq/18-vm   301                            root NOFD                                                  /proc/301/fd (opendir: Permission denied)
+rsyslogd    331                            root  cwd   unknown                                        /proc/331/cwd (readlink: Permission denied)
+rsyslogd    331                            root  rtd   unknown                                        /proc/331/root (readlink: Permission denied)
+rsyslogd    331                            root  txt   unknown                                        /proc/331/exe (readlink: Permission denied)
+rsyslogd    331                            root NOFD                                                  /proc/331/fd (opendir: Permission denied)
+rsyslogd    331  358 in:imuxso             root  cwd   unknown                                        /proc/331/task/358/cwd (readlink: Permission denied)
+rsyslogd    331  358 in:imuxso             root  rtd   unknown                                        /proc/331/task/358/root (readlink: Permission denied)
+rsyslogd    331  358 in:imuxso             root  txt   unknown                                        /proc/331/task/358/exe (readlink: Permission denied)
+rsyslogd    331  358 in:imuxso             root NOFD                                                  /proc/331/task/358/fd (opendir: Permission denied)
+rsyslogd    331  359 in:imklog             root  cwd   unknown                                        /proc/331/task/359/cwd (readlink: Permission denied)
+rsyslogd    331  359 in:imklog             root  rtd   unknown                                        /proc/331/task/359/root (readlink: Permission denied)
+rsyslogd    331  359 in:imklog             root  txt   unknown                                        /proc/331/task/359/exe (readlink: Permission denied)
+rsyslogd    331  359 in:imklog             root NOFD                                                  /proc/331/task/359/fd (opendir: Permission denied)
+rsyslogd    331  366 rs:main               root  cwd   unknown                                        /proc/331/task/366/cwd (readlink: Permission denied)
+rsyslogd    331  366 rs:main               root  rtd   unknown                                        /proc/331/task/366/root (readlink: Permission denied)
+rsyslogd    331  366 rs:main               root  txt   unknown                                        /proc/331/task/366/exe (readlink: Permission denied)
+rsyslogd    331  366 rs:main               root NOFD                                                  /proc/331/task/366/fd (opendir: Permission denied)
+cron        338                            root  cwd   unknown                                        /proc/338/cwd (readlink: Permission denied)
+cron        338                            root  rtd   unknown                                        /proc/338/root (readlink: Permission denied)
+cron        338                            root  txt   unknown                                        /proc/338/exe (readlink: Permission denied)
+cron        338                            root NOFD                                                  /proc/338/fd (opendir: Permission denied)
+dbus-daem   339                      messagebus  cwd   unknown                                        /proc/339/cwd (readlink: Permission denied)
+dbus-daem   339                      messagebus  rtd   unknown                                        /proc/339/root (readlink: Permission denied)
+dbus-daem   339                      messagebus  txt   unknown                                        /proc/339/exe (readlink: Permission denied)
+dbus-daem   339                      messagebus NOFD                                                  /proc/339/fd (opendir: Permission denied)
+systemd-l   345                            root  cwd   unknown                                        /proc/345/cwd (readlink: Permission denied)
+systemd-l   345                            root  rtd   unknown                                        /proc/345/root (readlink: Permission denied)
+systemd-l   345                            root  txt   unknown                                        /proc/345/exe (readlink: Permission denied)
+systemd-l   345                            root NOFD                                                  /proc/345/fd (opendir: Permission denied)
+wpa_suppl   355                            root  cwd   unknown                                        /proc/355/cwd (readlink: Permission denied)
+wpa_suppl   355                            root  rtd   unknown                                        /proc/355/root (readlink: Permission denied)
+wpa_suppl   355                            root  txt   unknown                                        /proc/355/exe (readlink: Permission denied)
+wpa_suppl   355                            root NOFD                                                  /proc/355/fd (opendir: Permission denied)
+cupsd       362                            root  cwd   unknown                                        /proc/362/cwd (readlink: Permission denied)
+cupsd       362                            root  rtd   unknown                                        /proc/362/root (readlink: Permission denied)
+cupsd       362                            root  txt   unknown                                        /proc/362/exe (readlink: Permission denied)
+cupsd       362                            root NOFD                                                  /proc/362/fd (opendir: Permission denied)
+avahi-dae   363                           avahi  cwd   unknown                                        /proc/363/cwd (readlink: Permission denied)
+avahi-dae   363                           avahi  rtd   unknown                                        /proc/363/root (readlink: Permission denied)
+avahi-dae   363                           avahi  txt   unknown                                        /proc/363/exe (readlink: Permission denied)
+avahi-dae   363                           avahi NOFD                                                  /proc/363/fd (opendir: Permission denied)
+dhclient    379                            root  cwd   unknown                                        /proc/379/cwd (readlink: Permission denied)
+dhclient    379                            root  rtd   unknown                                        /proc/379/root (readlink: Permission denied)
+dhclient    379                            root  txt   unknown                                        /proc/379/exe (readlink: Permission denied)
+dhclient    379                            root NOFD                                                  /proc/379/fd (opendir: Permission denied)
+avahi-dae   385                           avahi  cwd   unknown                                        /proc/385/cwd (readlink: Permission denied)
+avahi-dae   385                           avahi  rtd   unknown                                        /proc/385/root (readlink: Permission denied)
+avahi-dae   385                           avahi  txt   unknown                                        /proc/385/exe (readlink: Permission denied)
+avahi-dae   385                           avahi NOFD                                                  /proc/385/fd (opendir: Permission denied)
+cups-brow   387                            root  cwd   unknown                                        /proc/387/cwd (readlink: Permission denied)
+cups-brow   387                            root  rtd   unknown                                        /proc/387/root (readlink: Permission denied)
+cups-brow   387                            root  txt   unknown                                        /proc/387/exe (readlink: Permission denied)
+cups-brow   387                            root NOFD                                                  /proc/387/fd (opendir: Permission denied)
+cups-brow   387  422 gmain                 root  cwd   unknown                                        /proc/387/task/422/cwd (readlink: Permission denied)
+cups-brow   387  422 gmain                 root  rtd   unknown                                        /proc/387/task/422/root (readlink: Permission denied)
+cups-brow   387  422 gmain                 root  txt   unknown                                        /proc/387/task/422/exe (readlink: Permission denied)
+cups-brow   387  422 gmain                 root NOFD                                                  /proc/387/task/422/fd (opendir: Permission denied)
+cups-brow   387  423 gdbus                 root  cwd   unknown                                        /proc/387/task/423/cwd (readlink: Permission denied)
+cups-brow   387  423 gdbus                 root  rtd   unknown                                        /proc/387/task/423/root (readlink: Permission denied)
+cups-brow   387  423 gdbus                 root  txt   unknown                                        /proc/387/task/423/exe (readlink: Permission denied)
+cups-brow   387  423 gdbus                 root NOFD                                                  /proc/387/task/423/fd (opendir: Permission denied)
+colord      398                          colord  cwd   unknown                                        /proc/398/cwd (readlink: Permission denied)
+colord      398                          colord  rtd   unknown                                        /proc/398/root (readlink: Permission denied)
+colord      398                          colord  txt   unknown                                        /proc/398/exe (readlink: Permission denied)
+colord      398                          colord NOFD                                                  /proc/398/fd (opendir: Permission denied)
+colord      398  414 gmain               colord  cwd   unknown                                        /proc/398/task/414/cwd (readlink: Permission denied)
+colord      398  414 gmain               colord  rtd   unknown                                        /proc/398/task/414/root (readlink: Permission denied)
+colord      398  414 gmain               colord  txt   unknown                                        /proc/398/task/414/exe (readlink: Permission denied)
+colord      398  414 gmain               colord NOFD                                                  /proc/398/task/414/fd (opendir: Permission denied)
+colord      398  416 gdbus               colord  cwd   unknown                                        /proc/398/task/416/cwd (readlink: Permission denied)
+colord      398  416 gdbus               colord  rtd   unknown                                        /proc/398/task/416/root (readlink: Permission denied)
+colord      398  416 gdbus               colord  txt   unknown                                        /proc/398/task/416/exe (readlink: Permission denied)
+colord      398  416 gdbus               colord NOFD                                                  /proc/398/task/416/fd (opendir: Permission denied)
+agetty      417                            root  cwd   unknown                                        /proc/417/cwd (readlink: Permission denied)
+agetty      417                            root  rtd   unknown                                        /proc/417/root (readlink: Permission denied)
+agetty      417                            root  txt   unknown                                        /proc/417/exe (readlink: Permission denied)
+agetty      417                            root NOFD                                                  /proc/417/fd (opendir: Permission denied)
+sshd        418                            root  cwd   unknown                                        /proc/418/cwd (readlink: Permission denied)
+sshd        418                            root  rtd   unknown                                        /proc/418/root (readlink: Permission denied)
+sshd        418                            root  txt   unknown                                        /proc/418/exe (readlink: Permission denied)
+sshd        418                            root NOFD                                                  /proc/418/fd (opendir: Permission denied)
+dbus        421                              lp  cwd   unknown                                        /proc/421/cwd (readlink: Permission denied)
+dbus        421                              lp  rtd   unknown                                        /proc/421/root (readlink: Permission denied)
+dbus        421                              lp  txt   unknown                                        /proc/421/exe (readlink: Permission denied)
+dbus        421                              lp NOFD                                                  /proc/421/fd (opendir: Permission denied)
+sshd        473                            root  cwd   unknown                                        /proc/473/cwd (readlink: Permission denied)
+sshd        473                            root  rtd   unknown                                        /proc/473/root (readlink: Permission denied)
+sshd        473                            root  txt   unknown                                        /proc/473/exe (readlink: Permission denied)
+sshd        473                            root NOFD                                                  /proc/473/fd (opendir: Permission denied)
+sshd        474                            root  cwd   unknown                                        /proc/474/cwd (readlink: Permission denied)
+sshd        474                            root  rtd   unknown                                        /proc/474/root (readlink: Permission denied)
+sshd        474                            root  txt   unknown                                        /proc/474/exe (readlink: Permission denied)
+sshd        474                            root NOFD                                                  /proc/474/fd (opendir: Permission denied)
+systemd     478                         ldedier  cwd       DIR                8,1     4096          2 /
+systemd     478                         ldedier  rtd       DIR                8,1     4096          2 /
+systemd     478                         ldedier  txt       REG                8,1  1489208       4719 /usr/lib/systemd/systemd
+systemd     478                         ldedier  mem       REG                8,1  1579448        699 /usr/lib/x86_64-linux-gnu/libm-2.28.so
+systemd     478                         ldedier  mem       REG                8,1   149704       3381 /usr/lib/x86_64-linux-gnu/libudev.so.1.6.13
+systemd     478                         ldedier  mem       REG                8,1   137424        971 /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.26.1
+systemd     478                         ldedier  mem       REG                8,1    47040       4464 /usr/lib/x86_64-linux-gnu/libjson-c.so.3.0.1
+systemd     478                         ldedier  mem       REG                8,1    34904       4459 /usr/lib/x86_64-linux-gnu/libargon2.so.1
+systemd     478                         ldedier  mem       REG                8,1   432664       1506 /usr/lib/x86_64-linux-gnu/libdevmapper.so.1.02.1
+systemd     478                         ldedier  mem       REG                8,1    30776       3416 /usr/lib/x86_64-linux-gnu/libuuid.so.1.3.0
+systemd     478                         ldedier  mem       REG                8,1    26544        441 /usr/lib/x86_64-linux-gnu/libattr.so.1.1.2448
+systemd     478                         ldedier  mem       REG                8,1  3031904       4502 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+systemd     478                         ldedier  mem       REG                8,1   593696       4503 /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+systemd     478                         ldedier  mem       REG                8,1    26976        357 /usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0
+systemd     478                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+systemd     478                         ldedier  mem       REG                8,1   468944        424 /usr/lib/x86_64-linux-gnu/libpcre.so.3.13.3
+systemd     478                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+systemd     478                         ldedier  mem       REG                8,1   343008       1781 /usr/lib/x86_64-linux-gnu/libblkid.so.1.1.0
+systemd     478                         ldedier  mem       REG                8,1   121184       1022 /usr/lib/x86_64-linux-gnu/liblz4.so.1.8.3
+systemd     478                         ldedier  mem       REG                8,1   158400        397 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.4
+systemd     478                         ldedier  mem       REG                8,1   210968       4479 /usr/lib/x86_64-linux-gnu/libidn.so.11.6.16
+systemd     478                         ldedier  mem       REG                8,1    35280       4485 /usr/lib/x86_64-linux-gnu/libip4tc.so.0.1.0
+systemd     478                         ldedier  mem       REG                8,1  1168056        983 /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.2.4
+systemd     478                         ldedier  mem       REG                8,1   363920       4472 /usr/lib/x86_64-linux-gnu/libcryptsetup.so.12.4.0
+systemd     478                         ldedier  mem       REG                8,1    38936        448 /usr/lib/x86_64-linux-gnu/libacl.so.1.1.2253
+systemd     478                         ldedier  mem       REG                8,1    26864       4445 /usr/lib/x86_64-linux-gnu/libcap.so.2.25
+systemd     478                         ldedier  mem       REG                8,1    80576       4452 /usr/lib/x86_64-linux-gnu/libapparmor.so.1.6.0
+systemd     478                         ldedier  mem       REG                8,1   104496       4492 /usr/lib/x86_64-linux-gnu/libkmod.so.2.3.4
+systemd     478                         ldedier  mem       REG                8,1   128944        367 /usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0
+systemd     478                         ldedier  mem       REG                8,1    64176       2610 /usr/lib/x86_64-linux-gnu/libpam.so.0.84.2
+systemd     478                         ldedier  mem       REG                8,1   383456       1855 /usr/lib/x86_64-linux-gnu/libmount.so.1.1.0
+systemd     478                         ldedier  mem       REG                8,1   155296       2266 /usr/lib/x86_64-linux-gnu/libselinux.so.1
+systemd     478                         ldedier  mem       REG                8,1   293080       3399 /usr/lib/x86_64-linux-gnu/libseccomp.so.2.3.3
+systemd     478                         ldedier  mem       REG                8,1    35808        716 /usr/lib/x86_64-linux-gnu/librt-2.28.so
+systemd     478                         ldedier  mem       REG                8,1  2670992       4528 /usr/lib/systemd/libsystemd-shared-241.so
+systemd     478                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+systemd     478                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+systemd     478                         ldedier    0r      CHR                1,3      0t0       7291 /dev/null
+systemd     478                         ldedier    1u     unix 0x00000000e8ee1eaf      0t0      14553 type=STREAM
+systemd     478                         ldedier    2u     unix 0x00000000e8ee1eaf      0t0      14553 type=STREAM
+systemd     478                         ldedier    3u     unix 0x0000000074800c4a      0t0      14573 type=DGRAM
+systemd     478                         ldedier    4u  a_inode               0,13        0       7223 [eventpoll]
+systemd     478                         ldedier    5u  a_inode               0,13        0       7223 [signalfd]
+systemd     478                         ldedier    6r  a_inode               0,13        0       7223 inotify
+systemd     478                         ldedier    7r      DIR               0,24        0        482 /sys/fs/cgroup/unified/user.slice/user-1000.slice/user@1000.service
+systemd     478                         ldedier    8u  a_inode               0,13        0       7223 [timerfd]
+systemd     478                         ldedier    9u  netlink                         0t0      14582 KOBJECT_UEVENT
+systemd     478                         ldedier   10u  a_inode               0,13        0       7223 [eventpoll]
+systemd     478                         ldedier   11r  a_inode               0,13        0       7223 inotify
+systemd     478                         ldedier   12u     unix 0x00000000ef939f3b      0t0      14596 /run/user/1000/bus type=STREAM
+systemd     478                         ldedier   13r      REG                0,4        0      14584 /proc/478/mountinfo
+systemd     478                         ldedier   14r  a_inode               0,13        0       7223 inotify
+systemd     478                         ldedier   15r      REG                0,4        0 4026532062 /proc/swaps
+systemd     478                         ldedier   16u     unix 0x00000000cbf027dc      0t0      14585 /run/user/1000/systemd/notify type=DGRAM
+systemd     478                         ldedier   17u     unix 0x00000000b360eb00      0t0      14587 type=DGRAM
+systemd     478                         ldedier   18u     unix 0x00000000bfbe017f      0t0      14588 type=DGRAM
+systemd     478                         ldedier   19u     unix 0x000000009bbf9d50      0t0      14589 /run/user/1000/systemd/private type=STREAM
+systemd     478                         ldedier   20u     unix 0x0000000000bbaa8b      0t0      14591 type=STREAM
+systemd     478                         ldedier   21u  a_inode               0,13        0       7223 [timerfd]
+systemd     478                         ldedier   26u     unix 0x0000000028a2832e      0t0      18658 type=STREAM
+(sd-pam)    479                         ldedier  cwd   unknown                                        /proc/479/cwd (readlink: Permission denied)
+(sd-pam)    479                         ldedier  rtd   unknown                                        /proc/479/root (readlink: Permission denied)
+(sd-pam)    479                         ldedier  txt   unknown                                        /proc/479/exe (readlink: Permission denied)
+(sd-pam)    479                         ldedier NOFD                                                  /proc/479/fd (opendir: Permission denied)
+sshd        492                         ldedier  cwd   unknown                                        /proc/492/cwd (readlink: Permission denied)
+sshd        492                         ldedier  rtd   unknown                                        /proc/492/root (readlink: Permission denied)
+sshd        492                         ldedier  txt   unknown                                        /proc/492/exe (readlink: Permission denied)
+sshd        492                         ldedier NOFD                                                  /proc/492/fd (opendir: Permission denied)
+sshd        493                         ldedier  cwd   unknown                                        /proc/493/cwd (readlink: Permission denied)
+sshd        493                         ldedier  rtd   unknown                                        /proc/493/root (readlink: Permission denied)
+sshd        493                         ldedier  txt   unknown                                        /proc/493/exe (readlink: Permission denied)
+sshd        493                         ldedier NOFD                                                  /proc/493/fd (opendir: Permission denied)
+zsh         494                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+zsh         494                         ldedier  rtd       DIR                8,1     4096          2 /
+zsh         494                         ldedier  txt       REG                8,1   861568      23711 /usr/bin/zsh
+zsh         494                         ldedier  mem       REG                8,1  4836040     277573 /usr/share/zsh/functions/Completion/Unix.zwc
+zsh         494                         ldedier  mem       REG                8,1    76360     142761 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/computil.so
+zsh         494                         ldedier  mem       REG                8,1   283488     277740 /usr/share/zsh/functions/Completion/Zsh.zwc
+zsh         494                         ldedier  mem       REG                8,1   190296     277984 /usr/share/zsh/functions/Zle.zwc
+zsh         494                         ldedier  mem       REG                8,1   197160     277802 /usr/share/zsh/functions/Misc.zwc
+zsh         494                         ldedier  mem       REG                8,1   274176     276924 /usr/share/zsh/functions/Completion/Base.zwc
+zsh         494                         ldedier  mem       REG                8,1    15144     142767 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/langinfo.so
+zsh         494                         ldedier  mem       REG                8,1    67880     142760 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/complist.so
+zsh         494                         ldedier  mem       REG                8,1   182464     277753 /usr/share/zsh/functions/Completion.zwc
+zsh         494                         ldedier  mem       REG                8,1    49104     142777 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/parameter.so
+zsh         494                         ldedier  mem       REG                8,1    39240     142792 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/zutil.so
+zsh         494                         ldedier  mem       REG                8,1   155552     142759 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/complete.so
+zsh         494                         ldedier  mem       REG                8,1   339744     142787 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/zle.so
+zsh         494                         ldedier  mem       REG                8,1    14536     142785 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/terminfo.so
+zsh         494                         ldedier  mem       REG                8,1    26402       3043 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+zsh         494                         ldedier  mem       REG                8,1    55792        708 /usr/lib/x86_64-linux-gnu/libnss_files-2.28.so
+zsh         494                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+zsh         494                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+zsh         494                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+zsh         494                         ldedier  mem       REG                8,1  1579448        699 /usr/lib/x86_64-linux-gnu/libm-2.28.so
+zsh         494                         ldedier  mem       REG                8,1    35808        716 /usr/lib/x86_64-linux-gnu/librt-2.28.so
+zsh         494                         ldedier  mem       REG                8,1   183528       3404 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.1
+zsh         494                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+zsh         494                         ldedier  mem       REG                8,1    26864       4445 /usr/lib/x86_64-linux-gnu/libcap.so.2.25
+zsh         494                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+zsh         494                         ldedier    0u      CHR              136,0      0t0          3 /dev/pts/0
+zsh         494                         ldedier    1u      CHR              136,0      0t0          3 /dev/pts/0
+zsh         494                         ldedier    2u      CHR              136,0      0t0          3 /dev/pts/0
+zsh         494                         ldedier   10u      CHR              136,0      0t0          3 /dev/pts/0
+zsh         494                         ldedier   12r      REG                8,1   190296     277984 /usr/share/zsh/functions/Zle.zwc
+zsh         494                         ldedier   13r      REG                8,1   182464     277753 /usr/share/zsh/functions/Completion.zwc
+zsh         494                         ldedier   14r      REG                8,1   283488     277740 /usr/share/zsh/functions/Completion/Zsh.zwc
+zsh         494                         ldedier   15r      REG                8,1   274176     276924 /usr/share/zsh/functions/Completion/Base.zwc
+zsh         494                         ldedier   16r      REG                8,1   197160     277802 /usr/share/zsh/functions/Misc.zwc
+zsh         494                         ldedier   17r      REG                8,1  4836040     277573 /usr/share/zsh/functions/Completion/Unix.zwc
+zsh         495                         ldedier  cwd       DIR                8,1     4096     274396 /home/ldedier/Projects/woody_woodpacker
+zsh         495                         ldedier  rtd       DIR                8,1     4096          2 /
+zsh         495                         ldedier  txt       REG                8,1   861568      23711 /usr/bin/zsh
+zsh         495                         ldedier  mem       REG                8,1  4836040     277573 /usr/share/zsh/functions/Completion/Unix.zwc
+zsh         495                         ldedier  mem       REG                8,1    76360     142761 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/computil.so
+zsh         495                         ldedier  mem       REG                8,1   283488     277740 /usr/share/zsh/functions/Completion/Zsh.zwc
+zsh         495                         ldedier  mem       REG                8,1   190296     277984 /usr/share/zsh/functions/Zle.zwc
+zsh         495                         ldedier  mem       REG                8,1   197160     277802 /usr/share/zsh/functions/Misc.zwc
+zsh         495                         ldedier  mem       REG                8,1   274176     276924 /usr/share/zsh/functions/Completion/Base.zwc
+zsh         495                         ldedier  mem       REG                8,1    15144     142767 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/langinfo.so
+zsh         495                         ldedier  mem       REG                8,1    67880     142760 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/complist.so
+zsh         495                         ldedier  mem       REG                8,1   182464     277753 /usr/share/zsh/functions/Completion.zwc
+zsh         495                         ldedier  mem       REG                8,1    49104     142777 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/parameter.so
+zsh         495                         ldedier  mem       REG                8,1    39240     142792 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/zutil.so
+zsh         495                         ldedier  mem       REG                8,1   155552     142759 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/complete.so
+zsh         495                         ldedier  mem       REG                8,1   339744     142787 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/zle.so
+zsh         495                         ldedier  mem       REG                8,1    14536     142785 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/terminfo.so
+zsh         495                         ldedier  mem       REG                8,1    26402       3043 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+zsh         495                         ldedier  mem       REG                8,1    55792        708 /usr/lib/x86_64-linux-gnu/libnss_files-2.28.so
+zsh         495                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+zsh         495                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+zsh         495                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+zsh         495                         ldedier  mem       REG                8,1  1579448        699 /usr/lib/x86_64-linux-gnu/libm-2.28.so
+zsh         495                         ldedier  mem       REG                8,1    35808        716 /usr/lib/x86_64-linux-gnu/librt-2.28.so
+zsh         495                         ldedier  mem       REG                8,1   183528       3404 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.1
+zsh         495                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+zsh         495                         ldedier  mem       REG                8,1    26864       4445 /usr/lib/x86_64-linux-gnu/libcap.so.2.25
+zsh         495                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+zsh         495                         ldedier    0u      CHR              136,1      0t0          4 /dev/pts/1
+zsh         495                         ldedier    1u      CHR              136,1      0t0          4 /dev/pts/1
+zsh         495                         ldedier    2u      CHR              136,1      0t0          4 /dev/pts/1
+zsh         495                         ldedier   10u      CHR              136,1      0t0          4 /dev/pts/1
+zsh         495                         ldedier   12r      REG                8,1   190296     277984 /usr/share/zsh/functions/Zle.zwc
+zsh         495                         ldedier   13r      REG                8,1   182464     277753 /usr/share/zsh/functions/Completion.zwc
+zsh         495                         ldedier   14r      REG                8,1   283488     277740 /usr/share/zsh/functions/Completion/Zsh.zwc
+zsh         495                         ldedier   15r      REG                8,1   274176     276924 /usr/share/zsh/functions/Completion/Base.zwc
+zsh         495                         ldedier   16r      REG                8,1   197160     277802 /usr/share/zsh/functions/Misc.zwc
+zsh         495                         ldedier   17r      REG                8,1  4836040     277573 /usr/share/zsh/functions/Completion/Unix.zwc
+faked-sys  1980                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+faked-sys  1980                         ldedier  rtd       DIR                8,1     4096          2 /
+faked-sys  1980                         ldedier  txt       REG                8,1    27200      27278 /usr/bin/faked-sysv
+faked-sys  1980                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+faked-sys  1980                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+faked-sys  1980                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+to_change  1982                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+to_change  1982                         ldedier  rtd       DIR                8,1     4096          2 /
+to_change  1982                         ldedier  txt       REG                8,1    27200     274997 /home/ldedier/Projects/woody_woodpacker/tests/to_change_woody (deleted)
+to_change  1982                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+to_change  1982                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+to_change  1982                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+kworker/0  2393                            root  cwd   unknown                                        /proc/2393/cwd (readlink: Permission denied)
+kworker/0  2393                            root  rtd   unknown                                        /proc/2393/root (readlink: Permission denied)
+kworker/0  2393                            root  txt   unknown                                        /proc/2393/exe (readlink: Permission denied)
+kworker/0  2393                            root NOFD                                                  /proc/2393/fd (opendir: Permission denied)
+dbus-daem  3002                         ldedier  cwd       DIR                8,1     4096     136320 /home/ldedier
+dbus-daem  3002                         ldedier  rtd       DIR                8,1     4096          2 /
+dbus-daem  3002                         ldedier  txt       REG                8,1   240680      12880 /usr/bin/dbus-daemon
+dbus-daem  3002                         ldedier  mem       REG                8,1   282752      13087 /usr/lib/x86_64-linux-gnu/libnss_systemd.so.2
+dbus-daem  3002                         ldedier  mem       REG                8,1    55792        708 /usr/lib/x86_64-linux-gnu/libnss_files-2.28.so
+dbus-daem  3002                         ldedier  mem       REG                8,1   137424        971 /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.26.1
+dbus-daem  3002                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+dbus-daem  3002                         ldedier  mem       REG                8,1   468944        424 /usr/lib/x86_64-linux-gnu/libpcre.so.3.13.3
+dbus-daem  3002                         ldedier  mem       REG                8,1  1168056        983 /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.2.4
+dbus-daem  3002                         ldedier  mem       REG                8,1   121184       1022 /usr/lib/x86_64-linux-gnu/liblz4.so.1.8.3
+dbus-daem  3002                         ldedier  mem       REG                8,1   158400        397 /usr/lib/x86_64-linux-gnu/liblzma.so.5.2.4
+dbus-daem  3002                         ldedier  mem       REG                8,1    35808        716 /usr/lib/x86_64-linux-gnu/librt-2.28.so
+dbus-daem  3002                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+dbus-daem  3002                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+dbus-daem  3002                         ldedier  mem       REG                8,1    80576       4452 /usr/lib/x86_64-linux-gnu/libapparmor.so.1.6.0
+dbus-daem  3002                         ldedier  mem       REG                8,1    26976        357 /usr/lib/x86_64-linux-gnu/libcap-ng.so.0.0.0
+dbus-daem  3002                         ldedier  mem       REG                8,1   128944        367 /usr/lib/x86_64-linux-gnu/libaudit.so.1.0.0
+dbus-daem  3002                         ldedier  mem       REG                8,1   155296       2266 /usr/lib/x86_64-linux-gnu/libselinux.so.1
+dbus-daem  3002                         ldedier  mem       REG                8,1   243840       8587 /usr/lib/x86_64-linux-gnu/libexpat.so.1.6.8
+dbus-daem  3002                         ldedier  mem       REG                8,1   651472       3377 /usr/lib/x86_64-linux-gnu/libsystemd.so.0.25.0
+dbus-daem  3002                         ldedier  mem       REG                8,1   333976      12867 /usr/lib/x86_64-linux-gnu/libdbus-1.so.3.19.11
+dbus-daem  3002                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+dbus-daem  3002                         ldedier    0u      CHR                1,3      0t0       7291 /dev/null
+dbus-daem  3002                         ldedier    1u     unix 0x000000004828cc86      0t0      18687 type=STREAM
+dbus-daem  3002                         ldedier    2u     unix 0x000000004828cc86      0t0      18687 type=STREAM
+dbus-daem  3002                         ldedier    3u     unix 0x00000000ef939f3b      0t0      14596 /run/user/1000/bus type=STREAM
+dbus-daem  3002                         ldedier    4u  a_inode               0,13        0       7223 [eventpoll]
+dbus-daem  3002                         ldedier    5r  a_inode               0,13        0       7223 inotify
+dbus-daem  3002                         ldedier    6u     unix 0x00000000816763c3      0t0      18701 type=STREAM
+dbus-daem  3002                         ldedier    7u     unix 0x00000000bfbc2b63      0t0      18702 type=STREAM
+dbus-daem  3002                         ldedier    9u     unix 0x00000000e9dfba3e      0t0      18704 /run/user/1000/bus type=STREAM
+dbus-daem  3002                         ldedier   10u     unix 0x00000000c535c7d6      0t0      18707 type=DGRAM
+lsof       3616                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+lsof       3616                         ldedier  rtd       DIR                8,1     4096          2 /
+lsof       3616                         ldedier  txt       REG                8,1   175584      13119 /usrto_change_woody
+lsof       3616                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+lsof       3616                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+lsof       3616                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+lsof       3616                         ldedier  mem       REG                8,1   468944        424 /usr/lib/x86_64-linux-gnu/libpcre.so.3.13.3
+lsof       3616                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+lsof       3616                         ldedier  mem       REG                8,1   155296       2266 /usr/lib/x86_64-linux-gnu/libselinux.so.1
+lsof       3616                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+lsof       3616                         ldedier    0r      CHR                1,3      0t0       7291 /dev/null
+lsof       3616                         ldedier    1w      REG                8,1        0     143861 /tmp/trueOutput
+lsof       3616                         ldedier    2u      CHR              136,0      0t0          3 /dev/pts/0
+lsof       3616                         ldedier    3r      DIR                0,4        0          1 /proc
+lsof       3616                         ldedier    4r      DIR                0,4        0     191104 /proc/3616/fd
+lsof       3616                         ldedier    5w     FIFO               0,12      0t0     191109 pipe
+lsof       3616                         ldedier    6r     FIFO               0,12      0t0     191110 pipe
+lsof       3617                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+lsof       3617                         ldedier  rtd       DIR                8,1     4096          2 /
+lsof       3617                         ldedier  txt       REG                8,1   175584      13119 /usrto_change_woody
+lsof       3617                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+lsof       3617                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+lsof       3617                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+lsof       3617                         ldedier  mem       REG                8,1   468944        424 /usr/lib/x86_64-linux-gnu/libpcre.so.3.13.3
+lsof       3617                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+lsof       3617                         ldedier  mem       REG                8,1   155296       2266 /usr/lib/x86_64-linux-gnu/libselinux.so.1
+lsof       3617                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+lsof       3617                         ldedier    4r     FIFO               0,12      0t0     191109 pipe
+lsof       3617                         ldedier    7w     FIFO               0,12      0t0     191110 pipe
+faked-tcp  5531                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+faked-tcp  5531                         ldedier  rtd       DIR                8,1     4096          2 /
+faked-tcp  5531                         ldedier  txt       REG                8,1    31312      27279 /usr/bin/faked-tcp
+faked-tcp  5531                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+faked-tcp  5531                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+faked-tcp  5531                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+faked-tcp  5531                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+faked-tcp  5531                         ldedier    3u     IPv4             159923      0t0        TCP *:33059 (LISTEN)
+to_change  5533                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+to_change  5533                         ldedier  rtd       DIR                8,1     4096          2 /
+to_change  5533                         ldedier  txt       REG                8,1    31312     274998 /home/ldedier/Projects/woody_woodpacker/tests/to_change_woody (deleted)
+to_change  5533                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+to_change  5533                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+to_change  5533                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+to_change  5533                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+to_change  5533                         ldedier    3u     IPv4             159924      0t0        TCP *:46813 (LISTEN)
+kworker/u  6347                            root  cwd   unknown                                        /proc/6347/cwd (readlink: Permission denied)
+kworker/u  6347                            root  rtd   unknown                                        /proc/6347/root (readlink: Permission denied)
+kworker/u  6347                            root  txt   unknown                                        /proc/6347/exe (readlink: Permission denied)
+kworker/u  6347                            root NOFD                                                  /proc/6347/fd (opendir: Permission denied)
+kworker/0  6529                            root  cwd   unknown                                        /proc/6529/cwd (readlink: Permission denied)
+kworker/0  6529                            root  rtd   unknown                                        /proc/6529/root (readlink: Permission denied)
+kworker/0  6529                            root  txt   unknown                                        /proc/6529/exe (readlink: Permission denied)
+kworker/0  6529                            root NOFD                                                  /proc/6529/fd (opendir: Permission denied)
+kworker/u  6581                            root  cwd   unknown                                        /proc/6581/cwd (readlink: Permission denied)
+kworker/u  6581                            root  rtd   unknown                                        /proc/6581/root (readlink: Permission denied)
+kworker/u  6581                            root  txt   unknown                                        /proc/6581/exe (readlink: Permission denied)
+kworker/u  6581                            root NOFD                                                  /proc/6581/fd (opendir: Permission denied)
+polkitd    7837                            root  cwd   unknown                                        /proc/7837/cwd (readlink: Permission denied)
+polkitd    7837                            root  rtd   unknown                                        /proc/7837/root (readlink: Permission denied)
+polkitd    7837                            root  txt   unknown                                        /proc/7837/exe (readlink: Permission denied)
+polkitd    7837                            root NOFD                                                  /proc/7837/fd (opendir: Permission denied)
+polkitd    7837 7838 gmain                 root  cwd   unknown                                        /proc/7837/task/7838/cwd (readlink: Permission denied)
+polkitd    7837 7838 gmain                 root  rtd   unknown                                        /proc/7837/task/7838/root (readlink: Permission denied)
+polkitd    7837 7838 gmain                 root  txt   unknown                                        /proc/7837/task/7838/exe (readlink: Permission denied)
+polkitd    7837 7838 gmain                 root NOFD                                                  /proc/7837/task/7838/fd (opendir: Permission denied)
+polkitd    7837 7840 gdbus                 root  cwd   unknown                                        /proc/7837/task/7840/cwd (readlink: Permission denied)
+polkitd    7837 7840 gdbus                 root  rtd   unknown                                        /proc/7837/task/7840/root (readlink: Permission denied)
+polkitd    7837 7840 gdbus                 root  txt   unknown                                        /proc/7837/task/7840/exe (readlink: Permission denied)
+polkitd    7837 7840 gdbus                 root NOFD                                                  /proc/7837/task/7840/fd (opendir: Permission denied)
+krfcommd   8589                            root  cwd   unknown                                        /proc/8589/cwd (readlink: Permission denied)
+krfcommd   8589                            root  rtd   unknown                                        /proc/8589/root (readlink: Permission denied)
+krfcommd   8589                            root  txt   unknown                                        /proc/8589/exe (readlink: Permission denied)
+krfcommd   8589                            root NOFD                                                  /proc/8589/fd (opendir: Permission denied)
+ib-comp-w  8697                            root  cwd   unknown                                        /proc/8697/cwd (readlink: Permission denied)
+ib-comp-w  8697                            root  rtd   unknown                                        /proc/8697/root (readlink: Permission denied)
+ib-comp-w  8697                            root  txt   unknown                                        /proc/8697/exe (readlink: Permission denied)
+ib-comp-w  8697                            root NOFD                                                  /proc/8697/fd (opendir: Permission denied)
+ib_mcast   8698                            root  cwd   unknown                                        /proc/8698/cwd (readlink: Permission denied)
+ib_mcast   8698                            root  rtd   unknown                                        /proc/8698/root (readlink: Permission denied)
+ib_mcast   8698                            root  txt   unknown                                        /proc/8698/exe (readlink: Permission denied)
+ib_mcast   8698                            root NOFD                                                  /proc/8698/fd (opendir: Permission denied)
+ib_nl_sa_  8699                            root  cwd   unknown                                        /proc/8699/cwd (readlink: Permission denied)
+ib_nl_sa_  8699                            root  rtd   unknown                                        /proc/8699/root (readlink: Permission denied)
+ib_nl_sa_  8699                            root  txt   unknown                                        /proc/8699/exe (readlink: Permission denied)
+ib_nl_sa_  8699                            root NOFD                                                  /proc/8699/fd (opendir: Permission denied)
+faked-sys  9666                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+faked-sys  9666                         ldedier  rtd       DIR                8,1     4096          2 /
+faked-sys  9666                         ldedier  txt       REG                8,1    27200      27278 /usr/bin/faked-sysv
+faked-sys  9666                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+faked-sys  9666                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+faked-sys  9666                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+to_change  9668                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+to_change  9668                         ldedier  rtd       DIR                8,1     4096          2 /
+to_change  9668                         ldedier  txt       REG                8,1    27200     274996 /home/ldedier/Projects/woody_woodpacker/tests/to_change_woody (deleted)
+to_change  9668                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+to_change  9668                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+to_change  9668                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+ssh-agent  9778                         ldedier  cwd   unknown                                        /proc/9778/cwd (readlink: Permission denied)
+ssh-agent  9778                         ldedier  rtd   unknown                                        /proc/9778/root (readlink: Permission denied)
+ssh-agent  9778                         ldedier  txt   unknown                                        /proc/9778/exe (readlink: Permission denied)
+ssh-agent  9778                         ldedier NOFD                                                  /proc/9778/fd (opendir: Permission denied)
+faked-tcp  9963                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+faked-tcp  9963                         ldedier  rtd       DIR                8,1     4096          2 /
+faked-tcp  9963                         ldedier  txt       REG                8,1    31312      27279 /usr/bin/faked-tcp
+faked-tcp  9963                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+faked-tcp  9963                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+faked-tcp  9963                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+faked-tcp  9963                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+faked-tcp  9963                         ldedier    3u     IPv4             164485      0t0        TCP *:44825 (LISTEN)
+to_change  9965                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+to_change  9965                         ldedier  rtd       DIR                8,1     4096          2 /
+to_change  9965                         ldedier  txt       REG                8,1    31312     274999 /home/ldedier/Projects/woody_woodpacker/tests/to_change_woody (deleted)
+to_change  9965                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+to_change  9965                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+to_change  9965                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+to_change  9965                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+to_change  9965                         ldedier    3u     IPv4             164486      0t0        TCP *:36533 (LISTEN)
+faked-tcp 13510                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+faked-tcp 13510                         ldedier  rtd       DIR                8,1     4096          2 /
+faked-tcp 13510                         ldedier  txt       REG                8,1    31312      27279 /usr/bin/faked-tcp
+faked-tcp 13510                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+faked-tcp 13510                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+faked-tcp 13510                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+faked-tcp 13510                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+faked-tcp 13510                         ldedier    3u     IPv4             167988      0t0        TCP *:43157 (LISTEN)
+to_change 13512                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+to_change 13512                         ldedier  rtd       DIR                8,1     4096          2 /
+to_change 13512                         ldedier  txt       REG                8,1    31312     275000 /home/ldedier/Projects/woody_woodpacker/tests/to_change_woody (deleted)
+to_change 13512                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+to_change 13512                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+to_change 13512                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+to_change 13512                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+to_change 13512                         ldedier    3u     IPv4             167989      0t0        TCP *:34867 (LISTEN)
+script.sh 13947                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+script.sh 13947                         ldedier  rtd       DIR                8,1     4096          2 /
+script.sh 13947                         ldedier  txt       REG                8,1  1168776       1411 /usr/bin/bash
+script.sh 13947                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+script.sh 13947                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+script.sh 13947                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+script.sh 13947                         ldedier  mem       REG                8,1   183528       3404 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.1
+script.sh 13947                         ldedier  mem       REG                8,1    26402       3043 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+script.sh 13947                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+script.sh 13947                         ldedier    0u      CHR              136,0      0t0          3 /dev/pts/0
+script.sh 13947                         ldedier    1u      CHR              136,0      0t0          3 /dev/pts/0
+script.sh 13947                         ldedier    2u      CHR              136,0      0t0          3 /dev/pts/0
+script.sh 13947                         ldedier  255r      REG                8,1     2753     275132 /home/ldedier/Projects/woody_woodpacker/tests/script.sh
+gpg-agent 18513                         ldedier  cwd   unknown                                        /proc/18513/cwd (readlink: Permission denied)
+gpg-agent 18513                         ldedier  rtd   unknown                                        /proc/18513/root (readlink: Permission denied)
+gpg-agent 18513                         ldedier  txt   unknown                                        /proc/18513/exe (readlink: Permission denied)
+gpg-agent 18513                         ldedier NOFD                                                  /proc/18513/fd (opendir: Permission denied)
+systemd-h 19469                            root  cwd   unknown                                        /proc/19469/cwd (readlink: Permission denied)
+systemd-h 19469                            root  rtd   unknown                                        /proc/19469/root (readlink: Permission denied)
+systemd-h 19469                            root  txt   unknown                                        /proc/19469/exe (readlink: Permission denied)
+systemd-h 19469                            root NOFD                                                  /proc/19469/fd (opendir: Permission denied)
+ssh-agent 20526                         ldedier  cwd   unknown                                        /proc/20526/cwd (readlink: Permission denied)
+ssh-agent 20526                         ldedier  rtd   unknown                                        /proc/20526/root (readlink: Permission denied)
+ssh-agent 20526                         ldedier  txt   unknown                                        /proc/20526/exe (readlink: Permission denied)
+ssh-agent 20526                         ldedier NOFD                                                  /proc/20526/fd (opendir: Permission denied)
+systemd-l 20595                            root  cwd   unknown                                        /proc/20595/cwd (readlink: Permission denied)
+systemd-l 20595                            root  rtd   unknown                                        /proc/20595/root (readlink: Permission denied)
+systemd-l 20595                            root  txt   unknown                                        /proc/20595/exe (readlink: Permission denied)
+systemd-l 20595                            root NOFD                                                  /proc/20595/fd (opendir: Permission denied)
+sshd      21801                            root  cwd   unknown                                        /proc/21801/cwd (readlink: Permission denied)
+sshd      21801                            root  rtd   unknown                                        /proc/21801/root (readlink: Permission denied)
+sshd      21801                            root  txt   unknown                                        /proc/21801/exe (readlink: Permission denied)
+sshd      21801                            root NOFD                                                  /proc/21801/fd (opendir: Permission denied)
+sshd      21807                         ldedier  cwd   unknown                                        /proc/21807/cwd (readlink: Permission denied)
+sshd      21807                         ldedier  rtd   unknown                                        /proc/21807/root (readlink: Permission denied)
+sshd      21807                         ldedier  txt   unknown                                        /proc/21807/exe (readlink: Permission denied)
+sshd      21807                         ldedier NOFD                                                  /proc/21807/fd (opendir: Permission denied)
+zsh       21808                         ldedier  cwd       DIR                8,1     4096     136320 /home/ldedier
+zsh       21808                         ldedier  rtd       DIR                8,1     4096          2 /
+zsh       21808                         ldedier  txt       REG                8,1   861568      23711 /usr/bin/zsh
+zsh       21808                         ldedier  mem       REG                8,1    76360     142761 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/computil.so
+zsh       21808                         ldedier  mem       REG                8,1  4836040     277573 /usr/share/zsh/functions/Completion/Unix.zwc
+zsh       21808                         ldedier  mem       REG                8,1   283488     277740 /usr/share/zsh/functions/Completion/Zsh.zwc
+zsh       21808                         ldedier  mem       REG                8,1   190296     277984 /usr/share/zsh/functions/Zle.zwc
+zsh       21808                         ldedier  mem       REG                8,1   197160     277802 /usr/share/zsh/functions/Misc.zwc
+zsh       21808                         ldedier  mem       REG                8,1   274176     276924 /usr/share/zsh/functions/Completion/Base.zwc
+zsh       21808                         ldedier  mem       REG                8,1    15144     142767 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/langinfo.so
+zsh       21808                         ldedier  mem       REG                8,1    67880     142760 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/complist.so
+zsh       21808                         ldedier  mem       REG                8,1   182464     277753 /usr/share/zsh/functions/Completion.zwc
+zsh       21808                         ldedier  mem       REG                8,1    49104     142777 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/parameter.so
+zsh       21808                         ldedier  mem       REG                8,1    39240     142792 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/zutil.so
+zsh       21808                         ldedier  mem       REG                8,1   155552     142759 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/complete.so
+zsh       21808                         ldedier  mem       REG                8,1   339744     142787 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/zle.so
+zsh       21808                         ldedier  mem       REG                8,1    14536     142785 /usr/lib/x86_64-linux-gnu/zsh/5.7.1/zsh/terminfo.so
+zsh       21808                         ldedier  mem       REG                8,1    26402       3043 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+zsh       21808                         ldedier  mem       REG                8,1    55792        708 /usr/lib/x86_64-linux-gnu/libnss_files-2.28.so
+zsh       21808                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+zsh       21808                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+zsh       21808                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+zsh       21808                         ldedier  mem       REG                8,1  1579448        699 /usr/lib/x86_64-linux-gnu/libm-2.28.so
+zsh       21808                         ldedier  mem       REG                8,1    35808        716 /usr/lib/x86_64-linux-gnu/librt-2.28.so
+zsh       21808                         ldedier  mem       REG                8,1   183528       3404 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.1
+zsh       21808                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+zsh       21808                         ldedier  mem       REG                8,1    26864       4445 /usr/lib/x86_64-linux-gnu/libcap.so.2.25
+zsh       21808                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+zsh       21808                         ldedier    0u      CHR              136,2      0t0          5 /dev/pts/2
+zsh       21808                         ldedier    1u      CHR              136,2      0t0          5 /dev/pts/2
+zsh       21808                         ldedier    2u      CHR              136,2      0t0          5 /dev/pts/2
+zsh       21808                         ldedier   10u      CHR              136,2      0t0          5 /dev/pts/2
+zsh       21808                         ldedier   12r      REG                8,1   190296     277984 /usr/share/zsh/functions/Zle.zwc
+zsh       21808                         ldedier   13r      REG                8,1   182464     277753 /usr/share/zsh/functions/Completion.zwc
+zsh       21808                         ldedier   14r      REG                8,1   283488     277740 /usr/share/zsh/functions/Completion/Zsh.zwc
+zsh       21808                         ldedier   15r      REG                8,1   274176     276924 /usr/share/zsh/functions/Completion/Base.zwc
+zsh       21808                         ldedier   16r      REG                8,1   197160     277802 /usr/share/zsh/functions/Misc.zwc
+zsh       21808                         ldedier   17r      REG                8,1  4836040     277573 /usr/share/zsh/functions/Completion/Unix.zwc
+kworker/0 22025                            root  cwd   unknown                                        /proc/22025/cwd (readlink: Permission denied)
+kworker/0 22025                            root  rtd   unknown                                        /proc/22025/root (readlink: Permission denied)
+kworker/0 22025                            root  txt   unknown                                        /proc/22025/exe (readlink: Permission denied)
+kworker/0 22025                            root NOFD                                                  /proc/22025/fd (opendir: Permission denied)
+su        22056                            root  cwd   unknown                                        /proc/22056/cwd (readlink: Permission denied)
+su        22056                            root  rtd   unknown                                        /proc/22056/root (readlink: Permission denied)
+su        22056                            root  txt   unknown                                        /proc/22056/exe (readlink: Permission denied)
+su        22056                            root NOFD                                                  /proc/22056/fd (opendir: Permission denied)
+zsh       22057                            root  cwd   unknown                                        /proc/22057/cwd (readlink: Permission denied)
+zsh       22057                            root  rtd   unknown                                        /proc/22057/root (readlink: Permission denied)
+zsh       22057                            root  txt   unknown                                        /proc/22057/exe (readlink: Permission denied)
+zsh       22057                            root NOFD                                                  /proc/22057/fd (opendir: Permission denied)
+faked-sys 22875                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+faked-sys 22875                         ldedier  rtd       DIR                8,1     4096          2 /
+faked-sys 22875                         ldedier  txt       REG                8,1    27200      27278 /usr/bin/faked-sysv
+faked-sys 22875                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+faked-sys 22875                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+faked-sys 22875                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+to_change 22877                         ldedier  cwd       DIR                8,1     4096     274994 /home/ldedier/Projects/woody_woodpacker/tests
+to_change 22877                         ldedier  rtd       DIR                8,1     4096          2 /
+to_change 22877                         ldedier  txt       REG                8,1    27200     274449 /home/ldedier/Projects/woody_woodpacker/tests/to_change_woody (deleted)
+to_change 22877                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+to_change 22877                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+to_change 22877                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+kworker/u 25158                            root  cwd   unknown                                        /proc/25158/cwd (readlink: Permission denied)
+kworker/u 25158                            root  rtd   unknown                                        /proc/25158/root (readlink: Permission denied)
+kworker/u 25158                            root  txt   unknown                                        /proc/25158/exe (readlink: Permission denied)
+kworker/u 25158                            root NOFD                                                  /proc/25158/fd (opendir: Permission denied)
+systemd-t 26322                            root  cwd   unknown                                        /proc/26322/cwd (readlink: Permission denied)
+systemd-t 26322                            root  rtd   unknown                                        /proc/26322/root (readlink: Permission denied)
+systemd-t 26322                            root  txt   unknown                                        /proc/26322/exe (readlink: Permission denied)
+systemd-t 26322                            root NOFD                                                  /proc/26322/fd (opendir: Permission denied)
+dirmngr   31284                         ldedier  cwd       DIR                8,1     4096          2 /
+dirmngr   31284                         ldedier  rtd       DIR                8,1     4096          2 /
+dirmngr   31284                         ldedier  txt       REG                8,1   566840      27244 /usr/bin/dirmngr
+dirmngr   31284                         ldedier  mem       REG                8,1  3031632        464 /usr/lib/locale/locale-archive
+dirmngr   31284                         ldedier  mem       REG                8,1    14592        698 /usr/lib/x86_64-linux-gnu/libdl-2.28.so
+dirmngr   31284                         ldedier  mem       REG                8,1    35224       1105 /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+dirmngr   31284                         ldedier  mem       REG                8,1   113392      13110 /usr/lib/x86_64-linux-gnu/libsasl2.so.2.0.25
+dirmngr   31284                         ldedier  mem       REG                8,1    63672      16506 /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2.10.10
+dirmngr   31284                         ldedier  mem       REG                8,1   533280       1091 /usr/lib/x86_64-linux-gnu/libgmp.so.10.3.2
+dirmngr   31284                         ldedier  mem       REG                8,1   229192       1103 /usr/lib/x86_64-linux-gnu/libhogweed.so.4.5
+dirmngr   31284                         ldedier  mem       REG                8,1   224472       1096 /usr/lib/x86_64-linux-gnu/libnettle.so.6.5
+dirmngr   31284                         ldedier  mem       REG                8,1    75776       3390 /usr/lib/x86_64-linux-gnu/libtasn1.so.6.5.5
+dirmngr   31284                         ldedier  mem       REG                8,1  1583144       2261 /usr/lib/x86_64-linux-gnu/libunistring.so.2.1.0
+dirmngr   31284                         ldedier  mem       REG                8,1   120752       9867 /usr/lib/x86_64-linux-gnu/libidn2.so.0.3.4
+dirmngr   31284                         ldedier  mem       REG                8,1  1236720       1109 /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.3.0
+dirmngr   31284                         ldedier  mem       REG                8,1  1824496        696 /usr/lib/x86_64-linux-gnu/libc-2.28.so
+dirmngr   31284                         ldedier  mem       REG                8,1   331088      16507 /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2.10.10
+dirmngr   31284                         ldedier  mem       REG                8,1  1744256       1115 /usr/lib/x86_64-linux-gnu/libgnutls.so.30.23.2
+dirmngr   31284                         ldedier  mem       REG                8,1   146968        714 /usr/lib/x86_64-linux-gnu/libpthread-2.28.so
+dirmngr   31284                         ldedier  mem       REG                8,1    18816      27233 /usr/lib/x86_64-linux-gnu/libnpth.so.0.1.2
+dirmngr   31284                         ldedier  mem       REG                8,1   227344      27220 /usr/lib/x86_64-linux-gnu/libksba.so.8.11.6
+dirmngr   31284                         ldedier  mem       REG                8,1  1168056        983 /usr/lib/x86_64-linux-gnu/libgcrypt.so.20.2.4
+dirmngr   31284                         ldedier  mem       REG                8,1   137424        971 /usr/lib/x86_64-linux-gnu/libgpg-error.so.0.26.1
+dirmngr   31284                         ldedier  mem       REG                8,1    84120      27198 /usr/lib/x86_64-linux-gnu/libassuan.so.0.8.2
+dirmngr   31284                         ldedier  mem       REG                8,1    93000        715 /usr/lib/x86_64-linux-gnu/libresolv-2.28.so
+dirmngr   31284                         ldedier  mem       REG                8,1   165632         33 /usr/lib/x86_64-linux-gnu/ld-2.28.so
+dirmngr   31284                         ldedier    0r      CHR                1,3      0t0       7291 /dev/null
+dirmngr   31284                         ldedier    1w      CHR                1,3      0t0       7291 /dev/null
+dirmngr   31284                         ldedier    2w      CHR                1,3      0t0       7291 /dev/null
+dirmngr   31284                         ldedier    3u     unix 0x000000001335d0b6      0t0     186390 /run/user/1000/gnupg/S.dirmngr type=STREAM
+dirmngr   31284                         ldedier    4r  a_inode               0,13        0       7223 inotify

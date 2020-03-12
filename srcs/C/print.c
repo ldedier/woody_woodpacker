@@ -83,7 +83,7 @@ void	print_elf64(struct s_elf *elf)
 	while (i < elf->header->e_shnum)
 	{
 		section_header = (Elf64_Shdr *)((void *)(elf->ptr + elf->header->e_shoff + i * elf->header->e_shentsize));
-		section_header->sh_flags |= (SHF_WRITE | SHF_ALLOC | SHF_EXECINSTR);
+	//	section_header->sh_flags |= (SHF_WRITE | SHF_ALLOC | SHF_EXECINSTR);
 		ft_printf("\nsection #%d: %s\n\n", i, strtable + section_header->sh_name);
 		print_elf64_section_header(*section_header);
 		i++;

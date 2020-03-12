@@ -1,6 +1,6 @@
 ...WOODY...
 Usage:
-  to_change_woody [OPTION?]
+  to_change_woody [OPTION…]
 
   create-device [ID] [SCOPE] [KIND]
                                     Create a device

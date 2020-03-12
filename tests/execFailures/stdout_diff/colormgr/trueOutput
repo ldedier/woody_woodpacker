@@ -1,6 +1,6 @@
 ...WOODY...
 Usage:
-  colormgr [OPTION?]
+  colormgr [OPTION…]
 
   create-device [ID] [SCOPE] [KIND]
                                     Create a device

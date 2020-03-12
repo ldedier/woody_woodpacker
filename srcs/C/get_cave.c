@@ -25,15 +25,15 @@ int	elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *ca
 	if ((text_segment_header = get_text_segment_header(elf)) == NULL)
 		return (woody_error("could not find .text segment"));
 
-	text_segment_header->p_flags |= PF_W | PF_R | PF_X;
-
+	text_segment_header->p_flags |= PF_W;
+	ft_printf("OUAI\n");
+	print_elf64_program_segment_header(*text_segment_header);;
 	*cave_offset = text_segment_header->p_offset + text_segment_header->p_filesz;
 	while (i < elf->header->e_phnum)
 	{
 		segment_header = (Elf64_Phdr *)(elf->ptr + elf->header->e_phoff + i * elf->header->e_phentsize);
 
-		segment_header->p_flags |= PF_W | PF_R | PF_X;
-
+//		segment_header->p_flags |= PF_W | PF_R | PF_X;
 		if (segment_header != text_segment_header 
 			&& (segment_header->p_offset > *cave_offset)
 			&& segment_header->p_offset - *cave_offset < *cave_size)
@@ -46,6 +46,7 @@ int	elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *ca
 	if (*cave_size == (size_t)-1)
 		return (woody_error("could not find a loadable segment to inject our code\n"));
 
+/*
 	ft_printf("Text segment header\n");
 	print_elf64_program_segment_header(*text_segment_header);
 
@@ -60,6 +61,7 @@ int	elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *ca
 
 	print_elf64(elf);
 
+*/
 	next_segment_header->p_flags |= PF_W;
 	return (0);
 }

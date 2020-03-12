@@ -1,0 +1,84 @@
+...WOODY...
+Module                  Size  Used by
+tcp_diag               16384  0
+udp_diag               16384  0
+inet_diag              20480  2 tcp_diag,udp_diag
+unix_diag              16384  0
+ib_core               274432  0
+rfcomm                 86016  0
+cmac                   16384  0
+algif_hash             16384  0
+algif_skcipher         16384  0
+af_alg                 28672  2 algif_hash,algif_skcipher
+bluetooth             647168  3 rfcomm
+drbg                   28672  1
+ansi_cprng             16384  0
+ecdh_generic           24576  1 bluetooth
+rfkill                 28672  2 bluetooth
+vmwgfx                331776  1
+hid_generic            16384  0
+joydev                 24576  0
+intel_powerclamp       16384  0
+crct10dif_pclmul       16384  0
+crc32_pclmul           16384  0
+ttm                   131072  1 vmwgfx
+snd_intel8x0           45056  0
+ghash_clmulni_intel    16384  0
+snd_ac97_codec        147456  1 snd_intel8x0
+ac97_bus               16384  1 snd_ac97_codec
+drm_kms_helper        208896  1 vmwgfx
+usbhid                 57344  0
+snd_pcm               114688  2 snd_intel8x0,snd_ac97_codec
+intel_rapl_perf        16384  0
+snd_timer              36864  1 snd_pcm
+pcspkr                 16384  0
+hid                   135168  2 usbhid,hid_generic
+drm                   495616  4 vmwgfx,drm_kms_helper,ttm
+evdev                  28672  3
+snd                    94208  4 snd_intel8x0,snd_timer,snd_ac97_codec,snd_pcm
+serio_raw              16384  0
+sg                     36864  0
+soundcore              16384  1 snd
+vboxguest              40960  0
+ac                     16384  0
+video                  45056  0
+battery                20480  0
+button                 16384  0
+parport_pc             32768  0
+ppdev                  20480  0
+lp                     20480  0
+parport                57344  3 parport_pc,lp,ppdev
+ip_tables              28672  0
+x_tables               45056  1 ip_tables
+autofs4                49152  2
+ext4                  737280  1
+crc16                  16384  2 bluetooth,ext4
+mbcache                16384  1 ext4
+jbd2                  122880  1 ext4
+crc32c_generic         16384  0
+fscrypto               32768  1 ext4
+ecb                    16384  0
+sr_mod                 28672  0
+cdrom                  65536  1 sr_mod
+sd_mod                 61440  3
+ata_generic            16384  0
+crc32c_intel           24576  2
+ohci_pci               16384  0
+ata_piix               36864  0
+ahci                   40960  2
+libahci                40960  1 ahci
+ohci_hcd               61440  1 ohci_pci
+ehci_pci               16384  0
+ehci_hcd               94208  1 ehci_pci
+libata                270336  4 ata_piix,libahci,ahci,ata_generic
+usbcore               294912  5 ohci_hcd,ehci_pci,usbhid,ehci_hcd,ohci_pci
+aesni_intel           200704  0
+aes_x86_64             20480  1 aesni_intel
+crypto_simd            16384  1 aesni_intel
+cryptd                 28672  3 crypto_simd,ghash_clmulni_intel,aesni_intel
+glue_helper            16384  1 aesni_intel
+psmouse               172032  0
+i2c_piix4              24576  0
+usb_common             16384  1 usbcore
+e1000                 155648  0
+scsi_mod              249856  4 sd_mod,libata,sg,sr_mod

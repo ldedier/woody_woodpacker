@@ -1,4 +1,4 @@
-############### /usr/bin/gcc-ranlib-8 #############
+############### /bin/gcc-ranlib-8 #############
 
 real ret:		0
 to_change_woody ret:	1

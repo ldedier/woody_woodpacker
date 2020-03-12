@@ -5,7 +5,7 @@ source generateBlacklist.sh
 
 WoodyPackerErrorsDir=couldNotBePacked
 WoodyExecErrorsDir=execFailures
-execBlacklist=(/usr/bin/pidof /usr/bin/ssh-agent)
+execBlacklist=(/usr/bin/pidof /usr/bin/ssh-agent /usr/bin/faked-sysv /usr/bin/faked-tcp)
 
 retDiffsDir=return_value_diff
 outputDiffsDir=stdout_diff
