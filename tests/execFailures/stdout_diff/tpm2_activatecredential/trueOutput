@@ -1,6 +1,0 @@
-...WOODY...
-Usage: tpm2_activatecredential [<options>]
-Where <options> are:
-    [ -H | --handle=<value>] [ -c | --context=<value>] [ -k | --key-handle=<value>] [ -C | --key-context=<value>]
-    [ -P | --Password=<value>] [ -e | --endorse-passwd=<value>] [ -f | --in-file=<value>] [ -o | --out-file=<value>]
-    [ -X | --passwdInHex]

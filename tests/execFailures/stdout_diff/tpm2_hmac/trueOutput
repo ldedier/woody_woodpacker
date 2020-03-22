@@ -1,5 +1,0 @@
-...WOODY...
-Usage: tpm2_hmac [<options>] <arguments>
-Where <options> are:
-    [ -k | --key-handle=<value>] [ -c | --key-context=<value>] [ -P | --pwdk=<value>] [ -g | --algorithm=<value>]
-    [ -o | --outfile=<value>] [ -S | --input-session-handle=<value>]

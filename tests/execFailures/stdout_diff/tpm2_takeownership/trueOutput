@@ -1,5 +1,0 @@
-...WOODY...
-Usage: tpm2_takeownership [<options>]
-Where <options> are:
-    [ -o | --owner-passwd=<value>] [ -e | --endorse-passwd=<value>] [ -l | --lock-passwd=<value>] [ -O | --oldOwnerPasswd=<value>]
-    [ -E | --oldEndorsePasswd=<value>] [ -L | --oldLockPasswd=<value>] [ -c | --clear]

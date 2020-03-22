@@ -62,6 +62,7 @@ int			get_text(struct s_elf *elf, size_t *text_size, unsigned char **data, size_
 
 int			get_section(struct s_elf *elf, Elf64_Shdr **section_ptr, char *sect_name);
 Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
+Elf64_Phdr		*get_note_segment_header(struct s_elf *elf);
 
 int			woody_error(char *msg);
 
@@ -69,6 +70,7 @@ int			elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *
 
 
 int			write_binary_from_elf(struct s_elf *elf, char *filename);
+int     write_binary_from_elf_and_payload(struct s_elf *elf, struct s_elf *payload, char *filename);
 int			error_no_section(char *filename, char *sect_name);
 int			check_elf(struct s_elf *elf);
 

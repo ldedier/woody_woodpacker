@@ -1,4 +1,0 @@
-...WOODY...
-Usage: tpm2_nvrelease [<options>]
-Where <options> are:
-    [ -x | --index=<value>] [ -a | --auth-handle=<value>] [ -P | --handle-passwd=<value>] [ -S | --input-session-handle=<value>]

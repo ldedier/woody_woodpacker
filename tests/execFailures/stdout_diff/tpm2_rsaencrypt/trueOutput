@@ -1,4 +1,0 @@
-...WOODY...
-Usage: tpm2_rsaencrypt [<options>] <arguments>
-Where <options> are:
-    [ -k | --key-handle=<value>] [ -o | --out-file=<value>] [ -c | --key-context=<value>]

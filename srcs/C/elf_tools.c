@@ -51,3 +51,18 @@ int	write_binary_from_elf(struct s_elf *elf, char *filename)
 //	ft_printf("WROTE %zu\n", elf->st.st_size);
 	return (0);
 }
+
+int	write_binary_from_elf_and_payload(struct s_elf *elf, struct s_elf *payload, char *filename)
+{
+	int fd;
+
+	if ((fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0755)) < 0)
+	{
+		perror(filename);
+		return (1);
+	}
+	write(fd, elf->ptr, elf->st.st_size);
+	write(fd, payload->ptr + payload->text_section->sh_offset, payload->text_section->sh_size);
+	close(fd);
+	return (0);
+}

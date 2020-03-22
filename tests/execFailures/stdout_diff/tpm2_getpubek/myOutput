@@ -1,6 +1,0 @@
-...WOODY...
-Usage: to_change_woody [<options>]
-Where <options> are:
-    [ -e | --endorse-passwd=<value>] [ -o | --owner-passwd=<value>] [ -H | --handle=<value>] [ -P | --ek-passwd=<value>]
-    [ -g | --alg=<value>] [ -f | --file=<value>] [ -S | --input-session-handle=<value>] [ -d | --dbg=<value>]
-    [ -h | --help]

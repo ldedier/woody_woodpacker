@@ -1,6 +1,0 @@
-...WOODY...
-Usage: tpm2_quote [<options>]
-Where <options> are:
-    [ -k | --ak-handle=<value>] [ -c | --ak-context=<value>] [ -P | --ak-password=<value>] [ -l | --id-list=<value>]
-    [ -g | --algorithm=<value>] [ -L | --sel-list=<value>] [ -q | --qualify-data=<value>] [ -S | --input-session-handle=<value>]
-    [ -s | --signature=<value>] [ -m | --message=<value>] [ -f | --format=<value>] [ -G | --sig-hash-algorithm=<value>]

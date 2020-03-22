@@ -1,5 +1,0 @@
-...WOODY...
-Usage: tpm2_dictionarylockout [<options>]
-Where <options> are:
-    [ -n | --max-tries=<value>] [ -t | --recovery-time=<value>] [ -l | --lockout-recovery-time=<value>] [ -P | --lockout-passwd=<value>]
-    [ -c | --clear-lockout] [ -s | --setup-parameters] [ -S | --input-session-handle=<value>]

@@ -77,7 +77,6 @@ function checkFileELFExec {
 function testFileELFPacking {
 
 	applyPATH checkFileELFPack
-
 }
 
 function testFileELFExecuting {
@@ -94,7 +93,17 @@ rm -f $PACKED_NAME
 make -C $BINDIR
 
 #testFileELFPacking
-testFileELFExecuting
+#testFileELFExecuting
+
+
+function checkFileOUAI {
+	readelf -l $1 | grep "NOTE"
+	if [ $? -ne 0 ] ; then
+		echo OLALLALA $1
+	fi
+}
+
+applyPATH checkFileOUAI
 
 rm -f 0 1 test.ttf fonts.scale file2brl.temp
 reset

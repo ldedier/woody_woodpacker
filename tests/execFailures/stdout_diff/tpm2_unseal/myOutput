@@ -1,5 +1,0 @@
-...WOODY...
-Usage: to_change_woody [<options>]
-Where <options> are:
-    [ -H | --item=<value>] [ -P | --pwdk=<value>] [ -o | --outfile=<value>] [ -c | --item-context=<value>]
-    [ -S | --input-session-handle=<value>] [ -L | --set-list=<value>] [ -F | --pcr-input-file=<value>]

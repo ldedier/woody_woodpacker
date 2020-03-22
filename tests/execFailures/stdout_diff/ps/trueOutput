@@ -1,5 +1,0 @@
-...WOODY...
-  PID TTY          TIME CMD
- 2256 pts/3    00:00:00 bash
-15095 pts/3    00:00:06 script.sh
-21485 pts/3    00:00:00 ps

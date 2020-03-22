@@ -1,5 +1,0 @@
-...WOODY...
-Usage: tpm2_verifysignature [<options>]
-Where <options> are:
-    [ -k | --key-handle=<value>] [ -D | --digest=<value>] [ -g | --halg=<value>] [ -m | --msg=<value>]
-    [ -r | --raw] [ -s | --sig=<value>] [ -t | --ticket=<value>] [ -c | --key-context=<value>]

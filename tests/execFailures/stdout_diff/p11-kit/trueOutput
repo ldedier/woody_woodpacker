@@ -1,8 +1,0 @@
-...WOODY...
-usage: p11-kit command <args>...
-
-Common p11-kit commands are:
-  list-modules     List modules and tokens
-  remote           Run a specific PKCS#11 module remotely
-
-See 'p11-kit <command> --help' for more information

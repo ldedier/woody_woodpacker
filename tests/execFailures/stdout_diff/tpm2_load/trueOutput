@@ -1,5 +1,0 @@
-...WOODY...
-Usage: tpm2_load [<options>]
-Where <options> are:
-    [ -H | --parent=<value>] [ -P | --pwdp=<value>] [ -u | --pubfile=<value>] [ -r | --privfile=<value>]
-    [ -n | --name=<value>] [ -C | --context=<value>] [ -c | --context-parent=<value>] [ -S | --input-session-handle=<value>]

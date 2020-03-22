@@ -1,4 +1,0 @@
-############### /bin/llvm-objdump-7 #############
-
-real ret:		2
-to_change_woody ret:	132

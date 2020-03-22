@@ -1,6 +1,0 @@
-...WOODY...
-Usage: to_change_woody [<options>]
-Where <options> are:
-    [ -H | --parent=<value>] [ -P | --pwdp=<value>] [ -K | --pwdk=<value>] [ -g | --halg=<value>]
-    [ -G | --kalg=<value>] [ -A | --object-attributes=<value>] [ -I | --in-file=<value>] [ -L | --policy-file=<value>]
-    [ -u | --pubfile=<value>] [ -r | --privfile=<value>] [ -c | --context-parent=<value>] [ -S | --input-session-handle=<value>]
