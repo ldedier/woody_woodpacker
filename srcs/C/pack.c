@@ -134,7 +134,17 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 
 //	print_elf64(elf);
 
+	Elf64_Phdr *last_load_segment_header;
+
+	if (!(last_load_segment_header = get_last_loaded_segment_header(elf)))
+		return (woody_error("not found a single load segment"));
+
+	last_load_segment_header->p_flags |= PF_X;
+	last_load_segment_header->p_filesz += 42;
+	last_load_segment_header->p_memsz += 42;
+
 	printf("Payload size: %zu\n", payload->text_section->sh_size);
+
 	if (elf64_get_cave_attributes(elf, &cave.offset, &cave.size))
 		return (1);
 	if (cave.size < payload->text_section->sh_size)

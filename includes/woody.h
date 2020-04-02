@@ -80,4 +80,5 @@ int			patch_target(unsigned char *data, size_t size, long pattern, long to_rempl
 
 int			print_some(char *data);
 int			scan_target(unsigned char *data, size_t size);
+Elf64_Phdr		*get_last_loaded_segment_header(struct s_elf *elf);
 #endif

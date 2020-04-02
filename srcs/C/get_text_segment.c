@@ -31,3 +31,22 @@ Elf64_Phdr *get_text_segment_header(struct s_elf *elf)
 	}
 	return (NULL);
 }
+
+Elf64_Phdr *get_last_loaded_segment_header(struct s_elf *elf)
+{
+	Elf64_Phdr *segment_header;
+	Elf64_Phdr *res;
+	size_t i;
+
+	i = 0;
+	res = NULL;
+	while (i < elf->header->e_phnum)
+	{
+		segment_header = (Elf64_Phdr *)((void *)(elf->ptr
+			+ elf->header->e_phoff + i * elf->header->e_phentsize));
+		if (segment_header->p_type == PT_LOAD)
+			res = segment_header;
+		i++;
+	}
+	return (res);
+}
