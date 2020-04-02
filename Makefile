@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ldedier <ldedier@student.42.fr>            +#+  +:+       +#+         #
+#    By: niragne <niragne@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 14:46:31 by ldedier           #+#    #+#              #
-#    Updated: 2019/11/28 11:52:24 by ldedier          ###   ########.fr        #
+#    Updated: 2020/04/02 17:18:43 by niragne          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,8 +70,8 @@ INC 			=	-I $(INCLUDESDIR) -I $(LIBFTDIR)/$(LIBFT_INCLUDES_DIR)
 OK_COLOR = \x1b[32;01m
 EOC = \033[0m
 
-LFLAGS =	-L $(LIBFTDIR) -lft -Wall -Wextra -Werror
-CFLAGS = $(INC) -Wall -Wextra -Werror -DPAYLOAD_FILE=\"$(PWD)/$(OBJDIR)$(PAYLOAD_OBJ)\"
+LFLAGS =	-L $(LIBFTDIR) -lft -Wall -Wextra
+CFLAGS = $(INC) -Wall -Wextra -DPAYLOAD_FILE=\"$(PWD)/$(OBJDIR)$(PAYLOAD_OBJ)\"
 
 ifeq ($(DEBUG), 1)
 	CFLAGS += -fsanitize=address
