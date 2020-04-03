@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/02 19:39:15 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 15:05:09 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ void *update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t ins
 	void *first_updated = 0;
 
 	for (uint16_t i = 0; i < shnum ; i++) {
-		printf("%d\n", shdr->sh_name);
+		printf("%d\n", shdr->sh_type);
 		if (shdr->sh_offset > offset) {
 			if (!first_updated)
 				first_updated = shdr;
@@ -178,43 +178,38 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 
 //	print_elf64(elf);
 
+	// payload->text_section->sh_size = 81;
 	Elf64_Shdr *new_shdr;
 	Elf64_Phdr *last_load_segment_header;
-	size_t		insert_offset;
-	size_t		bss_len;
-
-	// payload->text_section->sh_size = 80;
 
 	if (!(last_load_segment_header = get_last_loaded_segment_header(elf)))
 		return (woody_error("not found a single load segment"));
 	
+	size_t insert_offset = last_load_segment_header->p_offset + last_load_segment_header->p_filesz;
+	size_t bss_len = last_load_segment_header->p_memsz - last_load_segment_header->p_filesz;
 	size_t new_startpoint_vaddr =  last_load_segment_header->p_memsz + last_load_segment_header->p_vaddr;
-
-	insert_offset = last_load_segment_header->p_offset + last_load_segment_header->p_filesz;
-	bss_len = last_load_segment_header->p_memsz - last_load_segment_header->p_filesz;
-
 	size_t payload_start_off = insert_offset + bss_len;
-	printf("PAYLOAD START OFF %p\n", payload_start_off);
+	size_t payload_size_aligned = (payload->text_section->sh_size + 63) & ~63;
+	size_t insert_size = (payload_size_aligned) + bss_len;
+	size_t output_len =  elf->st.st_size + insert_size + sizeof(Elf64_Shdr);
 
 	last_load_segment_header->p_flags |= PF_X;
-	last_load_segment_header->p_filesz += payload->text_section->sh_size;
-
-	size_t insert_size = ((payload->text_section->sh_size + 63) & ~63) + bss_len;
-	last_load_segment_header->p_memsz += (payload->text_section->sh_size + 63) & ~63;
+	last_load_segment_header->p_filesz += insert_size;
+	last_load_segment_header->p_memsz += payload_size_aligned;
 
 	printf("Payload size: %zu\n", payload->text_section->sh_size);
 	printf("Insert offset: %lx\n", insert_offset);
-	
-
-
-	size_t output_len =  elf->st.st_size + insert_size + sizeof(Elf64_Shdr);
-
-
+	printf("Insert size: %lx\n", insert_size);
 	
 	uint8_t* new_ptr;
 	new_ptr = malloc(output_len);
-	memmove(new_ptr, elf->ptr, insert_offset);
+	if (!new_ptr)
+		return(woody_error("malloc error"));
 	Elf64_Ehdr* new_hdr = (Elf64_Ehdr*)new_ptr;
+
+	// Copy file to new ptr with enough space to add our new section
+	memmove(new_ptr, elf->ptr, insert_offset);
+	memset(new_ptr + insert_offset, 0xaa, insert_size);
 	memmove(new_ptr + insert_offset + insert_size, elf->ptr + insert_offset, elf->st.st_size - insert_offset );
 
 	printf("ehdr before = %ld\n", elf->header->e_shoff);
@@ -224,15 +219,33 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 
 	printf("trying to update offsets with %d %lx %lx\n", new_hdr->e_shnum, insert_offset, insert_size);
 	new_shdr = update_shdrs_off((Elf64_Shdr *)(new_ptr + new_hdr->e_shoff), new_hdr->e_shnum, insert_offset, insert_size);
-
 	printf("new_shdr: %ld\n", new_shdr->sh_addr);
 	Elf64_Shdr *prev_shdr = new_shdr - 1;
 
-	new_hdr->e_entry = new_startpoint_vaddr;
 	memmove(new_ptr + payload_start_off, payload->ptr + payload->text_section->sh_offset, payload->text_section->sh_size);
-	
 	new_shdr->sh_offset += insert_size;
 
+	if (elf->header->e_type == ET_DYN)
+	{
+		new_hdr->e_entry = new_startpoint_vaddr;
+		printf("a gougou gaga\n");
+		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x1111111111111111, elf->header->e_entry - new_hdr->e_entry - 5))
+			return (woody_error("could not find payload jmp argument"));
+		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x3333333333333333, elf->text_section->sh_offset - new_hdr->e_entry - 5))
+			return (woody_error("could not find payload jmp argument"));
+	}
+	else if (elf->header->e_type == ET_EXEC)
+	{
+		new_hdr->e_entry = elf->text_section->sh_addr - elf->text_section->sh_offset + payload_start_off;
+		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x2222222222222222, 0))
+			return (woody_error("could not find payload jmp argument"));
+		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x1111111111111111, elf->header->e_entry))
+			return (woody_error("could not find payload jmp argument"));
+		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x3333333333333333, elf->text_section->sh_addr))
+			return (woody_error("could not find payload jmp argument"));
+	}
+	else
+		return (woody_error("MERDE"));	
 
 	size_t new_shdr_off = (void *)new_shdr - (void *)new_hdr;
 	size_t shift_len = output_len - new_shdr_off - sizeof(Elf64_Shdr);
@@ -244,7 +257,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	new_shdr->sh_flags = SHF_EXECINSTR | SHF_ALLOC;
 	new_shdr->sh_offset = payload_start_off;
 	new_shdr->sh_addr = prev_shdr->sh_addr + (payload_start_off - prev_shdr->sh_offset);
-	new_shdr->sh_size = (payload->text_section->sh_size + 63) & ~63;
+	new_shdr->sh_size = payload_size_aligned;
 	new_shdr->sh_link = 0;
 	new_shdr->sh_info =  0;
 	new_shdr->sh_addralign = 16;
