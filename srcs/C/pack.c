@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/03 16:51:28 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 17:25:51 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,7 +213,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	memmove(new_ptr + insert_offset + insert_size, elf->ptr + insert_offset, elf->st.st_size - insert_offset );
 
 	printf("ehdr before = %ld\n", elf->header->e_shoff);
-	while (new_hdr->e_shoff < insert_offset)
+	if (new_hdr->e_shoff > insert_offset)
 		new_hdr->e_shoff += insert_size;
 	printf("ehdr after = %ld\n", new_hdr->e_shoff);
 
@@ -252,6 +252,24 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	else
 		return (woody_error("MERDE"));	
 
+	char		*key;
+
+	if (!(key = generate_key(sizeof(KEY_PLACEHOLDER))))
+		return (woody_error("malloc error"));
+	if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x4444444444444444, elf->text_section->sh_size))
+		return (woody_error("could not find payload jmp argument"));
+	ft_printf("text section size: %zu\n", elf->text_section->sh_size);
+	if (patch_target_string(new_ptr + payload_start_off, payload->text_section->sh_size, KEY_PLACEHOLDER, key))
+		return (woody_error("could not find key string placeholder"));
+
+	print_string_hexa(key);
+	printf("\n");
+	// hash(elf->ptr + elf->text_section->sh_offset, key, elf->text_section->sh_size);
+	
+	free(key);
+
+
+
 	size_t new_shdr_off = (void *)new_shdr - (void *)new_hdr;
 	size_t shift_len = output_len - new_shdr_off - sizeof(Elf64_Shdr);
 
@@ -279,15 +297,18 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (1);
 	}
 
+	printf("%p\n", elf->ptr);
+	printf("%p\n", elf->text_section->sh_size);
+	hash((char*)(elf->ptr + elf->text_section->sh_offset), key, elf->text_section->sh_size);
 
 
 	// write(fd, elf->ptr, insert_offset);
 	// write(fd, buff, insert_size);
 	// write(fd, elf->ptr + insert_offset, elf->st.st_size - insert_offset);
+	
 
 	write(fd, new_ptr, output_len);
 	free(new_ptr);
-
 	
 	close(fd);
 	

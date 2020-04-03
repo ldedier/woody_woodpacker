@@ -37,7 +37,7 @@ nopie:
    lea rsi, [rel key] ; key of RC4
    mov rdx, 0x4444444444444444  ; size of text section
    push rax
-;    call hash
+   call hash
 
    ;; restore cpu state
    pop rax
