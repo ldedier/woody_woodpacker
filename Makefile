@@ -6,7 +6,7 @@
 #    By: niragne <niragne@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 14:46:31 by ldedier           #+#    #+#              #
-#    Updated: 2020/04/03 17:18:43 by niragne          ###   ########.fr        #
+#    Updated: 2020/04/03 17:47:51 by niragne          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ $(LIBFT):
 	@$(MAKE) -C $(LIBFTDIR)
 
 $(BINDIR)/$(NAME): $(LIBFT) $(OBJDIR) $(OBJECTS)
-	$(CC) -no-pie -o $@ $(OBJECTS) $(CFLAGS) $(LFLAGS)
+	$(CC) -o $@ $(OBJECTS) $(CFLAGS) $(LFLAGS)
 	@$(ECHO) "$(NAME) linked with success !"
 
 $(OBJDIR):

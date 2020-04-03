@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/03 17:25:51 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 18:45:54 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,6 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	printf("\n");
 	// hash(elf->ptr + elf->text_section->sh_offset, key, elf->text_section->sh_size);
 	
-	free(key);
 
 
 
@@ -297,10 +296,12 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (1);
 	}
 
-	printf("%p\n", elf->ptr);
+	printf("ptr %p\n", elf->text_section->sh_offset);
 	printf("%p\n", elf->text_section->sh_size);
-	hash((char*)(elf->ptr + elf->text_section->sh_offset), key, elf->text_section->sh_size);
+	hash((char*)(new_ptr + elf->text_section->sh_offset), key, elf->text_section->sh_size);
+	free(key);
 
+	
 
 	// write(fd, elf->ptr, insert_offset);
 	// write(fd, buff, insert_size);

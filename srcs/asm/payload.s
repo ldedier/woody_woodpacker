@@ -108,6 +108,7 @@ payload_strlen:
 
 hash:
    enter 0x110, 0
+   push r12
    mov qword[rbp - 0x108], rdi
    mov qword[rbp - 0x110], rdx
    lea rdi, [rbp - 0x100] ; S
@@ -135,6 +136,7 @@ hash_loop:
    inc rcx
    cmp rcx, rdx
    jl hash_loop
+   pop r12
    leave
    ret
 

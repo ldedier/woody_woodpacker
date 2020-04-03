@@ -1,2 +1,3 @@
-break main
+break *0x40394c
+break hash
 
