@@ -1,4 +1,4 @@
-section .text
+segment .text
     global payload
     global hash
 

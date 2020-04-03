@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/03 15:05:09 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 16:07:58 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -209,7 +209,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 
 	// Copy file to new ptr with enough space to add our new section
 	memmove(new_ptr, elf->ptr, insert_offset);
-	memset(new_ptr + insert_offset, 0xaa, insert_size);
+	memset(new_ptr + insert_offset + payload_size_aligned, 0x0, bss_len);
 	memmove(new_ptr + insert_offset + insert_size, elf->ptr + insert_offset, elf->st.st_size - insert_offset );
 
 	printf("ehdr before = %ld\n", elf->header->e_shoff);
