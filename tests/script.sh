@@ -4,6 +4,7 @@ source include.sh
 source generateBlacklist.sh
 
 WoodyPackerErrorsDir=couldNotBePacked
+WoodyValgrindErrorsDir=valgrindErrors
 WoodyExecErrorsDir=execFailures
 execBlacklist=(/usr/bin/pidof /usr/bin/ssh-agent /usr/bin/faked-sysv /usr/bin/faked-tcp)
 
@@ -19,6 +20,26 @@ else
 fi
 
 source $blacklistFile
+
+function checkFileELFValgrind {
+	file=$1
+	valgrind_supps=$2
+	error_exit_code=24
+	tmp_trace=.__valgrind_tmp_trace__
+
+	echo "valgrind --leak-check=full --error-exitcode=$error_exit_code --log-file=$tmp_trace ./$NAME $file > /dev/null 2>&1"
+
+	valgrind --leak-check=full --error-exitcode=$error_exit_code  --log-file=$tmp_trace ./$NAME $file > /dev/null 2>&1
+	res=$?
+	if [ $res -ne 0 ] && [ $res -ne 1 ]; then
+		mkdir -p $WoodyValgrindErrorsDir
+		logdir=$WoodyValgrindErrorsDir/$(basename $file)
+		cp $tmp_trace $logdir
+		echo -e "${RED}valgrind errors for ${file} logged at ${logdir}${EOC}"
+	else
+		echo -e "${GREEN}no valgrind errors for ${file}${EOC}"
+	fi
+}
 
 function checkFileELFPack {
 	file=$1
@@ -87,14 +108,21 @@ function testFileELFExecuting {
 
 }
 
+function testFileELFValgrind {
+	applyPATH checkFileELFValgrind
+
+}
+
 rm -rf $WoodyExecErrorsDir
 rm -rf $WoodyPackerErrorsDir
+rm -rf $WoodyValgrindErrorsDir
 rm -f $PACKED_NAME
 
 make -C $BINDIR
 
 #testFileELFPacking
-testFileELFExecuting
+#testFileELFExecuting
+testFileELFValgrind
 
 rm -f 0 1 test.ttf fonts.scale file2brl.temp
 reset

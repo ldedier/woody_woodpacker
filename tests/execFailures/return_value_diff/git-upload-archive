@@ -1,4 +1,0 @@
-############### /bin/git-upload-archive #############
-
-real ret:		128
-to_change_woody ret:	1
