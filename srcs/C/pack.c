@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/03 16:07:58 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 16:13:50 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	}
 	else if (elf->header->e_type == ET_EXEC)
 	{
-		new_hdr->e_entry = elf->text_section->sh_addr - elf->text_section->sh_offset + payload_start_off;
+		new_hdr->e_entry = new_startpoint_vaddr;
 		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x2222222222222222, 0))
 			return (woody_error("could not find payload jmp argument"));
 		if (patch_target(new_ptr + payload_start_off, payload->text_section->sh_size, 0x1111111111111111, elf->header->e_entry))
