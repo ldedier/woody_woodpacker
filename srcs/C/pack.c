@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/03 16:34:29 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 16:51:28 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,7 +213,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	memmove(new_ptr + insert_offset + insert_size, elf->ptr + insert_offset, elf->st.st_size - insert_offset );
 
 	printf("ehdr before = %ld\n", elf->header->e_shoff);
-	if (new_hdr->e_shoff > insert_offset)
+	while (new_hdr->e_shoff < insert_offset)
 		new_hdr->e_shoff += insert_size;
 	printf("ehdr after = %ld\n", new_hdr->e_shoff);
 
@@ -284,9 +284,9 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	// write(fd, elf->ptr, insert_offset);
 	// write(fd, buff, insert_size);
 	// write(fd, elf->ptr + insert_offset, elf->st.st_size - insert_offset);
-	
 
 	write(fd, new_ptr, output_len);
+	free(new_ptr);
 
 	
 	close(fd);
