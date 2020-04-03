@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/03 16:13:50 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/03 16:34:29 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,6 +219,11 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 
 	printf("trying to update offsets with %d %lx %lx\n", new_hdr->e_shnum, insert_offset, insert_size);
 	new_shdr = update_shdrs_off((Elf64_Shdr *)(new_ptr + new_hdr->e_shoff), new_hdr->e_shnum, insert_offset, insert_size);
+	if (!new_shdr)
+	{
+		free(new_ptr);
+		return(woody_error("a problem occured while parsing sections"));
+	}
 	printf("new_shdr: %ld\n", new_shdr->sh_addr);
 	Elf64_Shdr *prev_shdr = new_shdr - 1;
 
