@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/04 15:39:55 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/04 15:40:27 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,26 +231,18 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (woody_error("failed to allocate enough memory for new file"));
 
 	Elf64_Ehdr* new_hdr = (Elf64_Ehdr*)new_ptr;
-	printf("ehdr before = %lx\n", elf->header->e_shoff);
 	if (new_hdr->e_shoff > woody.insert_offset)
 		new_hdr->e_shoff += woody.insert_size;
-	printf("ehdr after = %lx\n", new_hdr->e_shoff);
 
-	printf("trying to update offsets with %d %lx %lx\n", new_hdr->e_shnum, woody.insert_offset, woody.insert_size);
 	new_shdr = update_shdrs_off((Elf64_Shdr *)(new_ptr + new_hdr->e_shoff), new_hdr->e_shnum, woody.insert_offset, woody.insert_size);
 	if (!new_shdr)
 	{
 		free(new_ptr);
 		return(woody_error("a problem occured while parsing sections"));
 	}
-	printf("new_shdr: %ld\n", new_shdr->sh_addr);
-
 	if (insert_and_patch_payload(&woody, new_ptr, new_shdr, new_hdr))
 		return (woody_error("error while patching payload"));
-
 	insert_new_shdr(&woody, new_ptr, new_shdr, new_hdr);
-	
-
 	char		*key;
 	if (generate_and_patch_key(&woody, new_ptr, &key))
 		return (woody_error("error while generating or patching key"));
