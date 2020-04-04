@@ -44,9 +44,7 @@ int	patch_target(unsigned char *data, size_t size, long pattern, long to_remplac
 		to_compare = (long *)(data + i);
 		if (*to_compare == pattern)
 		{
-			printf("jump %lx\n", *to_compare);
 			*to_compare = to_remplace;
-			printf("jump %ld\n", *to_compare);
 			return (0);
 		}
 		i++;

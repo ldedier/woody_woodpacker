@@ -55,6 +55,7 @@ nopie:
 
 fill_swap_buffer:
    enter 0x20, 0
+   push rbx
    mov [rbp - 0x8], rdi
    mov [rbp - 0x10], rsi
    mov rdi, rsi
@@ -68,16 +69,21 @@ fill_swap_loop_identity:
    inc rcx
    cmp rcx, 0xff
    jle fill_swap_loop_identity
+   
    xor rcx, rcx
    mov r11, 0
+
+;jmp fill_swap_end
+
 fill_swap_loop:
-   add r11, [rdi + rcx]
+
+   add r11b, byte[rdi + rcx]
 
    mov rax, rcx
    xor rdx, rdx
    div qword [rbp - 0x18] ; rdx = i mod keylength
 
-   add r11, [rsi + rdx]
+   add r11b, byte[rsi + rdx]
    and r11, 0xff
 
    mov bl, byte[rdi + rcx]
@@ -87,6 +93,9 @@ fill_swap_loop:
    inc rcx
    cmp rcx, 0xff
    jle fill_swap_loop
+
+fill_swap_end:
+   pop rbx
    leave
    ret
 
@@ -103,8 +112,7 @@ payload_strlen:
 
    ; rdi: address to hash
    ; rsi: key to hash
-   ; rdx: size to hash (if > 256 full merde)
-
+   ; rdx: size to hash
 
 hash:
    enter 0x110, 0
@@ -120,10 +128,15 @@ hash:
    xor r10, r10 ; i
    xor r11, r11 ; j
    xor r12, r12
-;   mov rdi, [rbp - 0x108]
-   mov rdx, [rbp - 0x110] ; rdx still size to hash
+   mov rdx, qword[rbp - 0x110] ; rdx still size to hash
 			  ; rdi : BUFFER S
+
+
 hash_loop:
+
+   cmp rcx, rdx
+   jge hash_loop_end
+
    inc r10b
    add r11b, byte[rdi + r10]
    mov al, byte[rdi + r10]
@@ -134,8 +147,9 @@ hash_loop:
    mov r12b, byte[rdi + r12]
    xor byte[rsi + rcx], r12b
    inc rcx
-   cmp rcx, rdx
-   jl hash_loop
+   jmp hash_loop
+
+hash_loop_end:
    pop r12
    leave
    ret

@@ -111,7 +111,7 @@ void	prepare_last_load(struct s_woody *woody, Elf64_Phdr *phdr)
 
 uint8_t*	create_new_bin(struct s_woody* woody)
 {
-	uint8_t* new_ptr = malloc(woody->output_len);
+	uint8_t* new_ptr = ft_memalloc(woody->output_len);
 	if (!new_ptr)
 		return(NULL);
 
@@ -180,12 +180,11 @@ int		generate_and_patch_key(struct s_woody* woody, uint8_t* new_ptr, char** key)
 		return (woody_error("malloc error"));
 	if (patch_target(new_ptr + woody->payload_start_off, woody->payload->text_section->sh_size, 0x4444444444444444, woody->file_to_pack->text_section->sh_size))
 		return (woody_error("could not find payload jmp argument"));
-	ft_printf("text section size: %zu\n", woody->file_to_pack->text_section->sh_size);
 	if (patch_target_string(new_ptr + woody->payload_start_off, woody->payload->text_section->sh_size, KEY_PLACEHOLDER, *key))
 		return (woody_error("could not find key string placeholder"));
-
+	ft_printf("key: ");
 	print_string_hexa(*key);
-	printf("\n");
+	ft_printf("\n");
 	return (0);	
 }
 
