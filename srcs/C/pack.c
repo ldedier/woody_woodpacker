@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/04 15:30:05 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/04 15:32:54 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,6 @@ int	insert_and_patch_payload(struct s_woody* woody, uint8_t* new_ptr, Elf64_Shdr
 
 	if (woody->file_to_pack->header->e_type == ET_DYN)
 	{
-		printf("a gougou gaga\n");
 		if (patch_target(new_ptr + woody->payload_start_off, woody->payload->text_section->sh_size, 0x1111111111111111, woody->file_to_pack->header->e_entry - new_hdr->e_entry - 5))
 			return (woody_error("could not find payload jmp argument"));
 		if (patch_target(new_ptr + woody->payload_start_off, woody->payload->text_section->sh_size, 0x3333333333333333, woody->file_to_pack->text_section->sh_offset - new_hdr->e_entry - 5))
