@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/04 15:32:54 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/04 15:39:55 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void *update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t ins
 	void *first_updated = 0;
 
 	for (uint16_t i = 0; i < shnum ; i++) {
-		printf("%d\n", shdr->sh_type);
 		if (shdr->sh_offset > offset) {
 			if (!first_updated)
 				first_updated = shdr;
