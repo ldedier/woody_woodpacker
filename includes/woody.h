@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 20:09:52 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/02 18:05:57 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/04 15:07:07 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,19 @@ struct s_elf
 	char *strtable;
 	Elf64_Ehdr *header;
 	Elf64_Shdr *text_section;
+};
+
+struct s_woody
+{
+	struct s_elf* file_to_pack;
+	struct s_elf* payload;
+	size_t insert_offset;
+	size_t bss_len;
+	size_t new_startpoint_vaddr;
+	size_t payload_start_off;
+	size_t payload_size_aligned;
+	size_t insert_size;
+	size_t output_len;
 };
 
 int			init(struct s_elf *elf, char *filename);
