@@ -12,6 +12,18 @@
 
 #include "woody.h"
 
+void	print_string_hexa(char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i])
+	{
+		ft_printf("%.2hhX", str[i]);
+		i++;
+	}
+}
+
 void print_elf64_exec_header(Elf64_Ehdr header)
 {
 	ft_printf("ident: %.*s\n", EI_NIDENT, header.e_ident);
@@ -83,14 +95,8 @@ void	print_elf64(struct s_elf *elf)
 	while (i < elf->header->e_shnum)
 	{
 		section_header = (Elf64_Shdr *)((void *)(elf->ptr + elf->header->e_shoff + i * elf->header->e_shentsize));
-	//	section_header->sh_flags |= (SHF_WRITE | SHF_ALLOC | SHF_EXECINSTR);
 		ft_printf("\nsection #%d: %s\n\n", i, strtable + section_header->sh_name);
 		print_elf64_section_header(*section_header);
 		i++;
 	}
-}
-
-void	print_cave(struct s_cave cave)
-{
-	ft_printf("cave offset: %u , cave size: %u\n", cave.offset, cave.size);
 }

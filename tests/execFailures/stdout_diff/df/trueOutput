@@ -1,0 +1,10 @@
+...WOODY...
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev              490744       0    490744   0% /dev
+tmpfs             101108    4324     96784   5% /run
+/dev/sda1        7158264 2031764   4743168  30% /
+tmpfs             505520       0    505520   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs             505520       0    505520   0% /sys/fs/cgroup
+tmpfs             101104       0    101104   0% /run/user/0
+tmpfs             101104       0    101104   0% /run/user/1000

@@ -49,7 +49,9 @@ SRCS_C		=	main.c \
 			init.c \
 			free.c \
 			check_elf.c \
+			prepare_packing.c \
 			pack.c \
+			patch_key.c \
 			print.c \
 			get_text_segment.c \
 			get_cave.c \

@@ -83,3 +83,9 @@ int woody_error(char *msg)
 	ft_dprintf(2, "%s\n", msg);
 	return (1);
 }
+
+int woody_error_free(char *msg, void *ptr)
+{
+	free(ptr);
+	return (woody_error(msg));
+}

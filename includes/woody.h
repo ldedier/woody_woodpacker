@@ -19,7 +19,7 @@
 # include "libft.h"
 
 # define PAYLOAD_SIZE 400
-# define PACKED_NAME "to_change_woody"
+# define PACKED_NAME "woody"
 # define DEBUG_KEY "pwd12"
 # define KEY_PLACEHOLDER "___TO_REMPLACE_KEY___"
 
@@ -77,6 +77,7 @@ int			get_section(struct s_elf *elf, Elf64_Shdr **section_ptr, char *sect_name);
 Elf64_Phdr		*get_text_segment_header(struct s_elf *elf);
 
 int			woody_error(char *msg);
+int			woody_error_free(char *msg, void *ptr);
 
 int			elf64_get_cave_attributes(struct s_elf *elf, size_t *cave_offset, size_t *cave_size);
 
@@ -94,4 +95,16 @@ int			patch_target(unsigned char *data, size_t size, long pattern, long to_rempl
 int			print_some(char *data);
 int			scan_target(unsigned char *data, size_t size);
 Elf64_Phdr		*get_last_loaded_segment_header(struct s_elf *elf);
+void			print_string_hexa(char *str);
+
+
+void			*update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t insert_len);
+void			prepare_config(struct s_woody *woody, Elf64_Phdr *phdr, struct s_elf *elf, struct s_elf *payload);
+void			prepare_last_load(struct s_woody *woody, Elf64_Phdr *phdr);
+uint8_t			*create_new_bin(struct s_woody* woody);
+
+
+
+char			*generate_key(size_t len);
+int			generate_and_patch_key(struct s_woody* woody, uint8_t* new_ptr, char** key);
 #endif

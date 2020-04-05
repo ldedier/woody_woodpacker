@@ -6,7 +6,7 @@ source generateBlacklist.sh
 WoodyPackerErrorsDir=couldNotBePacked
 WoodyValgrindErrorsDir=valgrindErrors
 WoodyExecErrorsDir=execFailures
-execBlacklist=(/usr/bin/pidof /usr/bin/ssh-agent /usr/bin/faked-sysv /usr/bin/faked-tcp)
+execBlacklist=(/usr/bin/pidof /usr/bin/ssh-agent /usr/bin/faked-sysv /usr/bin/faked-tcp )
 
 retDiffsDir=return_value_diff
 outputDiffsDir=stdout_diff
@@ -64,9 +64,15 @@ function checkFileELFExec {
 		echo -e "${GREEN}${file} got packed correctly!${EOC}"	
 		if [[ ! "${blacklist[@]}" =~ "$file" ]] && [[ ! "${blackerlist[@]}" =~ "$(basename $file)" ]] && [[ ! "${execBlacklist[@]}" =~ "$file" ]]   ; then
 			#logDir=$WoodyExecErrorsDir/$(basename $file)
+
+			relevantDiff=1
+			diff <($file < /dev/null) <($file < /dev/null)
+			if [ $? -ne 0 ]; then
+				relevantDiff=0
+			fi
 			myOutput=/tmp/myOutput
 			trueOutput=/tmp/trueOutput
-			$file < /dev/null > $trueOutput
+			(exec -a "./$PACKED_NAME" $file < /dev/null > $trueOutput)
 			trueRet=$?
 			./$PACKED_NAME < /dev/null > $myOutput
 			myRet=$?
@@ -82,12 +88,14 @@ function checkFileELFExec {
 					chmod 755 $returnDiffFile
 				fi
 			fi
-			diff <(echo "...WOODY..." ; cat $trueOutput | sed s/$(echo -n $file | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')/$PACKED_NAME/g) $myOutput
-			if [ $? -ne 0 ]; then
-				logDir=$WoodyExecErrorsDir/$outputDiffsDir/$(basename $file)
-				mkdir -p $logDir
-				cp $myOutput $logDir/myOutput
-				cp <(echo "...WOODY..." ; cat $trueOutput | sed s/$(echo -n $file | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')/$PACKED_NAME/g) $logDir/trueOutput
+			if [ $relevantDiff -ne 0 ]; then
+				diff <(echo "...WOODY..." ; cat $trueOutput) $myOutput
+				if [ $? -ne 0 ]; then
+					logDir=$WoodyExecErrorsDir/$outputDiffsDir/$(basename $file)
+					mkdir -p $logDir
+					cp $myOutput $logDir/myOutput
+					cp <(echo "...WOODY..." ; cat $trueOutput) $logDir/trueOutput
+				fi
 			fi
 			rm $myOutput
 			rm $trueOutput
@@ -120,8 +128,8 @@ rm -f $PACKED_NAME
 
 make -C $BINDIR
 
-#testFileELFPacking
-#testFileELFExecuting
+testFileELFPacking
+testFileELFExecuting
 testFileELFValgrind
 
 rm -f 0 1 test.ttf fonts.scale file2brl.temp

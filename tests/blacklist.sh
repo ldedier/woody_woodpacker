@@ -15,7 +15,6 @@ blacklist=(/usr/bin/bluetoothctl
 /usr/bin/pkcheck
 /usr/bin/pkttyagent
 /usr/bin/rctest
-/usr/bin/reset
 /usr/bin/resize
 /usr/bin/rtstat
 /usr/bin/rview
@@ -26,6 +25,7 @@ blacklist=(/usr/bin/bluetoothctl
 /usr/bin/systemd-cgls
 /usr/bin/systemd-delta
 /usr/bin/tload
+/usr/bin/valgrind-di-server
 /usr/bin/view
 /usr/bin/vim.basic
 /usr/bin/vimdiff

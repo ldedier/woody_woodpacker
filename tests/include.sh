@@ -2,7 +2,7 @@
 
 BINDIR=..
 NAME=$BINDIR/woody_woodpacker
-PACKED_NAME='to_change_woody'
+PACKED_NAME='woody'
 
 WoodyPackerErrorsDir=couldNotBePacked
 blacklistFile=blacklist.sh
