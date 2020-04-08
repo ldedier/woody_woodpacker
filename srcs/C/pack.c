@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/07 17:38:15 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/04 15:40:27 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/08 13:30:14 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 	uint8_t		*new_ptr;
 	Elf64_Ehdr	*new_hdr;
 
+
 	if (!(last_load_segment_header = get_last_loaded_segment_header(elf)))
 		return (woody_error("not found a single load segment"));
 	prepare_config(&woody, last_load_segment_header, elf, payload);
@@ -76,8 +77,13 @@ int	process_woody(struct s_elf *elf, struct s_elf *payload)
 		return (woody_error("failed to allocate enough memory for new file"));
 	new_hdr = (Elf64_Ehdr*)new_ptr;
 	if (new_hdr->e_shoff > woody.insert_offset)
+	{
 		new_hdr->e_shoff += woody.insert_size;
-	
+	}
+
+	Elf64_Shdr *first_section_header = (Elf64_Shdr *)(void *)(new_ptr + new_hdr->e_shoff);
+	update_shdrs_off(first_section_header, elf->header->e_shnum, woody.insert_offset, woody.insert_size);
+
 	if (insert_and_patch_payload(&woody, new_ptr, new_hdr))
 		return (woody_error_free("error while patching payload", new_ptr));
 	
