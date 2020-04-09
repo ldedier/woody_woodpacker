@@ -1,9 +1,0 @@
-...WOODY...
-RANGE                                  SIZE  STATE REMOVABLE BLOCK
-0x0000000000000000-0x0000000007ffffff  128M online        no     0
-0x0000000008000000-0x0000000017ffffff  256M online       yes   1-2
-0x0000000018000000-0x000000003fffffff  640M online        no   3-7
-
-Memory block size:       128M
-Total online memory:       1G
-Total offline memory:      0B

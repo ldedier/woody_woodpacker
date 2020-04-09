@@ -42,23 +42,26 @@ function checkFileELFValgrind {
 }
 
 function checkFileELFPack {
+
 	file=$1
 
 	./$NAME $file
-	if [ $? -ne 0 ];then
+	if [ $? -ne 0 ] ; then
 		echo -e "${RED}${file} is not packing correctly!${EOC}"
 		mkdir -p $WoodyPackerErrorsDir
 		ln -s $file $WoodyPackerErrorsDir/$(basename $file)
-	else 
+	else
 		echo -e "${GREEN}${file} got packed correctly!${EOC}"
 	fi
 }
 
 function checkFileELFExec {
-	file=$1
 
-	./$NAME $file
-	if [ $? -ne 0 ];then
+	binaryCopy=binary_copy
+	cp $1 $binaryCopy
+	file=$1
+	./$NAME $binaryCopy
+	if [ $? -ne 0 ] ; then
 		echo -e "${RED}${file} is not packing correctly!${EOC}"
 	else 
 		echo -e "${GREEN}${file} got packed correctly!${EOC}"	
@@ -66,13 +69,13 @@ function checkFileELFExec {
 			#logDir=$WoodyExecErrorsDir/$(basename $file)
 
 			relevantDiff=1
-			diff <($file < /dev/null) <($file < /dev/null)
+			diff <(./$binaryCopy < /dev/null) <(./$binaryCopy < /dev/null)
 			if [ $? -ne 0 ]; then
 				relevantDiff=0
 			fi
 			myOutput=/tmp/myOutput
 			trueOutput=/tmp/trueOutput
-			(exec -a "./$PACKED_NAME" $file < /dev/null > $trueOutput)
+			(exec -a "./$PACKED_NAME" ./$binaryCopy < /dev/null > $trueOutput)
 			trueRet=$?
 			./$PACKED_NAME < /dev/null > $myOutput
 			myRet=$?
@@ -101,6 +104,7 @@ function checkFileELFExec {
 			rm $trueOutput
 		fi
 	fi
+	rm -f $binaryCopy
 }
 
 function testFileELFPacking {
