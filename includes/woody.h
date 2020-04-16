@@ -6,7 +6,7 @@
 /*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 20:09:52 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/04 15:07:07 by niragne          ###   ########.fr       */
+/*   Updated: 2020/04/16 10:35:30 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ Elf64_Phdr		*get_last_loaded_segment_header(struct s_elf *elf);
 void			print_string_hexa(char *str);
 
 
-void			*update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t insert_len);
+void			update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t insert_len);
 void			prepare_config(struct s_woody *woody, Elf64_Phdr *phdr, struct s_elf *elf, struct s_elf *payload);
 void			prepare_last_load(struct s_woody *woody, Elf64_Phdr *phdr);
 uint8_t			*create_new_bin(struct s_woody* woody);

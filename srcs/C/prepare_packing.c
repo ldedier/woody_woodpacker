@@ -3,29 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   prepare_packing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldedier </var/mail/ldedier>                +#+  +:+       +#+        */
+/*   By: niragne <niragne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/05 09:45:50 by ldedier           #+#    #+#             */
-/*   Updated: 2020/04/05 09:45:50 by ldedier          ###   ########.fr       */
+/*   Updated: 2020/04/16 10:35:14 by niragne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "woody.h"
 #include <sys/mman.h>
 
-void *update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t insert_len)
+void update_shdrs_off(Elf64_Shdr *shdr, size_t shnum, size_t offset, size_t insert_len)
 {
-	void *first_updated = 0;
-
 	for (uint16_t i = 0; i < shnum ; i++) {
 		if (shdr->sh_offset > offset) {
-			if (!first_updated)
-				first_updated = shdr;
 			shdr->sh_offset += insert_len;
 		}
 		shdr++;
 	}
-	return first_updated;
 }
 
 void	prepare_config(struct s_woody *woody, Elf64_Phdr *phdr, struct s_elf *elf, struct s_elf *payload)
